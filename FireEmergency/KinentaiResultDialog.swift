@@ -204,9 +204,75 @@ class KinentaiResultDialog {
                 text1.text = "ファイル読込エラー"
             }
             break
+        case 311: //2018-09-26 追加
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_toukai110", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        case 312: //2018-09-26 追加
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_toukai111", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        case 313: //2018-09-26 追加
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_toukai112", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
         case 32:
             //テキストファイル読込
             let path = Bundle.main.path(forResource: "kinentai_syutochokka", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        case 321: //2018-09-26 追加
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_shutochokka110", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        case 322: //2018-09-26 追加
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_shutochokka111", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        case 323: //2018-09-26 追加
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_shutochokka112", ofType: "txt")!
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
                 if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
                     text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
@@ -230,6 +296,42 @@ class KinentaiResultDialog {
         case 34:
             //テキストファイル読込
             let path = Bundle.main.path(forResource: "kinentai_nankaitraf", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        //南海トラフ　判定後該当のアクション1 //2018-09-26 追加
+        case 341:
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_nankaitraf110", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+        break
+        //南海トラフ　判定後該当のアクション2 //2018-09-26 追加
+        case 342:
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_nankaitraf111", ofType: "txt")!
+            if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
+                if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
+                    text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)
+                }
+            } else {
+                text1.text = "ファイル読込エラー"
+            }
+            break
+        //南海トラフ　判定後該当のアクション3 //2018-09-26 追加
+        case 343:
+            //テキストファイル読込
+            let path = Bundle.main.path(forResource: "kinentai_nankaitraf112", ofType: "txt")!
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){
                 if text1.text=="" { //これしないと毎回ファイルを読み込んでスクロールすると下とカブる
                     text1.text = String(NSString(data: data, encoding: String.Encoding.utf8.rawValue)!)

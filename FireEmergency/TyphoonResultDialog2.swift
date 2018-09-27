@@ -294,8 +294,8 @@ class TyphoonResultDialog2 {
             let title:String! = "■大和川(柏原) 避難準備・高齢者等避難開始(水位4.7m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "中央", "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
-            text2.text="流域署3号:住之江,住吉,東住吉,平野,消防局\n流域周辺署4号:中央,天王寺,浪速,東成,生野,城東,阿倍野,西成"
+            let gaitousyo2 = Set(arrayLiteral: "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
+            text2.text="流域署3号:住之江,住吉,東住吉,平野,消防局\n流域周辺署4号:天王寺,浪速,東成,生野,城東,阿倍野,西成"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
@@ -330,9 +330,9 @@ class TyphoonResultDialog2 {
             let title:String! = "■大和川(柏原) 避難勧告(水位5.3m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "中央", "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
-            let gaitousyo3 = Set(arrayLiteral: "北", "都島", "福島", "此花", "西", "港", "大正", "西淀川", "淀川", "東淀川", "旭", "鶴見", "水上")
-            text2.text="流域署2号:住之江,住吉,東住吉,平野,消防局\n流域周辺署3号:中央,天王寺,浪速,東成,生野,城東,阿倍野,西成\nその他の署4号:北,都島,福島,此花,西,港,大正,西淀川,淀川,東淀川,旭,鶴見,水上"
+            let gaitousyo2 = Set(arrayLiteral: "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
+            let gaitousyo3 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "西淀川", "淀川", "東淀川", "旭", "鶴見", "水上")
+            text2.text="流域署2号:住之江,住吉,東住吉,平野,消防局\n流域周辺署3号:天王寺,浪速,東成,生野,城東,阿倍野,西成\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,西淀川,淀川,東淀川,旭,鶴見,水上"
             var message:String! = ""
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
                 //２号招集なので、１号は参集なしの判定する
@@ -1290,7 +1290,7 @@ class TyphoonResultDialog2 {
             let title:String! = "■東除川(大堀上小橋) 避難勧告(水位3.9m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野","住之江", "住吉", "東住吉", "西成", "水上")
+            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "西成", "水上")
             text2.text="流域署2号:平野,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,淀川,東淀川,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,西成,水上"
             var message:String! = ""
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
