@@ -20,6 +20,8 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
     fileprivate var mKinentaiSelectDialog2: KinentaiSelectDialog2!
     fileprivate var mKinentaiNankaitraf1: KinentaiNankaitraf1!
     fileprivate var mKinentaiNankaitraf2: KinentaiNankaitraf2!
+    fileprivate var mKinentaiToukai1: KinentaiToukai1! // 2018-09-26 追加
+    fileprivate var mKinentaiShutochokka1: KinentaiShutochokka1! // 2018-09-26 追加
     fileprivate var mKinentaiResultDialog: KinentaiResultDialog!
     //自分が何番目のダイアログが保存用
     fileprivate var mIndex: Int!
@@ -44,11 +46,24 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
             break
         case 3:
             text1.text = "アクションプラン"
-            items = ["■東海地震","■首都直下地震","■東南海・南海地震","■南海トラフ"]
+            //items = ["■東海地震","■首都直下地震","■東南海・南海地震","■南海トラフ"]
+            items = ["■東海地震","■首都直下地震","■南海トラフ"] //2018-09-26 東南海・南海地震削除
             break
-        case 34:  //南海トラフの場合はもう一度自己呼び出し
+        /* case 34:  //南海トラフの場合はもう一度自己呼び出し
             text1.text = "南海トラフ"
             items = ["ケース１(条件判定)","ケース２(同程度被害)"]
+            break */
+        case 31:  // 2018-09-26 追加  東海
+            text1.text = "東海地震アクションプラン適用"
+            items = ["\n■指揮支援部隊\n　→第二次応援\n　→出動先(タップで表示)\n","\n■大阪府大隊\n　→第二次応援\n　→出動先(タップで表示)\n","\n■航空小隊\n　→第一次応援（全隊出動）\n　→出動先(タップで表示)\n"]
+            break
+        case 32:  // 2018-09-26 追加　首都直下
+            text1.text = "首都直下地震アクションプラン"
+            items = ["\n■指揮支援部隊\n　→指揮支援部隊長として出動\n　→出動先(タップで表示)\n","\n■大阪府大隊(陸上)\n　→全隊出動\n　→出動先(タップで表示)\n","\n■航空小隊\n　→指揮支援部隊長の輸送\n　→出動先(タップで表示)\n"]
+            break
+        case 34:  // 2018-09-26 追加　南海トラフ
+            text1.text = "南海トラフ地震アクションプラン適用"
+            items = ["\n■指揮支援部隊\n　→出動可能な全隊出動\n　→出動先(タップで表示)\n","\n■大阪府大隊(陸上)\n　→被害確認後、出動可能な全隊出動\n　→出動先(タップで表示)\n","\n■航空小隊\n　→被害確認後、出動可能な全隊出動\n　→出動先(タップで表示)\n"]
             break
         case 4:
             text1.text = "大津波警報・噴火"
@@ -187,35 +202,101 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
         case 3:
             switch indexPath.row {
             case 0:
-                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
-                mKinentaiResultDialog.showResult(31, item: 0)
+                //2018-09-26 変更
+                /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(31, item: 0) */
+                mKinentaiToukai1 = KinentaiToukai1(parentView: parent)
+                mKinentaiToukai1.showResult()
                 break
             case 1:
-                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
-                mKinentaiResultDialog.showResult(32, item: 0)
+                //2018-09-26 変更
+                /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(32, item: 0) */
+                mKinentaiShutochokka1 = KinentaiShutochokka1(parentView: parent)
+                mKinentaiShutochokka1.showResult()
                 break
-            case 2:
+            //2018-09-26 東南海・南海地震削除
+            /* case 2:
                 mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
                 mKinentaiResultDialog.showResult(33, item: 0)
-                break
-            case 3:
-                mKinentaiSelectDialog = KinentaiSelectDialog(index: 34, parentView: parent)
-                mKinentaiSelectDialog.showInfo()
+                break */
+            case 2: // 3 => 2
+                //2018-09-26 変更
+                /* mKinentaiSelectDialog = KinentaiSelectDialog(index: 34, parentView: parent)
+                mKinentaiSelectDialog.showInfo() */
+                mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
+                mKinentaiNankaitraf1.showResult()
                 break
             default:
                 break
             }
             break
         //南海トラフのケース判定
+        //2018-09-26 KinentaiNankaitraf1直接表示に変更(この分岐は使用しない)
+            /* case 34:
+             switch indexPath.row {
+             case 0:
+                 mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
+                 mKinentaiNankaitraf1.showResult()
+                 break
+             case 1:
+                 mKinentaiNankaitraf2 = KinentaiNankaitraf2(parentView: parent)
+                 mKinentaiNankaitraf2.showResult()
+                 break
+             default:
+                break
+             }
+             break */
+        //2018-09-26 追加
+        case 31:
+            switch indexPath.row {
+            case 0:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(311, item: 0)
+                break
+            case 1:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(312, item: 0)
+                break
+            case 2:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(313, item: 0)
+                break
+            default:
+                break
+            }
+            break
+        case 32:
+            switch indexPath.row {
+            case 0:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(321, item: 0)
+                break
+            case 1:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(322, item: 0)
+                break
+            case 2:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(323, item: 0)
+                break
+            default:
+                break
+            }
+            break
         case 34:
             switch indexPath.row {
             case 0:
-                mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
-                mKinentaiNankaitraf1.showResult()
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(341, item: 0)
                 break
             case 1:
-                mKinentaiNankaitraf2 = KinentaiNankaitraf2(parentView: parent)
-                mKinentaiNankaitraf2.showResult()
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(342, item: 0)
+                break
+            case 2:
+                mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
+                mKinentaiResultDialog.showResult(343, item: 0)
                 break
             default:
                 break
