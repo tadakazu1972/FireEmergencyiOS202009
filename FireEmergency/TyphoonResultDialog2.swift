@@ -200,9 +200,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -242,9 +242,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -340,9 +340,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -382,9 +382,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -464,12 +464,12 @@ class TyphoonResultDialog2 {
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
                 //２号招集なので、１号は参集なしの判定する
                 if kubun == "１号招集" {
-                    message = "２号非常招集(非番・日勤)\n\n招集なし"
+                    message = "２号非常招集\n\n招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -498,9 +498,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -596,9 +596,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -638,9 +638,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -736,9 +736,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -778,9 +778,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -876,9 +876,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -918,9 +918,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -1016,9 +1016,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -1058,9 +1058,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -1156,9 +1156,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -1198,9 +1198,9 @@ class TyphoonResultDialog2 {
                 message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message
@@ -1299,9 +1299,9 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
-                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
@@ -1327,12 +1327,12 @@ class TyphoonResultDialog2 {
             var message:String! = ""
             //２号招集なので、１号は参集なしの判定する
             if kubun == "１号招集" {
-                message = "２号非常招集(非番・日勤)\n\n招集なし"
+                message = "２号非常招集\n\n招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                 } else {
-                    message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                 }
             }
             text1.text = title + message

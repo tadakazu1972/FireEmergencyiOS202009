@@ -101,17 +101,17 @@ class EarthResultDialog {
         case 22:
             //２号招集なので、１号は参集なしの判定する
             if kubun != "１号招集" {
-                text1.text="■津波警報\n\n２号非常招集(非番・日勤)\n\n\(tsunamiStation)へ参集"
+                text1.text="■津波警報\n\n２号非常招集\n\n\(tsunamiStation)へ参集"
             } else {
-                text1.text="■津波警報\n\n２号非常招集(非番・日勤)\n\n招集なし"
+                text1.text="■津波警報\n\n２号非常招集\n\n招集なし"
             }
             break
         case 23:
             //２号招集なので、１号は参集なしの判定する
             if kubun != "１号招集" {
-                text1.text="■警報なし\n\n２号非常招集(非番・日勤)\n\n\(mainStation)へ参集"
+                text1.text="■警報なし\n\n２号非常招集\n\n\(mainStation)へ参集"
             } else {
-                text1.text="■警報なし\n\n２号非常招集(非番・日勤)\n\n招集なし"
+                text1.text="■警報なし\n\n２号非常招集\n\n招集なし"
             }
             break
         //震度４
