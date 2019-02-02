@@ -18,6 +18,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
     fileprivate var btnClose: UIButton!
     fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //南海トラフの場合の自己呼び出し用
     fileprivate var mKinentaiSelectDialog2: KinentaiSelectDialog2!
+    fileprivate var mKinentaiSelectDialog3: KinentaiSelectDialog3! // 2019-02-02 追加
     fileprivate var mKinentaiNankaitraf1: KinentaiNankaitraf1!
     fileprivate var mKinentaiNankaitraf2: KinentaiNankaitraf2!
     fileprivate var mKinentaiToukai1: KinentaiToukai1! // 2018-09-26 追加
@@ -201,19 +202,27 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
         //アクションプラン
         case 3:
             switch indexPath.row {
+            //東海地震
             case 0:
                 //2018-09-26 変更
                 /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
                 mKinentaiResultDialog.showResult(31, item: 0) */
-                mKinentaiToukai1 = KinentaiToukai1(parentView: parent)
-                mKinentaiToukai1.showResult()
+                //2019-02-02 変更
+                /*mKinentaiToukai1 = KinentaiToukai1(parentView: parent)
+                mKinentaiToukai1.showResult()*/
+                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 1, parentView: parent)
+                mKinentaiSelectDialog3.showInfo()
                 break
+            //首都直下地震
             case 1:
                 //2018-09-26 変更
                 /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
                 mKinentaiResultDialog.showResult(32, item: 0) */
+                //2019-02-02 変更
                 mKinentaiShutochokka1 = KinentaiShutochokka1(parentView: parent)
                 mKinentaiShutochokka1.showResult()
+                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 2, parentView: parent)
+                mKinentaiSelectDialog3.showInfo()
                 break
             //2018-09-26 東南海・南海地震削除
             /* case 2:
@@ -224,8 +233,11 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
                 //2018-09-26 変更
                 /* mKinentaiSelectDialog = KinentaiSelectDialog(index: 34, parentView: parent)
                 mKinentaiSelectDialog.showInfo() */
-                mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
-                mKinentaiNankaitraf1.showResult()
+                //2019-02-02 変更
+                /*mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
+                mKinentaiNankaitraf1.showResult()*/
+                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 3, parentView: parent)
+                mKinentaiSelectDialog3.showInfo()
                 break
             default:
                 break
