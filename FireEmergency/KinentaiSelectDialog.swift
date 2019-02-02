@@ -11,7 +11,7 @@ import UIKit
 class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
     //ボタン押したら出るUIWindow
     fileprivate var parent: KinentaiViewController!
-    fileprivate var win1: UIWindow!
+    internal var win1: UIWindow!
     fileprivate var text1: UITextView!
     fileprivate var table: UITableView!
     fileprivate var items:[String] = ["","","",""]
@@ -210,7 +210,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
                 //2019-02-02 変更
                 /*mKinentaiToukai1 = KinentaiToukai1(parentView: parent)
                 mKinentaiToukai1.showResult()*/
-                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 1, parentView: parent)
+                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 1, parentView: self)
                 mKinentaiSelectDialog3.showInfo()
                 break
             //首都直下地震
@@ -221,7 +221,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
                 //2019-02-02 変更
                 mKinentaiShutochokka1 = KinentaiShutochokka1(parentView: parent)
                 mKinentaiShutochokka1.showResult()
-                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 2, parentView: parent)
+                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 2, parentView: self)
                 mKinentaiSelectDialog3.showInfo()
                 break
             //2018-09-26 東南海・南海地震削除
@@ -236,7 +236,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
                 //2019-02-02 変更
                 /*mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
                 mKinentaiNankaitraf1.showResult()*/
-                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 3, parentView: parent)
+                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 3, parentView: self)
                 mKinentaiSelectDialog3.showInfo()
                 break
             default:
@@ -335,7 +335,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
         }
         //自らのダイアログを消去しておく
         win1.isHidden = true      //win1隠す
-        text1.text = ""         //使い回しするのでテキスト内容クリア
-        items = ["","","",""]
+        //text1.text = ""         //使い回しするのでテキスト内容クリア
+        //items = ["","","",""]
     }
 }

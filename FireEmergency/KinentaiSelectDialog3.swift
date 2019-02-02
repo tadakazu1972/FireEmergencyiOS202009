@@ -11,22 +11,22 @@ import UIKit
 
 class KinentaiSelectDialog3 {
     //ボタン押したら出るUIWindow
-    fileprivate var parent: KinentaiViewController!
-    fileprivate var win1: UIWindow!
+    fileprivate var parent: KinentaiSelectDialog! //2019-02-02 クラス変更
+    internal var win1: UIWindow!
     fileprivate var text0: UITextView!      //見出し
     fileprivate var text1: UITextView!      //■指揮支援部隊
-    fileprivate var button1: UIButton!         //出動先ボタン1
+    fileprivate var button1: UIButton!      //出動先ボタン1
     fileprivate var text2: UITextView!      //■大阪府大隊（陸上）
-    fileprivate var button2: UIButton!         //出動先ボタン2
+    fileprivate var button2: UIButton!      //出動先ボタン2
     fileprivate var text3: UITextView!      //■航空小隊
-    fileprivate var button3: UIButton!         //出動先ボタン3
+    fileprivate var button3: UIButton!      //出動先ボタン3
     fileprivate var btnClose: UIButton!
-    fileprivate var mKinentaiResultDialog: KinentaiResultDialog!
+    fileprivate var mKinentaiResultDialog31: KinentaiResultDialog31!
     //一つ前のだ画面から送られてくるインデックス保存用 1:東海地震 2:首都直下地震　3:南海トラフ地震
     fileprivate var mIndex: Int!
     
     //コンストラクタ
-    init(index: Int, parentView: KinentaiViewController){
+    init(index: Int, parentView: KinentaiSelectDialog){
         parent = parentView
         win1 = UIWindow()
         text0 = UITextView()
@@ -90,12 +90,11 @@ class KinentaiSelectDialog3 {
     //表示
     func showInfo (){
         //元の画面を暗く
-        parent.view.alpha = 0.3
+        parent.win1.alpha = 0.1
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height-100)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.frame = CGRect(x: 20,y: 80, width: parent.win1.frame.width,height: 480)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -129,7 +128,7 @@ class KinentaiSelectDialog3 {
         button1.layer.masksToBounds = true
         button1.layer.cornerRadius = 10.0
         button1.layer.position = CGPoint(x: self.win1.frame.width/2, y: 140)
-        button1.addTarget(self, action: #selector(self.onClickClose(_:)), for: .touchUpInside)
+        button1.addTarget(self, action: #selector(self.onClickButton1(_:)), for: .touchUpInside)
         self.win1.addSubview(button1)
         
         //TextView2生成
@@ -149,7 +148,7 @@ class KinentaiSelectDialog3 {
         button2.layer.masksToBounds = true
         button2.layer.cornerRadius = 10.0
         button2.layer.position = CGPoint(x: self.win1.frame.width/2, y: 260)
-        button2.addTarget(self, action: #selector(self.onClickClose(_:)), for: .touchUpInside)
+        button2.addTarget(self, action: #selector(self.onClickButton2(_:)), for: .touchUpInside)
         self.win1.addSubview(button2)
         
         //TextView3生成
@@ -169,7 +168,7 @@ class KinentaiSelectDialog3 {
         button3.layer.masksToBounds = true
         button3.layer.cornerRadius = 10.0
         button3.layer.position = CGPoint(x: self.win1.frame.width/2, y: 380)
-        button3.addTarget(self, action: #selector(self.onClickClose(_:)), for: .touchUpInside)
+        button3.addTarget(self, action: #selector(self.onClickButton3(_:)), for: .touchUpInside)
         self.win1.addSubview(button3)
         
         //閉じるボタン生成
@@ -184,11 +183,88 @@ class KinentaiSelectDialog3 {
         self.win1.addSubview(btnClose)
     }
     
+    //指揮支援部隊　出動先ボタン1
+    @objc func onClickButton1(_ sender: UIButton){
+        //まずボタン無効化
+        offButton()
+        
+        switch mIndex{
+        //東海地震　ボタン1
+        case 1:
+            mKinentaiResultDialog31 = KinentaiResultDialog31(index: 1, parentView: self)
+            mKinentaiResultDialog31.showInfo()
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
+        }
+    }
+    
+    //大阪府大隊　出動先ボタン2
+    @objc func onClickButton2(_ sender: UIButton){
+        //まずボタン無効化
+        offButton()
+        
+        switch mIndex{
+        //東海地震　ボタン1
+        case 1:
+            mKinentaiResultDialog31 = KinentaiResultDialog31(index: 2, parentView: self)
+            mKinentaiResultDialog31.showInfo()
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
+        }
+    }
+    
+    //航空小隊　出動先ボタン3
+    @objc func onClickButton3(_ sender: UIButton){
+        //まずボタン無効化
+        offButton()
+        
+        switch mIndex{
+        //東海地震　ボタン1
+        case 1:
+            mKinentaiResultDialog31 = KinentaiResultDialog31(index: 3, parentView: self)
+            mKinentaiResultDialog31.showInfo()
+            break
+        case 2:
+            break
+        case 3:
+            break
+        default:
+            break
+        }
+    }
+    
+    //次の画面に遷移する前に、全てのボタン無効化
+    func offButton() {
+        button1.isEnabled = false
+        button2.isEnabled = false
+        button3.isEnabled = false
+        btnClose.isEnabled = false
+    }
+    
+    //帰ってきた時に無効化されていたボタンを有効化
+    func onButton(){
+        button1.isEnabled = true
+        button2.isEnabled = true
+        button3.isEnabled = true
+        btnClose.isEnabled = true
+    }
+    
     //閉じる
     @objc func onClickClose(_ sender: UIButton){
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
-        parent.view.alpha = 1.0 //元の画面明るく
+        parent.win1.alpha = 1.0 //元の画面明るく
+        parent.win1.isHidden = false //元のダイアログを表示
     }
 }
 
