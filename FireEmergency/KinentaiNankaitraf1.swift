@@ -147,7 +147,7 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height/2+130)
+        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height/2+200)
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
@@ -289,13 +289,15 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         chk1.frame = CGRect(x:10, y:210, width:self.win1.frame.width-20, height:60)
         chk1.setTitle("中部地方：山梨県、長野県、岐阜県、静岡県、愛知県、三重県", for: UIControlState())
         chk1.setTitleColor(UIColor.black, for: UIControlState())
+        chk1.titleLabel?.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         chk1.titleLabel?.numberOfLines = 2
         chk1.awakeFromNib()
         self.win1.addSubview(chk1)
         
         chk2.frame = CGRect(x:10, y:270, width:self.win1.frame.width-20, height:60)
-        chk2.setTitle("近畿地方：兵庫県、奈良県、和歌山県", for: UIControlState())
+        chk2.setTitle("近畿地方：兵庫県、奈良県、和歌山県                          ", for: UIControlState())
         chk2.setTitleColor(UIColor.black, for: UIControlState())
+        chk2.titleLabel?.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         chk2.titleLabel?.numberOfLines = 2
         chk2.awakeFromNib()
         self.win1.addSubview(chk2)
@@ -303,6 +305,7 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         chk3.frame = CGRect(x:10, y:340, width:self.win1.frame.width-20, height:60)
         chk3.setTitle("四国・九州地方：徳島県、香川県、愛媛県、高知県、大分県、宮崎県", for: UIControlState())
         chk3.setTitleColor(UIColor.black, for: UIControlState())
+        chk3.titleLabel?.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         chk3.titleLabel?.numberOfLines = 2
         chk3.awakeFromNib()
         self.win1.addSubview(chk3)

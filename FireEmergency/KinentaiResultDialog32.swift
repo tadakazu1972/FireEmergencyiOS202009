@@ -66,7 +66,7 @@ class KinentaiResultDialog32 {
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 20,y: 200,width: parent.win1.frame.width,height: parent.win1.frame.height/3)
+        win1.frame = CGRect(x: 20,y: parent.win1.frame.height/3, width: parent.win1.frame.width,height: parent.win1.frame.height/2)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
