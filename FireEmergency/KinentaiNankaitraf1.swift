@@ -16,8 +16,9 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
     fileprivate var textField1: UITextField!
     fileprivate var pic1: UIPickerView!
     let pic1Array: NSArray = ["山梨県中・西部","長野県南部","静岡県東部","静岡県中部","静岡県西部","駿河湾","駿河湾南方沖","新島・神津島近海","愛知県東部","愛知県西部","遠州灘","三河湾","岐阜県美濃東部","三重県北部","三重県中部","三重県南部","伊勢湾","三重県南東沖","和歌山県北部","和歌山県南部","和歌山県南方沖","紀伊水道","奈良県","淡路島付近","播磨灘","徳島県北部","徳島県南部","香川県東部","香川県西部","瀬戸内海中部","愛媛県東予","愛媛県中予","愛媛県南予","伊予灘","豊後水道","高知県東部","高知県中部","高知県西部","土佐湾","四国沖","大分県南部","宮崎県北部平野部","日向灘","九州地方南東沖","その他"]
-    fileprivate var label2: UILabel!
-    fileprivate var text2: UITextView!
+    fileprivate var label2: UITextView!
+    //2019-02-03 削除
+    /*fileprivate var text2: UITextView!
     fileprivate var textField2: UITextField!
     fileprivate var pic2: UIPickerView!
     let pic2Array: NSArray = ["山梨県","長野県","岐阜県","静岡県","愛知県","三重県","その他"]
@@ -28,11 +29,44 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
     fileprivate var text4: UITextView!
     fileprivate var textField4: UITextField!
     fileprivate var pic4: UIPickerView!
-    let pic4Array: NSArray = ["徳島県","香川県","愛媛県","高知県","大分県","宮崎県","その他"]
+    let pic4Array: NSArray = ["徳島県","香川県","愛媛県","高知県","大分県","宮崎県","その他"]*/
     fileprivate var btnClose: UIButton!
     fileprivate var btnAction: UIButton!
     fileprivate var mKinentaiResultDialog: KinentaiResultDialog!
-    fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //2018-09-26 追加
+    //fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //2018-09-26 追加->2019-02-03 削除
+    fileprivate var mKinentaiSelectDialog3: KinentaiSelectDialog3! //2019-02-03 追加
+    
+    // 2019-02-03 追加
+    class CheckBox: UIButton {
+        // Images
+        let checkedImage = UIImage(named: "ic_check_box.png")! as UIImage
+        let uncheckedImage = UIImage(named: "ic_check_box_outline_blank.png")! as UIImage
+        
+        // Bool property
+        var isChecked: Bool = false {
+            didSet{
+                if isChecked == true {
+                    self.setImage(checkedImage, for: UIControlState.normal)
+                } else {
+                    self.setImage(uncheckedImage, for: UIControlState.normal)
+                }
+            }
+        }
+        
+        override func awakeFromNib() {
+            self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
+            self.isChecked = false
+        }
+        
+        func buttonClicked(sender: UIButton) {
+            if sender == self {
+                isChecked = !isChecked
+            }
+        }
+    }
+    fileprivate var chk1: CheckBox!
+    fileprivate var chk2: CheckBox!
+    fileprivate var chk3: CheckBox!
     
     //UITextFieldを便宜的に親として継承しているため。UIViewControllerを継承したくないための策。
     override init(frame: CGRect) {
@@ -52,7 +86,9 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         text1       = UITextView()
         textField1  = UITextField()
         pic1        = UIPickerView()
-        label2      = UILabel()
+        label2      = UITextView()
+        //2019-02-03 削除
+        /*
         text2       = UITextView()
         textField2  = UITextField()
         pic2        = UIPickerView()
@@ -61,9 +97,14 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         pic3        = UIPickerView()
         text4       = UITextView()
         textField4  = UITextField()
-        pic4        = UIPickerView()
+        pic4        = UIPickerView()*/
         btnClose    = UIButton()
         btnAction   = UIButton()
+        
+        // 2019-02-03 追加
+        chk1 = CheckBox()
+        chk2 = CheckBox()
+        chk3 = CheckBox()
     }
     
     //デコンストラクタ
@@ -76,7 +117,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         pic1        = nil
         
         label2      = nil
-        
+        //2019-02-03 削除
+        /*
         text2       = nil
         textField2  = nil
         pic2        = nil
@@ -87,10 +129,15 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         
         text4       = nil
         textField4  = nil
-        pic4        = nil
+        pic4        = nil*/
         
         btnClose    = nil
         btnAction   = nil
+        
+        // 2019-02-03 追加
+        chk1 = nil
+        chk2 = nil
+        chk3 = nil
     }
     
     //表示
@@ -143,15 +190,16 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         pic1.selectRow(0, inComponent:0, animated:false) //呼び出したrow値でピッカー初期化
         
         //label2生成
-        label2.text = "②次のいずれの地方においても、震度６強以上が観測された場合、又は大津波警報が発表された場合"
-        label2.frame = CGRect(x: 10,y: 140, width: self.win1.frame.width - 20, height: 60)
+        label2.text = "②中部地方、近畿地方、四国・九州地方の３地域のいずれにおいても、震度６強以上が観測された場合、又は大津波警報が発表された場合"
+        label2.frame = CGRect(x: 10,y: 140, width: self.win1.frame.width - 20, height: 90)
         label2.backgroundColor = UIColor.clear
         label2.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         label2.textColor = UIColor.black
         label2.textAlignment = NSTextAlignment.left
-        label2.numberOfLines = 2
         self.win1.addSubview(label2)
         
+        //2019-02-03 削除
+        /*
         //２セット目
         //text2生成
         text2.frame = CGRect(x: 10,y: 200, width: 100, height: 60)
@@ -235,6 +283,29 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         pic4.translatesAutoresizingMaskIntoConstraints = false
         pic4.tag = 4
         pic4.selectRow(0, inComponent:0, animated:false) //呼び出したrow値でピッカー初期化
+        */
+        
+        // checkbox生成　2019-02-03 追加
+        chk1.frame = CGRect(x:10, y:210, width:self.win1.frame.width-20, height:60)
+        chk1.setTitle("中部地方：山梨県、長野県、岐阜県、静岡県、愛知県、三重県", for: UIControlState())
+        chk1.setTitleColor(UIColor.black, for: UIControlState())
+        chk1.titleLabel?.numberOfLines = 2
+        chk1.awakeFromNib()
+        self.win1.addSubview(chk1)
+        
+        chk2.frame = CGRect(x:10, y:270, width:self.win1.frame.width-20, height:60)
+        chk2.setTitle("近畿地方：兵庫県、奈良県、和歌山県", for: UIControlState())
+        chk2.setTitleColor(UIColor.black, for: UIControlState())
+        chk2.titleLabel?.numberOfLines = 2
+        chk2.awakeFromNib()
+        self.win1.addSubview(chk2)
+        
+        chk3.frame = CGRect(x:10, y:340, width:self.win1.frame.width-20, height:60)
+        chk3.setTitle("四国・九州地方：徳島県、香川県、愛媛県、高知県、大分県、宮崎県", for: UIControlState())
+        chk3.setTitleColor(UIColor.black, for: UIControlState())
+        chk3.titleLabel?.numberOfLines = 2
+        chk3.awakeFromNib()
+        self.win1.addSubview(chk3)
         
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
@@ -272,6 +343,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         case 1:
             rowNum = pic1Array.count
             break
+        //2019-02-03 削除
+        /*
         case 2:
             rowNum = pic2Array.count
             break
@@ -280,7 +353,7 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
             break
         case 4:
             rowNum = pic4Array.count
-            break
+            break*/
         default:
             rowNum = pic1Array.count
             break
@@ -297,6 +370,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         case 1:
             picComponent = pic1Array[row] as? String
             break
+        //2019-02-03 削除
+        /*
         case 2:
             picComponent = pic2Array[row] as? String
             break
@@ -305,7 +380,7 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
             break
         case 4:
             picComponent = pic4Array[row] as? String
-            break
+            break*/
         default:
             picComponent = pic1Array[row] as? String
             break
@@ -321,6 +396,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         case 1:
             textField1.text = pic1Array[row] as? String
             break
+        //2019-02-03 削除
+        /*
         case 2:
             textField2.text = pic2Array[row] as? String
             break
@@ -329,7 +406,7 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
             break
         case 4:
             textField4.text = pic4Array[row] as? String
-            break
+            break*/
         default:
             break
         }
@@ -338,9 +415,11 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
     //ツールバーの選択ボタンを押した時
     func done() {
         textField1.endEditing(true) //これで閉じる
+        //2019-02-03 削除
+        /*
         textField2.endEditing(true)
         textField3.endEditing(true)
-        textField4.endEditing(true)
+        textField4.endEditing(true)*/
     }
     
     //閉じる
@@ -356,12 +435,20 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
         //対応の結果であるアクションプランを表示
-        if textField1.text != "その他" && textField2.text != "その他" && textField3.text != "その他" && textField4.text != "その他" {
+        var i: Int8 = 0
+        if chk1.isChecked {i += 1}
+        if chk2.isChecked {i += 1}
+        if chk3.isChecked {i += 1}
+        //対応の結果であるアクションプランを表示
+        if (textField1.text != "その他" && i==3) {
             // 2018-09-26 遷移先を選択用ダイアログに変更
             /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
             mKinentaiResultDialog.showResult(34, item: 0) */
-            mKinentaiSelectDialog = KinentaiSelectDialog(index: 34, parentView: parent)
-            mKinentaiSelectDialog.showInfo()
+            //2019-02-03 追加
+            /*mKinentaiSelectDialog = KinentaiSelectDialog(index: 34, parentView: parent)
+            mKinentaiSelectDialog.showInfo()*/
+            mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 3, parentView: parent)
+            mKinentaiSelectDialog3.showInfo()
         } else {
             mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
             mKinentaiResultDialog.showResult(35, item: 0)

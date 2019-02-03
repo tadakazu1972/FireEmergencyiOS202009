@@ -18,7 +18,8 @@ class KinentaiShutochokka1 : UITextField {
     fileprivate var btnClose: UIButton!
     fileprivate var btnAction: UIButton!
     fileprivate var mKinentaiResultDialog: KinentaiResultDialog!
-    fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //2018-09-26 追加
+    //fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //2018-09-26 追加->2019-02-03 削除
+    fileprivate var mKinentaiSelectDialog3: KinentaiSelectDialog3! //2019-02-03 追加
     
     //UITextFieldを便宜的に親として継承しているため。UIViewControllerを継承したくないための策。
     override init(frame: CGRect) {
@@ -56,7 +57,7 @@ class KinentaiShutochokka1 : UITextField {
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height/2+130)
+        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height/2/2)
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
@@ -69,7 +70,7 @@ class KinentaiShutochokka1 : UITextField {
         //text1生成
         text1.frame = CGRect(x: 10,y: 10, width: self.win1.frame.width - 20, height: self.win1.frame.height-60)
         text1.backgroundColor = UIColor.clear
-        text1.font = UIFont.systemFont(ofSize: CGFloat(14))
+        text1.font = UIFont.systemFont(ofSize: CGFloat(18))
         text1.textColor = UIColor.black
         text1.textAlignment = NSTextAlignment.left
         text1.isEditable = false
@@ -114,7 +115,10 @@ class KinentaiShutochokka1 : UITextField {
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
         //対応の結果であるアクションプランを表示
-        mKinentaiSelectDialog = KinentaiSelectDialog(index: 32, parentView: parent)
-        mKinentaiSelectDialog.showInfo()
+        //2019-02-03 修正
+        /*mKinentaiSelectDialog = KinentaiSelectDialog(index: 32, parentView: parent)
+        mKinentaiSelectDialog.showInfo()*/
+        mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 2, parentView: parent)
+        mKinentaiSelectDialog3.showInfo()
     }
 }

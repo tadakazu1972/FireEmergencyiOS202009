@@ -342,6 +342,8 @@ class KinentaiResultDialog {
             break
         //南海トラフ　アクションプラン適用なし
         case 35:
+            //2019-02-03 追加　適用なしなので、UIWindowの高さをなるべく小さく
+            win1.frame = CGRect(x: 20,y: 180,width: parent.view.frame.width-40,height: parent.view.frame.height/3)
             //テキストファイル読込
             let path = Bundle.main.path(forResource: "kinentai_nankaitraf2", ofType: "txt")!
             if let data = try? Data(contentsOf: URL(fileURLWithPath: path)){

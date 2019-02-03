@@ -1,19 +1,18 @@
 //
-//  KinentaiResultDialog31.swift
+//  KinentaiResultDialog33.swift
 //  FireEmergency
 //
-//  Created by 中道忠和 on 2019/02/02.
+//  Created by 中道忠和 on 2019/02/03.
 //  Copyright © 2019年 tadakazu nakamichi. All rights reserved.
-//
-//  2019.2.2追加　アクションプランの追加画面
+//  2019-02-03 アクションプランの追加画面
 
 import UIKit
 
-class KinentaiResultDialog31 {
+class KinentaiResultDialog33 {
     //ボタン押したら出るUIWindow
     fileprivate var parent: KinentaiSelectDialog3!
     fileprivate var win1: UIWindow!
-    fileprivate var text0: UITextView!      //被害状況により、消防庁が決定
+    fileprivate var text0: UITextView!      //ここに出動先が表示される
     fileprivate var btnBack: UIButton!
     fileprivate var mKinentaiResultDialog: KinentaiResultDialog!
     //一つ前のだ画面から送られてくるインデックス保存用 1:指揮支援部隊 2:大阪府大隊　3:航空小隊
@@ -31,15 +30,15 @@ class KinentaiResultDialog31 {
         switch index {
         //指揮支援部隊
         case 1:
-            text0.text = "被害状況により、消防庁が決定"
+            text0.text = "■指揮支援部隊\n　指揮支援部隊長\n　→和歌山県\n\n　指揮支援隊\n　→被害状況による\n"
             break
-        //大阪府大隊
+        //大阪府大隊(陸上)
         case 2:
-            text0.text = "被害状況により、消防庁が決定"
+            text0.text = "■大阪府大隊(陸上)\n　出動先：和歌山県\n\n　集結場所：蜻蛉池公園又は岸和田SA\n\n　進出拠点：紀ノ川SA(阪和自動車道)又は橋本運動公園\n"
             break
         //航空小隊
         case 3:
-            text0.text = "被害状況により、消防庁が決定"
+            text0.text = "■航空小隊\n　出動先：和歌山県\n\n　任務：指揮支援隊輸送ヘリ又は救助・救急・輸送ヘリ\n"
             break
         default:
             break
@@ -67,7 +66,7 @@ class KinentaiResultDialog31 {
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 20,y: 200,width: parent.win1.frame.width, height: parent.win1.frame.height/3)
+        win1.frame = CGRect(x: 20,y: 200,width: parent.win1.frame.width,height: parent.win1.frame.height/2)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -76,7 +75,7 @@ class KinentaiResultDialog31 {
         self.win1.makeKeyAndVisible()
         
         //TextView0生成
-        text0.frame = CGRect(x: 10, y: 20, width: self.win1.frame.width-20, height: 60)
+        text0.frame = CGRect(x: 10, y: 20, width: self.win1.frame.width-20, height: 200)
         text0.backgroundColor = UIColor.clear
         text0.font = UIFont.systemFont(ofSize: CGFloat(18))
         text0.textColor = UIColor.black

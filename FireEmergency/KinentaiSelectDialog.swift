@@ -207,37 +207,29 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
                 //2018-09-26 変更
                 /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
                 mKinentaiResultDialog.showResult(31, item: 0) */
-                //2019-02-02 変更
-                /*mKinentaiToukai1 = KinentaiToukai1(parentView: parent)
-                mKinentaiToukai1.showResult()*/
-                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 1, parentView: self)
-                mKinentaiSelectDialog3.showInfo()
+                mKinentaiToukai1 = KinentaiToukai1(parentView: parent)
+                mKinentaiToukai1.showResult()
                 break
             //首都直下地震
             case 1:
                 //2018-09-26 変更
                 /* mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
                 mKinentaiResultDialog.showResult(32, item: 0) */
-                //2019-02-02 変更
                 mKinentaiShutochokka1 = KinentaiShutochokka1(parentView: parent)
                 mKinentaiShutochokka1.showResult()
-                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 2, parentView: self)
-                mKinentaiSelectDialog3.showInfo()
                 break
             //2018-09-26 東南海・南海地震削除
             /* case 2:
                 mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
                 mKinentaiResultDialog.showResult(33, item: 0)
                 break */
+            //南海トラフ地震
             case 2: // 3 => 2
                 //2018-09-26 変更
                 /* mKinentaiSelectDialog = KinentaiSelectDialog(index: 34, parentView: parent)
                 mKinentaiSelectDialog.showInfo() */
-                //2019-02-02 変更
-                /*mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
-                mKinentaiNankaitraf1.showResult()*/
-                mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 3, parentView: self)
-                mKinentaiSelectDialog3.showInfo()
+                mKinentaiNankaitraf1 = KinentaiNankaitraf1(parentView: parent)
+                mKinentaiNankaitraf1.showResult()
                 break
             default:
                 break

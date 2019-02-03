@@ -34,7 +34,8 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
     fileprivate var btnClose: UIButton!
     fileprivate var btnAction: UIButton!
     fileprivate var mKinentaiResultDialog: KinentaiResultDialog!
-    fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //2018-09-26 追加
+    //fileprivate var mKinentaiSelectDialog: KinentaiSelectDialog!  //2018-09-26 追加-> 2019-02-03 削除
+    fileprivate var mKinentaiSelectDialog3: KinentaiSelectDialog3!  //2019-02-02 追加
     
     // 2018-09-26 追加
     class CheckBox: UIButton {
@@ -392,8 +393,11 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         if chk7.isChecked {i += 1}
         if chk8.isChecked {i += 1}
         if (textField1.text != "その他" && i >= 2 ) {
-            mKinentaiSelectDialog = KinentaiSelectDialog(index: 31, parentView: parent)
-            mKinentaiSelectDialog.showInfo()
+            //2019-02-03 追加
+            /*mKinentaiSelectDialog = KinentaiSelectDialog(index: 31, parentView: parent)
+            mKinentaiSelectDialog.showInfo()*/
+            mKinentaiSelectDialog3 = KinentaiSelectDialog3(index: 1, parentView: parent)
+            mKinentaiSelectDialog3.showInfo()
         } else {
             mKinentaiResultDialog = KinentaiResultDialog(parentView: parent)
             mKinentaiResultDialog.showResult(35, item: 0)

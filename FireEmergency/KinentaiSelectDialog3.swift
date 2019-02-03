@@ -11,7 +11,7 @@ import UIKit
 
 class KinentaiSelectDialog3 {
     //ボタン押したら出るUIWindow
-    fileprivate var parent: KinentaiSelectDialog! //2019-02-02 クラス変更
+    fileprivate var parent: KinentaiViewController! //2019-02-02 クラス変更
     internal var win1: UIWindow!
     fileprivate var text0: UITextView!      //見出し
     fileprivate var text1: UITextView!      //■指揮支援部隊
@@ -22,11 +22,13 @@ class KinentaiSelectDialog3 {
     fileprivate var button3: UIButton!      //出動先ボタン3
     fileprivate var btnClose: UIButton!
     fileprivate var mKinentaiResultDialog31: KinentaiResultDialog31!
+    fileprivate var mKinentaiResultDialog32: KinentaiResultDialog32!
+    fileprivate var mKinentaiResultDialog33: KinentaiResultDialog33!
     //一つ前のだ画面から送られてくるインデックス保存用 1:東海地震 2:首都直下地震　3:南海トラフ地震
     fileprivate var mIndex: Int!
     
     //コンストラクタ
-    init(index: Int, parentView: KinentaiSelectDialog){
+    init(index: Int, parentView: KinentaiViewController){
         parent = parentView
         win1 = UIWindow()
         text0 = UITextView()
@@ -89,12 +91,12 @@ class KinentaiSelectDialog3 {
     
     //表示
     func showInfo (){
-        //元の画面を暗く
-        parent.win1.alpha = 0.1
+        //KinentaiViewControllerの画面を暗く
+        parent.view.alpha = 0.1
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 20,y: 80, width: parent.win1.frame.width,height: 480)
+        win1.frame = CGRect(x: 20,y: 80, width: parent.view.frame.width-40, height: 480)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -194,9 +196,15 @@ class KinentaiSelectDialog3 {
             mKinentaiResultDialog31 = KinentaiResultDialog31(index: 1, parentView: self)
             mKinentaiResultDialog31.showInfo()
             break
+        //首都直下地震　ボタン1
         case 2:
+            mKinentaiResultDialog32 = KinentaiResultDialog32(index: 1, parentView: self)
+            mKinentaiResultDialog32.showInfo()
             break
+        //南海トラフ地震　ボタン1
         case 3:
+            mKinentaiResultDialog33 = KinentaiResultDialog33(index: 1, parentView: self)
+            mKinentaiResultDialog33.showInfo()
             break
         default:
             break
@@ -209,14 +217,20 @@ class KinentaiSelectDialog3 {
         offButton()
         
         switch mIndex{
-        //東海地震　ボタン1
+        //東海地震　ボタン2
         case 1:
             mKinentaiResultDialog31 = KinentaiResultDialog31(index: 2, parentView: self)
             mKinentaiResultDialog31.showInfo()
             break
+        //首都直下地震　ボタン2
         case 2:
+            mKinentaiResultDialog32 = KinentaiResultDialog32(index: 2, parentView: self)
+            mKinentaiResultDialog32.showInfo()
             break
+        //南海トラフ地震　ボタン2
         case 3:
+            mKinentaiResultDialog33 = KinentaiResultDialog33(index: 2, parentView: self)
+            mKinentaiResultDialog33.showInfo()
             break
         default:
             break
@@ -229,14 +243,20 @@ class KinentaiSelectDialog3 {
         offButton()
         
         switch mIndex{
-        //東海地震　ボタン1
+        //東海地震　ボタン3
         case 1:
             mKinentaiResultDialog31 = KinentaiResultDialog31(index: 3, parentView: self)
             mKinentaiResultDialog31.showInfo()
             break
+        //首都直下地震　ボタン3
         case 2:
+            mKinentaiResultDialog32 = KinentaiResultDialog32(index: 3, parentView: self)
+            mKinentaiResultDialog32.showInfo()
             break
+        //南海トラフ地震　ボタン3
         case 3:
+            mKinentaiResultDialog33 = KinentaiResultDialog33(index: 3, parentView: self)
+            mKinentaiResultDialog33.showInfo()
             break
         default:
             break
@@ -263,8 +283,7 @@ class KinentaiSelectDialog3 {
     @objc func onClickClose(_ sender: UIButton){
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
-        parent.win1.alpha = 1.0 //元の画面明るく
-        parent.win1.isHidden = false //元のダイアログを表示
+        parent.view.alpha = 1.0 //元の画面明るく
     }
 }
 
