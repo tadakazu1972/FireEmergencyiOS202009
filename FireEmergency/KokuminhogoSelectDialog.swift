@@ -69,7 +69,7 @@ class KokuminhogoSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSou
         table.delegate = self
         table.dataSource = self
         table.estimatedRowHeight = 10 //下とあわせこの２行で複数行表示されるときの間がひらくようになる
-        table.rowHeight = UITableViewAutomaticDimension //同上
+        table.rowHeight = UITableView.automaticDimension //同上
         table.register(UITableViewCell.self, forCellReuseIdentifier:"cell")
         table.separatorColor = UIColor.clear
         self.win1.addSubview(table)
@@ -77,8 +77,8 @@ class KokuminhogoSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSou
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnClose.backgroundColor = UIColor.orange
-        btnClose.setTitle("閉じる", for: UIControlState())
-        btnClose.setTitleColor(UIColor.white, for: UIControlState())
+        btnClose.setTitle("閉じる", for: UIControl.State())
+        btnClose.setTitleColor(UIColor.white, for: UIControl.State())
         btnClose.layer.masksToBounds = true
         btnClose.layer.cornerRadius = 10.0
         btnClose.layer.position = CGPoint(x: self.win1.frame.width/2, y: self.win1.frame.height-20)

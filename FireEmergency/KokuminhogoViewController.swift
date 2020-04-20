@@ -60,9 +60,9 @@ class KokuminhogoViewController: UIViewController {
         //基礎データ入力
         btnData.backgroundColor = UIColor.blue
         btnData.layer.masksToBounds = true
-        btnData.setTitle("基礎データ入力", for: UIControlState())
-        btnData.setTitleColor(UIColor.white, for: UIControlState())
-        btnData.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnData.setTitle("基礎データ入力", for: UIControl.State())
+        btnData.setTitleColor(UIColor.white, for: UIControl.State())
+        btnData.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnData.layer.cornerRadius = 8.0
         btnData.tag = 0
         btnData.addTarget(self, action: #selector(self.onClickbtnData(_:)), for: .touchUpInside)
@@ -71,8 +71,8 @@ class KokuminhogoViewController: UIViewController {
         //震災
         btnEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnEarthquake.layer.masksToBounds = true
-        btnEarthquake.setTitle("震災", for: UIControlState())
-        btnEarthquake.setTitleColor(UIColor.black, for: UIControlState())
+        btnEarthquake.setTitle("震災", for: UIControl.State())
+        btnEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
         btnEarthquake.tag=1
         btnEarthquake.addTarget(self, action: #selector(self.onClickbtnKokuminhogo(_:)), for: .touchUpInside)
         btnEarthquake.translatesAutoresizingMaskIntoConstraints = false
@@ -80,8 +80,8 @@ class KokuminhogoViewController: UIViewController {
         //風水害
         btnTyphoon.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon.layer.masksToBounds = true
-        btnTyphoon.setTitle("風水害", for: UIControlState())
-        btnTyphoon.setTitleColor(UIColor.black, for: UIControlState())
+        btnTyphoon.setTitle("風水害", for: UIControl.State())
+        btnTyphoon.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoon.tag=2
         btnTyphoon.addTarget(self, action: #selector(self.onClickbtnTyphoon(_:)), for: .touchUpInside)
         btnTyphoon.translatesAutoresizingMaskIntoConstraints = false
@@ -89,16 +89,16 @@ class KokuminhogoViewController: UIViewController {
         //国民保護
         btnKokuminhogo.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo.layer.masksToBounds = true
-        btnKokuminhogo.setTitle("国民保", for: UIControlState())
-        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo.setTitle("国民保", for: UIControl.State())
+        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo.tag=3
         btnKokuminhogo.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnKokuminhogo)
         //緊援隊
         btnKinentai.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai.layer.masksToBounds = true
-        btnKinentai.setTitle("緊援隊", for: UIControlState())
-        btnKinentai.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai.setTitle("緊援隊", for: UIControl.State())
+        btnKinentai.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai.tag=4
         btnKinentai.addTarget(self, action: #selector(self.onClickbtnKinentai(_:)), for: .touchUpInside)
         btnKinentai.translatesAutoresizingMaskIntoConstraints = false
@@ -121,9 +121,9 @@ class KokuminhogoViewController: UIViewController {
         //１号非常招集
         btnKokuminhogo1.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo1.layer.masksToBounds = true
-        btnKokuminhogo1.setTitle("第１非常警備(１号招集)", for: UIControlState())
-        btnKokuminhogo1.setTitleColor(UIColor.black, for: UIControlState())
-        btnKokuminhogo1.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKokuminhogo1.setTitle("第１非常警備(１号招集)", for: UIControl.State())
+        btnKokuminhogo1.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKokuminhogo1.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKokuminhogo1.tag=5
         btnKokuminhogo1.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogo1.addTarget(self, action: #selector(self.showKokuminhogo1(_:)), for: .touchUpInside)
@@ -131,8 +131,8 @@ class KokuminhogoViewController: UIViewController {
         //２号非常招集
         btnKokuminhogo2.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo2.layer.masksToBounds = true
-        btnKokuminhogo2.setTitle("第２非常警備(２号招集)", for: UIControlState())
-        btnKokuminhogo2.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo2.setTitle("第２非常警備(２号招集)", for: UIControl.State())
+        btnKokuminhogo2.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo2.tag=6
         btnKokuminhogo2.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogo2.addTarget(self, action: #selector(self.showKokuminhogo2(_:)), for: .touchUpInside)
@@ -140,8 +140,8 @@ class KokuminhogoViewController: UIViewController {
         //３号非常招集
         btnKokuminhogo3.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo3.layer.masksToBounds = true
-        btnKokuminhogo3.setTitle("第３非常警備(３号招集)", for: UIControlState())
-        btnKokuminhogo3.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo3.setTitle("第３非常警備(３号招集)", for: UIControl.State())
+        btnKokuminhogo3.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo3.tag=7
         btnKokuminhogo3.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogo3.addTarget(self, action: #selector(self.showKokuminhogo3(_:)), for: .touchUpInside)
@@ -149,8 +149,8 @@ class KokuminhogoViewController: UIViewController {
         //４号非常招集
         btnKokuminhogo4.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo4.layer.masksToBounds = true
-        btnKokuminhogo4.setTitle("第４非常警備(４号招集)", for: UIControlState())
-        btnKokuminhogo4.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo4.setTitle("第４非常警備(４号招集)", for: UIControl.State())
+        btnKokuminhogo4.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo4.tag=8
         btnKokuminhogo4.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogo4.addTarget(self, action: #selector(self.showKokuminhogo4(_:)), for: .touchUpInside)
@@ -158,8 +158,8 @@ class KokuminhogoViewController: UIViewController {
         //５号非常招集
         btnKokuminhogo5.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo5.layer.masksToBounds = true
-        btnKokuminhogo5.setTitle("第５非常警備", for: UIControlState())
-        btnKokuminhogo5.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo5.setTitle("第５非常警備", for: UIControl.State())
+        btnKokuminhogo5.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo5.tag=9
         btnKokuminhogo5.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogo5.addTarget(self, action: #selector(self.showKokuminhogo5(_:)), for: .touchUpInside)
@@ -180,10 +180,10 @@ class KokuminhogoViewController: UIViewController {
         //情報（関係機関）
         btnKokuminhogoKankeikikan.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogoKankeikikan.layer.masksToBounds = true
-        btnKokuminhogoKankeikikan.setTitle("情報(関係機関)", for: UIControlState())
+        btnKokuminhogoKankeikikan.setTitle("情報(関係機関)", for: UIControl.State())
         btnKokuminhogoKankeikikan.titleLabel!.adjustsFontSizeToFitWidth = true
-        btnKokuminhogoKankeikikan.setTitleColor(UIColor.black, for: UIControlState())
-        btnKokuminhogoKankeikikan.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKokuminhogoKankeikikan.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKokuminhogoKankeikikan.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKokuminhogoKankeikikan.tag=9
         btnKokuminhogoKankeikikan.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogoKankeikikan.addTarget(self, action: #selector(self.showInfoKankeikikan(_:)), for: .touchUpInside)
@@ -191,9 +191,9 @@ class KokuminhogoViewController: UIViewController {
         //情報（停電）
         btnKokuminhogoBlackout.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogoBlackout.layer.masksToBounds = true
-        btnKokuminhogoBlackout.setTitle("情報(停電)", for: UIControlState())
-        btnKokuminhogoBlackout.setTitleColor(UIColor.black, for: UIControlState())
-        btnKokuminhogoBlackout.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKokuminhogoBlackout.setTitle("情報(停電)", for: UIControl.State())
+        btnKokuminhogoBlackout.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKokuminhogoBlackout.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKokuminhogoBlackout.tag=10
         btnKokuminhogoBlackout.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogoBlackout.addTarget(self, action: #selector(self.showInfoBlackout(_:)), for: .touchUpInside)
@@ -201,9 +201,9 @@ class KokuminhogoViewController: UIViewController {
         //情報（道路）
         btnKokuminhogoRoad.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogoRoad.layer.masksToBounds = true
-        btnKokuminhogoRoad.setTitle("情報(道路)", for: UIControlState())
-        btnKokuminhogoRoad.setTitleColor(UIColor.black, for: UIControlState())
-        btnKokuminhogoRoad.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKokuminhogoRoad.setTitle("情報(道路)", for: UIControl.State())
+        btnKokuminhogoRoad.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKokuminhogoRoad.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKokuminhogoRoad.tag=11
         btnKokuminhogoRoad.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogoRoad.addTarget(self, action: #selector(self.showInfoRoad(_:)), for: .touchUpInside)
@@ -211,8 +211,8 @@ class KokuminhogoViewController: UIViewController {
         //連絡網
         btnKokuminhogoTel.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogoTel.layer.masksToBounds = true
-        btnKokuminhogoTel.setTitle("連絡網", for: UIControlState())
-        btnKokuminhogoTel.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogoTel.setTitle("連絡網", for: UIControl.State())
+        btnKokuminhogoTel.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogoTel.tag=12
         btnKokuminhogoTel.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogoTel.addTarget(self, action: #selector(self.showContactLoad(_:)), for: .touchUpInside)
@@ -220,9 +220,9 @@ class KokuminhogoViewController: UIViewController {
         //留意事項
         btnKokuminhogoCaution.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogoCaution.layer.masksToBounds = true
-        btnKokuminhogoCaution.setTitle("留意事項等", for: UIControlState())
-        btnKokuminhogoCaution.setTitleColor(UIColor.black, for: UIControlState())
-        btnKokuminhogoCaution.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKokuminhogoCaution.setTitle("留意事項等", for: UIControl.State())
+        btnKokuminhogoCaution.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKokuminhogoCaution.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKokuminhogoCaution.tag=13
         btnKokuminhogoCaution.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogoCaution.addTarget(self, action: #selector(ViewController.showInfoCaution(_:)), for: .touchUpInside)
@@ -230,8 +230,8 @@ class KokuminhogoViewController: UIViewController {
         //防災ネット
         btnKokuminhogoBousaiNet.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogoBousaiNet.layer.masksToBounds = true
-        btnKokuminhogoBousaiNet.setTitle("防災ネット", for: UIControlState())
-        btnKokuminhogoBousaiNet.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogoBousaiNet.setTitle("防災ネット", for: UIControl.State())
+        btnKokuminhogoBousaiNet.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogoBousaiNet.tag=9
         btnKokuminhogoBousaiNet.translatesAutoresizingMaskIntoConstraints = false
         btnKokuminhogoBousaiNet.addTarget(self, action: #selector(self.showInfoBousainet(_:)), for: .touchUpInside)
@@ -263,7 +263,7 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //制約ひな型
-    func Constraint(_ item: AnyObject, _ attr: NSLayoutAttribute, to: AnyObject?, _ attrTo: NSLayoutAttribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutRelation = .equal, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+    func Constraint(_ item: AnyObject, _ attr: NSLayoutConstraint.Attribute, to: AnyObject?, _ attrTo: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = UILayoutPriority.required) -> NSLayoutConstraint {
         let ret = NSLayoutConstraint(
             item:       item,
             attribute:  attr,
@@ -480,47 +480,47 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //１号非常召集
-    func showKokuminhogo1(_ sender: UIButton){
+    @objc func showKokuminhogo1(_ sender: UIButton){
         mKokuminhogoResultDialog.showResult(1)
     }
     
     //２号非常召集
-    func showKokuminhogo2(_ sender: UIButton){
+    @objc func showKokuminhogo2(_ sender: UIButton){
         mKokuminhogoResultDialog.showResult(2)
     }
 
     //３号非常召集
-    func showKokuminhogo3(_ sender: UIButton){
+    @objc func showKokuminhogo3(_ sender: UIButton){
         mKokuminhogoResultDialog.showResult(3)
     }
 
     //４号非常召集
-    func showKokuminhogo4(_ sender: UIButton){
+    @objc func showKokuminhogo4(_ sender: UIButton){
         mKokuminhogoResultDialog.showResult(4)
     }
 
     //５号非常召集
-    func showKokuminhogo5(_ sender: UIButton){
+    @objc func showKokuminhogo5(_ sender: UIButton){
         mKokuminhogoResultDialog.showResult(5)
     }
     
     //情報(関係機関)
-    func showInfoKankeikikan(_ sender: UIButton){
+    @objc func showInfoKankeikikan(_ sender: UIButton){
         mInfoDialog.showInfo("kankeikikan")
     }
     
     //情報（停電）
-    func showInfoBlackout(_ sender: UIButton){
+    @objc func showInfoBlackout(_ sender: UIButton){
         mInfoDialog.showInfo("blackout")
     }
     
     //情報（道路）
-    func showInfoRoad(_ sender: UIButton){
+    @objc func showInfoRoad(_ sender: UIButton){
         mInfoDialog.showInfo("road")
     }
     
     //連絡網
-    func showContactLoad(_ sender: UIButton){
+    @objc func showContactLoad(_ sender: UIButton){
         //初期設定のままだと設定画面に遷移
         if userDefaults.string(forKey: "password") == "nil" {
             //PasViewController呼び出し
@@ -546,12 +546,12 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //防災ネット
-    func showInfoBousainet(_ sender: UIButton){
+    @objc func showInfoBousainet(_ sender: UIButton){
         mBousainetDialog.showInfo()
     }
     
     //基礎データ入力画面遷移
-    func onClickbtnData(_ sender : UIButton){
+    @objc func onClickbtnData(_ sender : UIButton){
         //dataViewControllerのインスタンス生成
         let data:DataViewController = DataViewController()
         
@@ -564,7 +564,7 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //震災画面遷移
-    func onClickbtnKokuminhogo(_ sender : UIButton){
+    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
         //dataViewControllerのインスタンス生成
         let data:ViewController = ViewController()
         
@@ -577,7 +577,7 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //風水害画面遷移
-    func onClickbtnTyphoon(_ sender : UIButton){
+    @objc func onClickbtnTyphoon(_ sender : UIButton){
         //インスタンス生成
         let data:TyphoonViewController = TyphoonViewController()
         
@@ -590,7 +590,7 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //緊援隊画面遷移
-    func onClickbtnKinentai(_ sender : UIButton){
+    @objc func onClickbtnKinentai(_ sender : UIButton){
         //KinentaiViewControllerのインスタンス生成
         let data:KinentaiViewController = KinentaiViewController()
         

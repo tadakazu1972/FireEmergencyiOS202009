@@ -126,8 +126,8 @@ class KinentaiSelectDialog3 {
         //出動先ボタン1生成
         button1.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         button1.backgroundColor = UIColor.red
-        button1.setTitle("出動先", for: UIControlState())
-        button1.setTitleColor(UIColor.white, for: UIControlState())
+        button1.setTitle("出動先", for: UIControl.State())
+        button1.setTitleColor(UIColor.white, for: UIControl.State())
         button1.layer.masksToBounds = true
         button1.layer.cornerRadius = 10.0
         button1.layer.position = CGPoint(x: self.win1.frame.width/2, y: 140)
@@ -146,8 +146,8 @@ class KinentaiSelectDialog3 {
         //出動先ボタン2生成
         button2.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         button2.backgroundColor = UIColor.red
-        button2.setTitle("出動先", for: UIControlState())
-        button2.setTitleColor(UIColor.white, for: UIControlState())
+        button2.setTitle("出動先", for: UIControl.State())
+        button2.setTitleColor(UIColor.white, for: UIControl.State())
         button2.layer.masksToBounds = true
         button2.layer.cornerRadius = 10.0
         button2.layer.position = CGPoint(x: self.win1.frame.width/2, y: 260)
@@ -166,8 +166,8 @@ class KinentaiSelectDialog3 {
         //出動先ボタン3生成
         button3.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         button3.backgroundColor = UIColor.red
-        button3.setTitle("出動先", for: UIControlState())
-        button3.setTitleColor(UIColor.white, for: UIControlState())
+        button3.setTitle("出動先", for: UIControl.State())
+        button3.setTitleColor(UIColor.white, for: UIControl.State())
         button3.layer.masksToBounds = true
         button3.layer.cornerRadius = 10.0
         button3.layer.position = CGPoint(x: self.win1.frame.width/2, y: 380)
@@ -177,8 +177,8 @@ class KinentaiSelectDialog3 {
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnClose.backgroundColor = UIColor.orange
-        btnClose.setTitle("閉じる", for: UIControlState())
-        btnClose.setTitleColor(UIColor.white, for: UIControlState())
+        btnClose.setTitle("閉じる", for: UIControl.State())
+        btnClose.setTitleColor(UIColor.white, for: UIControl.State())
         btnClose.layer.masksToBounds = true
         btnClose.layer.cornerRadius = 10.0
         btnClose.layer.position = CGPoint(x: self.win1.frame.width/2, y: self.win1.frame.height-20)

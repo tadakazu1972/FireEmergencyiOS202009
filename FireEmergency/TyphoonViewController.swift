@@ -58,9 +58,9 @@ class TyphoonViewController: UIViewController {
         //基礎データ入力
         btnData.backgroundColor = UIColor.red
         btnData.layer.masksToBounds = true
-        btnData.setTitle("基礎データ入力", for: UIControlState())
-        btnData.setTitleColor(UIColor.white, for: UIControlState())
-        btnData.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnData.setTitle("基礎データ入力", for: UIControl.State())
+        btnData.setTitleColor(UIColor.white, for: UIControl.State())
+        btnData.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnData.layer.cornerRadius = 8.0
         btnData.tag = 0
         btnData.addTarget(self, action: #selector(self.onClickbtnData(_:)), for: .touchUpInside)
@@ -69,8 +69,8 @@ class TyphoonViewController: UIViewController {
         //震災
         btnEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnEarthquake.layer.masksToBounds = true
-        btnEarthquake.setTitle("震災", for: UIControlState())
-        btnEarthquake.setTitleColor(UIColor.black, for: UIControlState())
+        btnEarthquake.setTitle("震災", for: UIControl.State())
+        btnEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
         btnEarthquake.tag=1
         btnEarthquake.addTarget(self, action: #selector(self.onClickbtnEarthquake(_:)), for: .touchUpInside)
         btnEarthquake.translatesAutoresizingMaskIntoConstraints = false
@@ -78,16 +78,16 @@ class TyphoonViewController: UIViewController {
         //風水害
         btnTyphoon.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon.layer.masksToBounds = true
-        btnTyphoon.setTitle("風水害", for: UIControlState())
-        btnTyphoon.setTitleColor(UIColor.black, for: UIControlState())
+        btnTyphoon.setTitle("風水害", for: UIControl.State())
+        btnTyphoon.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoon.tag=2
         btnTyphoon.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnTyphoon)
         //国民保護
         btnKokuminhogo.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo.layer.masksToBounds = true
-        btnKokuminhogo.setTitle("国民保", for: UIControlState())
-        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo.setTitle("国民保", for: UIControl.State())
+        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo.tag=3
         btnKokuminhogo.addTarget(self, action: #selector(self.onClickbtnKokuminhogo(_:)), for: .touchUpInside)
         btnKokuminhogo.translatesAutoresizingMaskIntoConstraints = false
@@ -95,8 +95,8 @@ class TyphoonViewController: UIViewController {
         //緊援隊
         btnKinentai.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai.layer.masksToBounds = true
-        btnKinentai.setTitle("緊援隊", for: UIControlState())
-        btnKinentai.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai.setTitle("緊援隊", for: UIControl.State())
+        btnKinentai.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai.tag=4
         btnKinentai.addTarget(self, action: #selector(self.onClickbtnKinentai(_:)), for: .touchUpInside)
         btnKinentai.translatesAutoresizingMaskIntoConstraints = false
@@ -119,9 +119,9 @@ class TyphoonViewController: UIViewController {
         //非常警備の基準（全て）
         btnTyphoon1.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon1.layer.masksToBounds = true
-        btnTyphoon1.setTitle("非常警備の基準(全て)", for: UIControlState())
-        btnTyphoon1.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoon1.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoon1.setTitle("非常警備の基準(全て)", for: UIControl.State())
+        btnTyphoon1.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoon1.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoon1.tag=5
         btnTyphoon1.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoon1.addTarget(self, action: #selector(self.showSelectTyphoon1(_:)), for: .touchUpInside)
@@ -129,9 +129,9 @@ class TyphoonViewController: UIViewController {
         //気象警報による非常招集
         btnTyphoon2.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon2.layer.masksToBounds = true
-        btnTyphoon2.setTitle("気象警報による非常招集", for: UIControlState())
-        btnTyphoon2.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoon2.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoon2.setTitle("気象警報による非常招集", for: UIControl.State())
+        btnTyphoon2.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoon2.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoon2.tag=6
         btnTyphoon2.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoon2.addTarget(self, action: #selector(self.showSelectTyphoon2(_:)), for: .touchUpInside)
@@ -139,9 +139,9 @@ class TyphoonViewController: UIViewController {
         //河川水位による非常招集
         btnTyphoon3.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon3.layer.masksToBounds = true
-        btnTyphoon3.setTitle("河川水位による非常招集", for: UIControlState())
-        btnTyphoon3.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoon3.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoon3.setTitle("河川水位による非常招集", for: UIControl.State())
+        btnTyphoon3.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoon3.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoon3.tag=7
         btnTyphoon3.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoon3.addTarget(self, action: #selector(self.showSelectTyphoon3(_:)), for: .touchUpInside)
@@ -160,9 +160,9 @@ class TyphoonViewController: UIViewController {
         //情報（気象）
         btnTyphoonWeather.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoonWeather.layer.masksToBounds = true
-        btnTyphoonWeather.setTitle("情報(気象)", for: UIControlState())
-        btnTyphoonWeather.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoonWeather.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoonWeather.setTitle("情報(気象)", for: UIControl.State())
+        btnTyphoonWeather.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoonWeather.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoonWeather.tag=9
         btnTyphoonWeather.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoonWeather.addTarget(self, action: #selector(self.showInfoWeather(_:)), for: .touchUpInside)
@@ -170,9 +170,9 @@ class TyphoonViewController: UIViewController {
         //情報（河川）
         btnTyphoonRiver.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoonRiver.layer.masksToBounds = true
-        btnTyphoonRiver.setTitle("情報(河川)", for: UIControlState())
-        btnTyphoonRiver.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoonRiver.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoonRiver.setTitle("情報(河川)", for: UIControl.State())
+        btnTyphoonRiver.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoonRiver.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoonRiver.tag=10
         btnTyphoonRiver.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoonRiver.addTarget(self, action: #selector(self.showInfoRiver(_:)), for: .touchUpInside)
@@ -180,9 +180,9 @@ class TyphoonViewController: UIViewController {
         //情報（道路）
         btnTyphoonRoad.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoonRoad.layer.masksToBounds = true
-        btnTyphoonRoad.setTitle("情報(道路)", for: UIControlState())
-        btnTyphoonRoad.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoonRoad.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoonRoad.setTitle("情報(道路)", for: UIControl.State())
+        btnTyphoonRoad.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoonRoad.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoonRoad.tag=11
         btnTyphoonRoad.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoonRoad.addTarget(self, action: #selector(self.showInfoRoad(_:)), for: .touchUpInside)
@@ -190,8 +190,8 @@ class TyphoonViewController: UIViewController {
         //連絡網
         btnTyphoonTel.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoonTel.layer.masksToBounds = true
-        btnTyphoonTel.setTitle("連絡網", for: UIControlState())
-        btnTyphoonTel.setTitleColor(UIColor.black, for: UIControlState())
+        btnTyphoonTel.setTitle("連絡網", for: UIControl.State())
+        btnTyphoonTel.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoonTel.tag=12
         btnTyphoonTel.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoonTel.addTarget(self, action: #selector(self.showContactLoad(_:)), for: .touchUpInside)
@@ -199,9 +199,9 @@ class TyphoonViewController: UIViewController {
         //留意事項
         btnTyphoonCaution.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoonCaution.layer.masksToBounds = true
-        btnTyphoonCaution.setTitle("留意事項", for: UIControlState())
-        btnTyphoonCaution.setTitleColor(UIColor.black, for: UIControlState())
-        btnTyphoonCaution.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnTyphoonCaution.setTitle("留意事項", for: UIControl.State())
+        btnTyphoonCaution.setTitleColor(UIColor.black, for: UIControl.State())
+        btnTyphoonCaution.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoonCaution.tag=13
         btnTyphoonCaution.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoonCaution.addTarget(self, action: #selector(self.showInfoCaution(_:)), for: .touchUpInside)
@@ -209,8 +209,8 @@ class TyphoonViewController: UIViewController {
         //防災ネット
         btnTyphoonBousaiNet.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoonBousaiNet.layer.masksToBounds = true
-        btnTyphoonBousaiNet.setTitle("防災ネット", for: UIControlState())
-        btnTyphoonBousaiNet.setTitleColor(UIColor.black, for: UIControlState())
+        btnTyphoonBousaiNet.setTitle("防災ネット", for: UIControl.State())
+        btnTyphoonBousaiNet.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoonBousaiNet.tag=14
         btnTyphoonBousaiNet.translatesAutoresizingMaskIntoConstraints = false
         btnTyphoonBousaiNet.addTarget(self, action: #selector(self.showInfoBousainet(_:)), for: .touchUpInside)
@@ -241,7 +241,7 @@ class TyphoonViewController: UIViewController {
     }
     
     //制約ひな型
-    func Constraint(_ item: AnyObject, _ attr: NSLayoutAttribute, to: AnyObject?, _ attrTo: NSLayoutAttribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutRelation = .equal, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+    func Constraint(_ item: AnyObject, _ attr: NSLayoutConstraint.Attribute, to: AnyObject?, _ attrTo: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = UILayoutPriority.required) -> NSLayoutConstraint {
         let ret = NSLayoutConstraint(
             item:       item,
             attribute:  attr,
@@ -440,39 +440,39 @@ class TyphoonViewController: UIViewController {
     }
     
     //非常警備の基準(全て)
-    func showSelectTyphoon1(_ sender: UIButton){
+    @objc func showSelectTyphoon1(_ sender: UIButton){
         mTyphoonResultDialog.showResult(11)
     }
     
     //気象警報による非常招集
-    func showSelectTyphoon2(_ sender: UIButton){
+    @objc func showSelectTyphoon2(_ sender: UIButton){
         mTyphoonSelectDialog = TyphoonSelectDialog(index: 2, parentView: self)
         mTyphoonSelectDialog.showInfo()
     }
     
     //河川水位による非常招集
-    func showSelectTyphoon3(_ sender: UIButton){
+    @objc func showSelectTyphoon3(_ sender: UIButton){
         mTyphoonSelectDialog = TyphoonSelectDialog(index: 3, parentView: self)
         mTyphoonSelectDialog.showInfo()
     }
     
     //情報(気象)
-    func showInfoWeather(_ sender: UIButton){
+    @objc func showInfoWeather(_ sender: UIButton){
         mInfoDialog.showInfo("weather")
     }
     
     //情報（河川）
-    func showInfoRiver(_ sender: UIButton){
+    @objc func showInfoRiver(_ sender: UIButton){
         mInfoDialog.showInfo("river")
     }
     
     //情報（道路）
-    func showInfoRoad(_ sender: UIButton){
+    @objc func showInfoRoad(_ sender: UIButton){
         mInfoDialog.showInfo("road")
     }
     
     //連絡網
-    func showContactLoad(_ sender: UIButton){
+    @objc func showContactLoad(_ sender: UIButton){
         //初期設定のままだと設定画面に遷移
         if userDefaults.string(forKey: "password") == "nil" {
             //PasViewController呼び出し
@@ -493,17 +493,17 @@ class TyphoonViewController: UIViewController {
     }
 
     //留意事項
-    func showInfoCaution(_ sender: UIButton){
+    @objc func showInfoCaution(_ sender: UIButton){
         mInfoDialog.showInfo("typhoon_caution")
     }
     
     //防災ネット
-    func showInfoBousainet(_ sender: UIButton){
+    @objc func showInfoBousainet(_ sender: UIButton){
         mBousainetDialog.showInfo()
     }
 
     //基礎データ入力画面遷移
-    func onClickbtnData(_ sender : UIButton){
+    @objc func onClickbtnData(_ sender : UIButton){
         //dataViewControllerのインスタンス生成
         let data:DataViewController = DataViewController()
         
@@ -516,7 +516,7 @@ class TyphoonViewController: UIViewController {
     }
     
     //震災画面遷移
-    func onClickbtnEarthquake(_ sender : UIButton){
+    @objc func onClickbtnEarthquake(_ sender : UIButton){
         //インスタンス生成
         let data:ViewController = ViewController()
         
@@ -529,7 +529,7 @@ class TyphoonViewController: UIViewController {
     }
     
     //国民保護画面遷移
-    func onClickbtnKokuminhogo(_ sender : UIButton){
+    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
         //KokuminhogoViewControllerのインスタンス生成
         let data:KokuminhogoViewController = KokuminhogoViewController()
         
@@ -542,7 +542,7 @@ class TyphoonViewController: UIViewController {
     }
     
     //緊援隊画面遷移
-    func onClickbtnKinentai(_ sender : UIButton){
+    @objc func onClickbtnKinentai(_ sender : UIButton){
         //KinentaiViewControllerのインスタンス生成
         let data:KinentaiViewController = KinentaiViewController()
         

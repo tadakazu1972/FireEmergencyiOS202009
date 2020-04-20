@@ -87,8 +87,8 @@ class KinentaiResultDialog31 {
         //戻るボタン生成
         btnBack.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnBack.backgroundColor = UIColor.orange
-        btnBack.setTitle("戻る", for: UIControlState())
-        btnBack.setTitleColor(UIColor.white, for: UIControlState())
+        btnBack.setTitle("戻る", for: UIControl.State())
+        btnBack.setTitleColor(UIColor.white, for: UIControl.State())
         btnBack.layer.masksToBounds = true
         btnBack.layer.cornerRadius = 10.0
         btnBack.layer.position = CGPoint(x: self.win1.frame.width/2, y: self.win1.frame.height-20)

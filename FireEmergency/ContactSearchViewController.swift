@@ -85,9 +85,9 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         //全部選択ボタン
         btnSelectAll.backgroundColor = UIColor.lightGray
         btnSelectAll.layer.masksToBounds = true
-        btnSelectAll.setTitle("データ全件一覧表示", for: UIControlState())
-        btnSelectAll.setTitleColor(UIColor.black, for: UIControlState())
-        btnSelectAll.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnSelectAll.setTitle("データ全件一覧表示", for: UIControl.State())
+        btnSelectAll.setTitleColor(UIColor.black, for: UIControl.State())
+        btnSelectAll.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnSelectAll.layer.cornerRadius = 8.0
         btnSelectAll.addTarget(self, action: #selector(self.onClickbtnSelectAll(_:)), for: .touchUpInside)
         btnSelectAll.translatesAutoresizingMaskIntoConstraints = false
@@ -107,8 +107,8 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         
         //pickerViewとともにポップアップするツールバーとボタンの設定
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
-        let doneItem = UIBarButtonItem(title:"選択", style: UIBarButtonItemStyle.plain, target: self, action: #selector(self.selectRow))
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil) //小ワザ。上の選択ボタンを右寄せにするためのダミースペース
+        let doneItem = UIBarButtonItem(title:"選択", style: UIBarButtonItem.Style.plain, target: self, action: #selector(self.selectRow))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil) //小ワザ。上の選択ボタンを右寄せにするためのダミースペース
         toolbar.setItems([flexibleSpace, doneItem], animated: true)
         
         //非常招集区分ラベル
@@ -118,7 +118,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         lblKubun.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(lblKubun)
         //非常招集区分テキストフィールド
-        txtKubun.borderStyle = UITextBorderStyle.bezel
+        txtKubun.borderStyle = UITextField.BorderStyle.bezel
         txtKubun.text = kubunArray[0] as? String
         txtKubun.inputView = picKubun //これでテキストフィールドとピッカービューを紐付け
         txtKubun.inputAccessoryView = toolbar //上で設定したポップアップと紐付け
@@ -138,7 +138,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         lblSyozoku0.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(lblSyozoku0)
         //所属(大分類)テキストフィールド
-        txtSyozoku0.borderStyle = UITextBorderStyle.bezel
+        txtSyozoku0.borderStyle = UITextField.BorderStyle.bezel
         txtSyozoku0.text = syozoku0Array[0] as? String
         txtSyozoku0.inputView = picSyozoku0
         txtSyozoku0.inputAccessoryView = toolbar
@@ -158,7 +158,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         lblSyozoku.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(lblSyozoku)
         //所属(小分類)テキストフィールド
-        txtSyozoku.borderStyle = UITextBorderStyle.bezel
+        txtSyozoku.borderStyle = UITextField.BorderStyle.bezel
         txtSyozoku.text = "すべて"
         txtSyozoku.inputView = picSyozoku
         txtSyozoku.inputAccessoryView = toolbar
@@ -178,7 +178,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         lblKinmu.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(lblKinmu)
         //勤務区分テキストフィールド
-        txtKinmu.borderStyle = UITextBorderStyle.bezel
+        txtKinmu.borderStyle = UITextField.BorderStyle.bezel
         txtKinmu.text = kinmuArray[0] as? String
         txtKinmu.inputView = picKinmu
         txtKinmu.inputAccessoryView = toolbar
@@ -194,9 +194,9 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         //キャンセルボタン
         btnCancel.backgroundColor = UIColor.blue
         btnCancel.layer.masksToBounds = true
-        btnCancel.setTitle("キャンセル", for: UIControlState())
-        btnCancel.setTitleColor(UIColor.white, for: UIControlState())
-        btnCancel.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnCancel.setTitle("キャンセル", for: UIControl.State())
+        btnCancel.setTitleColor(UIColor.white, for: UIControl.State())
+        btnCancel.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnCancel.layer.cornerRadius = 8.0
         btnCancel.addTarget(self, action: #selector(self.onClickbtnCancel(_:)), for: .touchUpInside)
         btnCancel.translatesAutoresizingMaskIntoConstraints = false
@@ -204,9 +204,9 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
         //検索ボタン
         btnSearch.backgroundColor = UIColor.red
         btnSearch.layer.masksToBounds = true
-        btnSearch.setTitle("検索", for: UIControlState())
-        btnSearch.setTitleColor(UIColor.white, for: UIControlState())
-        btnSearch.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnSearch.setTitle("検索", for: UIControl.State())
+        btnSearch.setTitleColor(UIColor.white, for: UIControl.State())
+        btnSearch.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnSearch.layer.cornerRadius = 8.0
         btnSearch.addTarget(self, action: #selector(self.onClickbtnSearch(_:)), for: .touchUpInside)
         btnSearch.translatesAutoresizingMaskIntoConstraints = false
@@ -217,7 +217,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     //制約ひな型
-    func Constraint(_ item: AnyObject, _ attr: NSLayoutAttribute, to: AnyObject?, _ attrTo: NSLayoutAttribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutRelation = .equal, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+    func Constraint(_ item: AnyObject, _ attr: NSLayoutConstraint.Attribute, to: AnyObject?, _ attrTo: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = UILayoutPriority.required) -> NSLayoutConstraint {
         let ret = NSLayoutConstraint(
             item:       item,
             attribute:  attr,
@@ -399,7 +399,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     //ツールバーで選択ボタンを押した時
-    func selectRow(){
+    @objc func selectRow(){
         txtKubun.endEditing(true) //閉じるアクション
         txtSyozoku0.endEditing(true)
         txtSyozoku.endEditing(true)
@@ -407,14 +407,14 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     //全件一覧表示ボタンクリック
-    func onClickbtnSelectAll(_ sender : UIButton){
+    @objc func onClickbtnSelectAll(_ sender : UIButton){
         mDBHelper.selectAll()
         mContactLoadDialog2 = ContactLoadDialog2(parentView: self, resultFrom: mDBHelper.resultArray)
         mContactLoadDialog2.showResult()
     }
     
     //検索ボタンクリック
-    func onClickbtnSearch(_ sender : UIButton){
+    @objc func onClickbtnSearch(_ sender : UIButton){
         //DBにつないでselect文実行
         mDBHelper.select(txtKubun.text!, syozoku0: txtSyozoku0.text!, syozoku: txtSyozoku.text!, kinmu: txtKinmu.text!)
         mContactLoadDialog2 = ContactLoadDialog2(parentView: self, resultFrom: mDBHelper.resultArray)
@@ -422,7 +422,7 @@ class ContactSearchViewController: UIViewController, UIPickerViewDelegate, UIPic
     }
     
     //キャンセルボタンクリック
-    func onClickbtnCancel(_ sender : UIButton){
+    @objc func onClickbtnCancel(_ sender : UIButton){
         //自己を破棄し、呼び出し元へ遷移
         self.dismiss(animated: true, completion: nil)
     }

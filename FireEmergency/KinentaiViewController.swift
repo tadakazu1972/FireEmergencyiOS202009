@@ -61,9 +61,9 @@ class KinentaiViewController: UIViewController {
         //基礎データ入力
         btnData.backgroundColor = UIColor.blue
         btnData.layer.masksToBounds = true
-        btnData.setTitle("基礎データ入力", for: UIControlState())
-        btnData.setTitleColor(UIColor.white, for: UIControlState())
-        btnData.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnData.setTitle("基礎データ入力", for: UIControl.State())
+        btnData.setTitleColor(UIColor.white, for: UIControl.State())
+        btnData.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnData.layer.cornerRadius = 8.0
         btnData.tag = 0
         btnData.addTarget(self, action: #selector(self.onClickbtnData(_:)), for: .touchUpInside)
@@ -72,8 +72,8 @@ class KinentaiViewController: UIViewController {
         //震災
         btnEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnEarthquake.layer.masksToBounds = true
-        btnEarthquake.setTitle("震災", for: UIControlState())
-        btnEarthquake.setTitleColor(UIColor.black, for: UIControlState())
+        btnEarthquake.setTitle("震災", for: UIControl.State())
+        btnEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
         btnEarthquake.tag=1
         btnEarthquake.addTarget(self, action: #selector(self.onClickbtnEarthquake(_:)), for: .touchUpInside)
         btnEarthquake.translatesAutoresizingMaskIntoConstraints = false
@@ -81,8 +81,8 @@ class KinentaiViewController: UIViewController {
         //風水害
         btnTyphoon.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon.layer.masksToBounds = true
-        btnTyphoon.setTitle("風水害", for: UIControlState())
-        btnTyphoon.setTitleColor(UIColor.black, for: UIControlState())
+        btnTyphoon.setTitle("風水害", for: UIControl.State())
+        btnTyphoon.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoon.tag=2
         btnTyphoon.addTarget(self, action: #selector(self.onClickbtnTyphoon(_:)), for: .touchUpInside)
         btnTyphoon.translatesAutoresizingMaskIntoConstraints = false
@@ -90,8 +90,8 @@ class KinentaiViewController: UIViewController {
         //国民保護
         btnKokuminhogo.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo.layer.masksToBounds = true
-        btnKokuminhogo.setTitle("国民保", for: UIControlState())
-        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo.setTitle("国民保", for: UIControl.State())
+        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo.tag=3
         btnKokuminhogo.addTarget(self, action: #selector(self.onClickbtnKokuminhogo(_:)), for: .touchUpInside)
         btnKokuminhogo.translatesAutoresizingMaskIntoConstraints = false
@@ -99,8 +99,8 @@ class KinentaiViewController: UIViewController {
         //緊援隊
         btnKinentai.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai.layer.masksToBounds = true
-        btnKinentai.setTitle("緊援隊", for: UIControlState())
-        btnKinentai.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai.setTitle("緊援隊", for: UIControl.State())
+        btnKinentai.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai.tag=4
         btnKinentai.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnKinentai)
@@ -122,9 +122,9 @@ class KinentaiViewController: UIViewController {
         //地震(震央「陸」)
         btnKinentai1.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai1.layer.masksToBounds = true
-        btnKinentai1.setTitle("地震(震央「陸」)", for: UIControlState())
-        btnKinentai1.setTitleColor(UIColor.black, for: UIControlState())
-        btnKinentai1.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKinentai1.setTitle("地震(震央「陸」)", for: UIControl.State())
+        btnKinentai1.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKinentai1.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKinentai1.tag=5
         btnKinentai1.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai1.addTarget(self, action: #selector(self.showSelectKinentai1(_:)), for: .touchUpInside)
@@ -132,8 +132,8 @@ class KinentaiViewController: UIViewController {
         //地震(震央「海」)
         btnKinentai2.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai2.layer.masksToBounds = true
-        btnKinentai2.setTitle("地震(震央「海域」)", for: UIControlState())
-        btnKinentai2.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai2.setTitle("地震(震央「海域」)", for: UIControl.State())
+        btnKinentai2.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai2.tag=6
         btnKinentai2.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai2.addTarget(self, action: #selector(self.showSelectKinentai2(_:)), for: .touchUpInside)
@@ -141,8 +141,8 @@ class KinentaiViewController: UIViewController {
         //アクションプラン
         btnKinentai3.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai3.layer.masksToBounds = true
-        btnKinentai3.setTitle("アクションプラン", for: UIControlState())
-        btnKinentai3.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai3.setTitle("アクションプラン", for: UIControl.State())
+        btnKinentai3.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai3.tag=7
         btnKinentai3.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai3.addTarget(self, action: #selector(self.showSelectKinentai3(_:)), for: .touchUpInside)
@@ -150,8 +150,8 @@ class KinentaiViewController: UIViewController {
         //大津波警報・噴火
         btnKinentai4.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai4.layer.masksToBounds = true
-        btnKinentai4.setTitle("大津波警報・噴火", for: UIControlState())
-        btnKinentai4.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai4.setTitle("大津波警報・噴火", for: UIControl.State())
+        btnKinentai4.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai4.tag=8
         btnKinentai4.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai4.addTarget(self, action: #selector(self.showSelectKinentai4(_:)), for: .touchUpInside)
@@ -159,8 +159,8 @@ class KinentaiViewController: UIViewController {
         //特殊災害(NBC含む)
         btnKinentai5.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai5.layer.masksToBounds = true
-        btnKinentai5.setTitle("特殊災害(NBC含む)", for: UIControlState())
-        btnKinentai5.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai5.setTitle("特殊災害(NBC含む)", for: UIControl.State())
+        btnKinentai5.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai5.tag=9
         btnKinentai5.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai5.addTarget(self, action: #selector(self.showSelectKinentai5(_:)), for: .touchUpInside)
@@ -181,9 +181,9 @@ class KinentaiViewController: UIViewController {
         //情報（地震）
         btnKinentaiEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentaiEarthquake.layer.masksToBounds = true
-        btnKinentaiEarthquake.setTitle("情報(地震)", for: UIControlState())
-        btnKinentaiEarthquake.setTitleColor(UIColor.black, for: UIControlState())
-        btnKinentaiEarthquake.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKinentaiEarthquake.setTitle("情報(地震)", for: UIControl.State())
+        btnKinentaiEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKinentaiEarthquake.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKinentaiEarthquake.tag=10
         btnKinentaiEarthquake.translatesAutoresizingMaskIntoConstraints = false
         btnKinentaiEarthquake.addTarget(self, action: #selector(self.showInfoEarthquake(_:)), for: .touchUpInside)
@@ -191,9 +191,9 @@ class KinentaiViewController: UIViewController {
         //情報(停電)
         btnKinentaiBlackout.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentaiBlackout.layer.masksToBounds = true
-        btnKinentaiBlackout.setTitle("情報(停電)", for: UIControlState())
-        btnKinentaiBlackout.setTitleColor(UIColor.black, for: UIControlState())
-        btnKinentaiBlackout.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKinentaiBlackout.setTitle("情報(停電)", for: UIControl.State())
+        btnKinentaiBlackout.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKinentaiBlackout.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKinentaiBlackout.tag=11
         btnKinentaiBlackout.translatesAutoresizingMaskIntoConstraints = false
         btnKinentaiBlackout.addTarget(self, action: #selector(self.showInfoBlackout(_:)), for: .touchUpInside)
@@ -201,9 +201,9 @@ class KinentaiViewController: UIViewController {
         //情報(道路)
         btnKinentaiRoad.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentaiRoad.layer.masksToBounds = true
-        btnKinentaiRoad.setTitle("情報(道路)", for: UIControlState())
-        btnKinentaiRoad.setTitleColor(UIColor.black, for: UIControlState())
-        btnKinentaiRoad.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKinentaiRoad.setTitle("情報(道路)", for: UIControl.State())
+        btnKinentaiRoad.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKinentaiRoad.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKinentaiRoad.tag=12
         btnKinentaiRoad.translatesAutoresizingMaskIntoConstraints = false
         btnKinentaiRoad.addTarget(self, action: #selector(self.showInfoRoad(_:)), for: .touchUpInside)
@@ -211,8 +211,8 @@ class KinentaiViewController: UIViewController {
         //連絡網
         btnKinentaiTel.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentaiTel.layer.masksToBounds = true
-        btnKinentaiTel.setTitle("連絡網", for: UIControlState())
-        btnKinentaiTel.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentaiTel.setTitle("連絡網", for: UIControl.State())
+        btnKinentaiTel.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentaiTel.tag=13
         btnKinentaiTel.translatesAutoresizingMaskIntoConstraints = false
         btnKinentaiTel.addTarget(self, action: #selector(self.showContactLoad(_:)), for: .touchUpInside)
@@ -220,9 +220,9 @@ class KinentaiViewController: UIViewController {
         //情報(河川)
         btnKinentaiRiver.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentaiRiver.layer.masksToBounds = true
-        btnKinentaiRiver.setTitle("情報(河川)", for: UIControlState())
-        btnKinentaiRiver.setTitleColor(UIColor.black, for: UIControlState())
-        btnKinentaiRiver.setTitleColor(UIColor.red, for: UIControlState.highlighted)
+        btnKinentaiRiver.setTitle("情報(河川)", for: UIControl.State())
+        btnKinentaiRiver.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKinentaiRiver.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKinentaiRiver.tag=14
         btnKinentaiRiver.translatesAutoresizingMaskIntoConstraints = false
         btnKinentaiRiver.addTarget(self, action: #selector(self.showInfoRiver(_:)), for: .touchUpInside)
@@ -230,8 +230,8 @@ class KinentaiViewController: UIViewController {
         //情報(気象)
         btnKinentaiWeather.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentaiWeather.layer.masksToBounds = true
-        btnKinentaiWeather.setTitle("情報(気象)", for: UIControlState())
-        btnKinentaiWeather.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentaiWeather.setTitle("情報(気象)", for: UIControl.State())
+        btnKinentaiWeather.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentaiWeather.tag=15
         btnKinentaiWeather.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnKinentaiWeather)
@@ -259,7 +259,7 @@ class KinentaiViewController: UIViewController {
     }
     
     //制約ひな型
-    func Constraint(_ item: AnyObject, _ attr: NSLayoutAttribute, to: AnyObject?, _ attrTo: NSLayoutAttribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutRelation = .equal, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+    func Constraint(_ item: AnyObject, _ attr: NSLayoutConstraint.Attribute, to: AnyObject?, _ attrTo: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = UILayoutPriority.required) -> NSLayoutConstraint {
         let ret = NSLayoutConstraint(
             item:       item,
             attribute:  attr,
@@ -476,48 +476,48 @@ class KinentaiViewController: UIViewController {
     }
     
     //地震(震央「陸」)
-    func showSelectKinentai1(_ sender: UIButton){
+    @objc func showSelectKinentai1(_ sender: UIButton){
         mKinentaiSelectDialog = KinentaiSelectDialog(index: 1, parentView: self)
         mKinentaiSelectDialog.showInfo()
     }
     
     //地震(震央「海域」)
-    func showSelectKinentai2(_ sender: UIButton){
+    @objc func showSelectKinentai2(_ sender: UIButton){
         mKinentaiSelectDialog = KinentaiSelectDialog(index: 2, parentView: self)
         mKinentaiSelectDialog.showInfo()
     }
     
     //アクションプラン
-    func showSelectKinentai3(_ sender: UIButton){
+    @objc func showSelectKinentai3(_ sender: UIButton){
         mKinentaiSelectDialog = KinentaiSelectDialog(index: 3, parentView: self)
         mKinentaiSelectDialog.showInfo()
     }
     
     //大津波警報・噴火
-    func showSelectKinentai4(_ sender: UIButton){
+    @objc func showSelectKinentai4(_ sender: UIButton){
         mKinentaiSelectDialog = KinentaiSelectDialog(index: 4, parentView: self)
         mKinentaiSelectDialog.showInfo()
     }
     
     //特殊災害(NBC含む)
-    func showSelectKinentai5(_ sender: UIButton){
+    @objc func showSelectKinentai5(_ sender: UIButton){
         //特殊災害はKinentaiSelectDialogをすっとばしていきなり都道府県選択のKinentaiSelectDIalog2を呼び出す
         mKinentaiSelectDialog2 = KinentaiSelectDialog2(index: 51, parentView: self)
         mKinentaiSelectDialog2.showInfo()
     }
     
     //情報(地震)
-    func showInfoEarthquake(_ sender: UIButton){
+    @objc func showInfoEarthquake(_ sender: UIButton){
         mInfoDialog.showInfo("earthquake")
     }
     
     //情報（道路）
-    func showInfoRoad(_ sender: UIButton){
+    @objc func showInfoRoad(_ sender: UIButton){
         mInfoDialog.showInfo("road")
     }
     
     //連絡網
-    func showContactLoad(_ sender: UIButton){
+    @objc func showContactLoad(_ sender: UIButton){
         //初期設定のままだと設定画面に遷移
         if userDefaults.string(forKey: "password") == "nil" {
             //PasViewController呼び出し
@@ -538,12 +538,12 @@ class KinentaiViewController: UIViewController {
     }
     
     //情報（停電）
-    func showInfoBlackout(_ sender: UIButton){
+    @objc func showInfoBlackout(_ sender: UIButton){
         mInfoDialog.showInfo("blackout")
     }
 
     //情報(河川)
-    func showInfoRiver(_ sender: UIButton){
+    @objc func showInfoRiver(_ sender: UIButton){
         mInfoDialog.showInfo("river")
     }
     
@@ -553,7 +553,7 @@ class KinentaiViewController: UIViewController {
     }
     
     //基礎データ入力画面遷移
-    func onClickbtnData(_ sender : UIButton){
+    @objc func onClickbtnData(_ sender : UIButton){
         //dataViewControllerのインスタンス生成
         let data:DataViewController = DataViewController()
         
@@ -566,7 +566,7 @@ class KinentaiViewController: UIViewController {
     }
     
     //震災画面遷移
-    func onClickbtnEarthquake(_ sender : UIButton){
+    @objc func onClickbtnEarthquake(_ sender : UIButton){
         //dataViewControllerのインスタンス生成
         let data:ViewController = ViewController()
         
@@ -579,7 +579,7 @@ class KinentaiViewController: UIViewController {
     }
     
     //風水害画面遷移
-    func onClickbtnTyphoon(_ sender : UIButton){
+    @objc func onClickbtnTyphoon(_ sender : UIButton){
         //インスタンス生成
         let data:TyphoonViewController = TyphoonViewController()
         
@@ -592,7 +592,7 @@ class KinentaiViewController: UIViewController {
     }
     
     //国民保護画面遷移
-    func onClickbtnKokuminhogo(_ sender : UIButton){
+    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
         //KokuminhogoViewControllerのインスタンス生成
         let data:KokuminhogoViewController = KokuminhogoViewController()
         

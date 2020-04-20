@@ -46,19 +46,19 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         var isChecked: Bool = false {
             didSet{
                 if isChecked == true {
-                    self.setImage(checkedImage, for: UIControlState.normal)
+                    self.setImage(checkedImage, for: UIControl.State.normal)
                 } else {
-                    self.setImage(uncheckedImage, for: UIControlState.normal)
+                    self.setImage(uncheckedImage, for: UIControl.State.normal)
                 }
             }
         }
         
         override func awakeFromNib() {
-            self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
+            self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
             self.isChecked = false
         }
         
-        func buttonClicked(sender: UIButton) {
+        @objc func buttonClicked(sender: UIButton) {
             if sender == self {
                 isChecked = !isChecked
             }
@@ -177,8 +177,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         textField1.inputView = pic1 //ここでpickerView1と紐付け
         //pickerViewとともにポップアップするツールバーとボタンの設定
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
-        let doneItem = UIBarButtonItem(title:"選択", style: UIBarButtonItemStyle.plain, target: self, action: #selector(KinentaiNankaitraf1.done))
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil) //小ワザ。上の選択ボタンを右寄せにするためのダミースペース
+        let doneItem = UIBarButtonItem(title:"選択", style: UIBarButtonItem.Style.plain, target: self, action: #selector(KinentaiNankaitraf1.done))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil) //小ワザ。上の選択ボタンを右寄せにするためのダミースペース
         toolbar.setItems([flexibleSpace, doneItem], animated: true)
         textField1.inputAccessoryView = toolbar
         self.win1.addSubview(textField1)
@@ -287,24 +287,24 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         
         // checkbox生成　2019-02-03 追加
         chk1.frame = CGRect(x:10, y:210, width:self.win1.frame.width-20, height:60)
-        chk1.setTitle("中部地方：山梨県、長野県、岐阜県、静岡県、愛知県、三重県", for: UIControlState())
-        chk1.setTitleColor(UIColor.black, for: UIControlState())
+        chk1.setTitle("中部地方：山梨県、長野県、岐阜県、静岡県、愛知県、三重県", for: UIControl.State())
+        chk1.setTitleColor(UIColor.black, for: UIControl.State())
         chk1.titleLabel?.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         chk1.titleLabel?.numberOfLines = 2
         chk1.awakeFromNib()
         self.win1.addSubview(chk1)
         
         chk2.frame = CGRect(x:10, y:270, width:self.win1.frame.width-20, height:60)
-        chk2.setTitle("近畿地方：兵庫県、奈良県、和歌山県                          ", for: UIControlState())
-        chk2.setTitleColor(UIColor.black, for: UIControlState())
+        chk2.setTitle("近畿地方：兵庫県、奈良県、和歌山県                          ", for: UIControl.State())
+        chk2.setTitleColor(UIColor.black, for: UIControl.State())
         chk2.titleLabel?.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         chk2.titleLabel?.numberOfLines = 2
         chk2.awakeFromNib()
         self.win1.addSubview(chk2)
         
         chk3.frame = CGRect(x:10, y:340, width:self.win1.frame.width-20, height:60)
-        chk3.setTitle("四国・九州地方：徳島県、香川県、愛媛県、高知県、大分県、宮崎県", for: UIControlState())
-        chk3.setTitleColor(UIColor.black, for: UIControlState())
+        chk3.setTitle("四国・九州地方：徳島県、香川県、愛媛県、高知県、大分県、宮崎県", for: UIControl.State())
+        chk3.setTitleColor(UIColor.black, for: UIControl.State())
         chk3.titleLabel?.font = UIFont.systemFont(ofSize: (CGFloat(14)))
         chk3.titleLabel?.numberOfLines = 2
         chk3.awakeFromNib()
@@ -313,8 +313,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnClose.backgroundColor = UIColor.orange
-        btnClose.setTitle("閉じる", for: UIControlState())
-        btnClose.setTitleColor(UIColor.white, for: UIControlState())
+        btnClose.setTitle("閉じる", for: UIControl.State())
+        btnClose.setTitleColor(UIColor.white, for: UIControl.State())
         btnClose.layer.masksToBounds = true
         btnClose.layer.cornerRadius = 10.0
         btnClose.layer.position = CGPoint(x: self.win1.frame.width/2-60, y: self.win1.frame.height-20)
@@ -324,8 +324,8 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
         //判定ボタン生成
         btnAction.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnAction.backgroundColor = UIColor.red
-        btnAction.setTitle("判定", for: UIControlState())
-        btnAction.setTitleColor(UIColor.white, for: UIControlState())
+        btnAction.setTitle("判定", for: UIControl.State())
+        btnAction.setTitleColor(UIColor.white, for: UIControl.State())
         btnAction.layer.masksToBounds = true
         btnAction.layer.cornerRadius = 10.0
         btnAction.layer.position = CGPoint(x: self.win1.frame.width/2+60, y: self.win1.frame.height-20)
@@ -416,7 +416,7 @@ class KinentaiNankaitraf1 : UITextField, UIPickerViewDelegate, UIPickerViewDataS
     }
     
     //ツールバーの選択ボタンを押した時
-    func done() {
+    @objc func done() {
         textField1.endEditing(true) //これで閉じる
         //2019-02-03 削除
         /*

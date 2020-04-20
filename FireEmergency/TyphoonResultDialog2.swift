@@ -1356,8 +1356,8 @@ class TyphoonResultDialog2 {
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnClose.backgroundColor = UIColor.orange
-        btnClose.setTitle("閉じる", for: UIControlState())
-        btnClose.setTitleColor(UIColor.white, for: UIControlState())
+        btnClose.setTitle("閉じる", for: UIControl.State())
+        btnClose.setTitleColor(UIColor.white, for: UIControl.State())
         btnClose.layer.masksToBounds = true
         btnClose.layer.cornerRadius = 10.0
         btnClose.layer.position = CGPoint(x: self.win1.frame.width/2-60, y: self.win1.frame.height-20)
@@ -1367,8 +1367,8 @@ class TyphoonResultDialog2 {
         //戻るボタン生成
         btnBack.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnBack.backgroundColor = UIColor.blue
-        btnBack.setTitle("戻る", for: UIControlState())
-        btnBack.setTitleColor(UIColor.white, for: UIControlState())
+        btnBack.setTitle("戻る", for: UIControl.State())
+        btnBack.setTitleColor(UIColor.white, for: UIControl.State())
         btnBack.layer.masksToBounds = true
         btnBack.layer.cornerRadius = 10.0
         btnBack.layer.position = CGPoint(x: self.win1.frame.width/2+60, y: self.win1.frame.height-20)
@@ -1378,8 +1378,8 @@ class TyphoonResultDialog2 {
         //該当署ボタン生成
         btnGaitousyo.frame = CGRect(x: 0,y: 0,width: 80,height: 30)
         btnGaitousyo.backgroundColor = UIColor.lightGray
-        btnGaitousyo.setTitle("該当署", for: UIControlState())
-        btnGaitousyo.setTitleColor(UIColor.black, for: UIControlState())
+        btnGaitousyo.setTitle("該当署", for: UIControl.State())
+        btnGaitousyo.setTitleColor(UIColor.black, for: UIControl.State())
         btnGaitousyo.layer.masksToBounds = true
         btnGaitousyo.layer.cornerRadius = 0.0
         btnGaitousyo.layer.position = CGPoint(x: 56, y: self.win1.frame.height/2+60)

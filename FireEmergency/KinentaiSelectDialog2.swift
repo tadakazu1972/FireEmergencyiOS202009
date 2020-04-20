@@ -27,7 +27,7 @@ class KinentaiSelectDialog2: NSObject, UICollectionViewDelegate, UICollectionVie
         text1 = UITextView()
         let layout = UICollectionViewFlowLayout() //これがないとエラーになる
         layout.itemSize = CGSize(width: 70,height: 30) // Cellの大きさ
-        layout.sectionInset = UIEdgeInsetsMake(8, 8, 8, 8) //Cellのマージン
+        layout.sectionInset = UIEdgeInsets(top: 8, left: 8, bottom: 8, right: 8) //Cellのマージン
         layout.headerReferenceSize = CGSize(width: 1,height: 1) //セクション毎のヘッダーサイズ
         collection = UICollectionView(frame: CGRect.zero, collectionViewLayout: layout)
         btnClose = UIButton()
@@ -127,8 +127,8 @@ class KinentaiSelectDialog2: NSObject, UICollectionViewDelegate, UICollectionVie
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnClose.backgroundColor = UIColor.orange
-        btnClose.setTitle("閉じる", for: UIControlState())
-        btnClose.setTitleColor(UIColor.white, for: UIControlState())
+        btnClose.setTitle("閉じる", for: UIControl.State())
+        btnClose.setTitleColor(UIColor.white, for: UIControl.State())
         btnClose.layer.masksToBounds = true
         btnClose.layer.cornerRadius = 10.0
         btnClose.layer.position = CGPoint(x: self.win1.frame.width/2, y: self.win1.frame.height-20)

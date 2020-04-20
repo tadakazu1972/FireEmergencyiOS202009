@@ -33,16 +33,16 @@ class PassViewController: UIViewController, UITextFieldDelegate {
         txtPass.adjustsFontSizeToFitWidth = true
         txtPass.textColor = UIColor.black
         txtPass.delegate = self
-        txtPass.borderStyle = UITextBorderStyle.bezel
+        txtPass.borderStyle = UITextField.BorderStyle.bezel
         txtPass.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(txtPass)
         
         //キャンセルボタン
         btnCancel.backgroundColor = UIColor.blue
         btnCancel.layer.masksToBounds = true
-        btnCancel.setTitle("キャンセル", for: UIControlState())
-        btnCancel.setTitleColor(UIColor.white, for: UIControlState())
-        btnCancel.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnCancel.setTitle("キャンセル", for: UIControl.State())
+        btnCancel.setTitleColor(UIColor.white, for: UIControl.State())
+        btnCancel.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnCancel.layer.cornerRadius = 8.0
         btnCancel.tag = 2
         btnCancel.addTarget(self, action: #selector(self.onClickbtnCancel(_:)), for: .touchUpInside)
@@ -51,9 +51,9 @@ class PassViewController: UIViewController, UITextFieldDelegate {
         //データ登録ボタン
         btnSave.backgroundColor = UIColor.red
         btnSave.layer.masksToBounds = true
-        btnSave.setTitle("登録", for: UIControlState())
-        btnSave.setTitleColor(UIColor.white, for: UIControlState())
-        btnSave.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnSave.setTitle("登録", for: UIControl.State())
+        btnSave.setTitleColor(UIColor.white, for: UIControl.State())
+        btnSave.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnSave.layer.cornerRadius = 8.0
         btnSave.tag = 1
         btnSave.addTarget(self, action: #selector(self.onClickbtnSave(_:)), for: .touchUpInside)
@@ -62,7 +62,7 @@ class PassViewController: UIViewController, UITextFieldDelegate {
     }
     
     //制約ひな型
-    func Constraint(_ item: AnyObject, _ attr: NSLayoutAttribute, to: AnyObject?, _ attrTo: NSLayoutAttribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutRelation = .equal, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+    func Constraint(_ item: AnyObject, _ attr: NSLayoutConstraint.Attribute, to: AnyObject?, _ attrTo: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = UILayoutPriority.required) -> NSLayoutConstraint {
         let ret = NSLayoutConstraint(
             item:       item,
             attribute:  attr,
@@ -105,7 +105,7 @@ class PassViewController: UIViewController, UITextFieldDelegate {
     }
     
     //登録ボタンクリック
-    func onClickbtnSave(_ sender : UIButton){
+    @objc func onClickbtnSave(_ sender : UIButton){
         //UserDefaultsに書き込み
         let pass: String = txtPass.text!
         userDefaults.set(pass, forKey: "password")
@@ -115,7 +115,7 @@ class PassViewController: UIViewController, UITextFieldDelegate {
     }
     
     //キャンセルボタンクリック
-    func onClickbtnCancel(_ sender : UIButton){
+    @objc func onClickbtnCancel(_ sender : UIButton){
         //自己を破棄し、呼び出し元へ遷移
         self.dismiss(animated: true, completion: nil)
     }

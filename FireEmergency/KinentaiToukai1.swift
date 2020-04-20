@@ -47,19 +47,19 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         var isChecked: Bool = false {
             didSet{
                 if isChecked == true {
-                    self.setImage(checkedImage, for: UIControlState.normal)
+                    self.setImage(checkedImage, for: UIControl.State.normal)
                 } else {
-                    self.setImage(uncheckedImage, for: UIControlState.normal)
+                    self.setImage(uncheckedImage, for: UIControl.State.normal)
                 }
             }
         }
         
         override func awakeFromNib() {
-            self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControlEvents.touchUpInside)
+            self.addTarget(self, action:#selector(buttonClicked(sender:)), for: UIControl.Event.touchUpInside)
             self.isChecked = false
         }
         
-        func buttonClicked(sender: UIButton) {
+        @objc func buttonClicked(sender: UIButton) {
             if sender == self {
                 isChecked = !isChecked
             }
@@ -192,8 +192,8 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         textField1.inputView = pic1 //ここでpickerView1と紐付け
         //pickerViewとともにポップアップするツールバーとボタンの設定
         let toolbar = UIToolbar(frame: CGRect(x: 0, y: 0, width: 0, height: 35))
-        let doneItem = UIBarButtonItem(title:"選択", style: UIBarButtonItemStyle.plain, target: self, action: #selector(KinentaiToukai1.done))
-        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonSystemItem.flexibleSpace, target: nil, action: nil) //小ワザ。上の選択ボタンを右寄せにするためのダミースペース
+        let doneItem = UIBarButtonItem(title:"選択", style: UIBarButtonItem.Style.plain, target: self, action: #selector(KinentaiToukai1.done))
+        let flexibleSpace = UIBarButtonItem(barButtonSystemItem: UIBarButtonItem.SystemItem.flexibleSpace, target: nil, action: nil) //小ワザ。上の選択ボタンを右寄せにするためのダミースペース
         toolbar.setItems([flexibleSpace, doneItem], animated: true)
         textField1.inputAccessoryView = toolbar
         self.win1.addSubview(textField1)
@@ -216,58 +216,58 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         
         // checkbox生成　2018-09-26 追加
         chk1.frame = CGRect(x:0, y:300, width:self.win1.frame.width/2, height:40)
-        chk1.setTitle("静岡県", for: UIControlState())
-        chk1.setTitleColor(UIColor.black, for: UIControlState())
+        chk1.setTitle("静岡県", for: UIControl.State())
+        chk1.setTitleColor(UIColor.black, for: UIControl.State())
         chk1.awakeFromNib()
         self.win1.addSubview(chk1)
         
         chk2.frame = CGRect(x:self.win1.frame.width/2, y:300, width:self.win1.frame.width/2, height:40)
-        chk2.setTitle("愛知県", for: UIControlState())
-        chk2.setTitleColor(UIColor.black, for: UIControlState())
+        chk2.setTitle("愛知県", for: UIControl.State())
+        chk2.setTitleColor(UIColor.black, for: UIControl.State())
         chk2.awakeFromNib()
         self.win1.addSubview(chk2)
         
         chk3.frame = CGRect(x:0, y:350, width:self.win1.frame.width/2, height:40)
-        chk3.setTitle("山梨県", for: UIControlState())
-        chk3.setTitleColor(UIColor.black, for: UIControlState())
+        chk3.setTitle("山梨県", for: UIControl.State())
+        chk3.setTitleColor(UIColor.black, for: UIControl.State())
         chk3.awakeFromNib()
         self.win1.addSubview(chk3)
         
         chk4.frame = CGRect(x:self.win1.frame.width/2, y:350, width:self.win1.frame.width/2, height:40)
-        chk4.setTitle("長野県", for: UIControlState())
-        chk4.setTitleColor(UIColor.black, for: UIControlState())
+        chk4.setTitle("長野県", for: UIControl.State())
+        chk4.setTitleColor(UIColor.black, for: UIControl.State())
         chk4.awakeFromNib()
         self.win1.addSubview(chk4)
         
         chk5.frame = CGRect(x:0, y:400, width:self.win1.frame.width/2, height:40)
-        chk5.setTitle("神奈川県", for: UIControlState())
-        chk5.setTitleColor(UIColor.black, for: UIControlState())
+        chk5.setTitle("神奈川県", for: UIControl.State())
+        chk5.setTitleColor(UIColor.black, for: UIControl.State())
         chk5.awakeFromNib()
         self.win1.addSubview(chk5)
         
         chk6.frame = CGRect(x:self.win1.frame.width/2, y:400, width:self.win1.frame.width/2, height:40)
-        chk6.setTitle("三重県", for: UIControlState())
-        chk6.setTitleColor(UIColor.black, for: UIControlState())
+        chk6.setTitle("三重県", for: UIControl.State())
+        chk6.setTitleColor(UIColor.black, for: UIControl.State())
         chk6.awakeFromNib()
         self.win1.addSubview(chk6)
         
         chk7.frame = CGRect(x:0, y:450, width:self.win1.frame.width/2, height:40)
-        chk7.setTitle("岐阜県", for: UIControlState())
-        chk7.setTitleColor(UIColor.black, for: UIControlState())
+        chk7.setTitle("岐阜県", for: UIControl.State())
+        chk7.setTitleColor(UIColor.black, for: UIControl.State())
         chk7.awakeFromNib()
         self.win1.addSubview(chk7)
         
         chk8.frame = CGRect(x:self.win1.frame.width/2, y:450, width:self.win1.frame.width/2, height:40)
-        chk8.setTitle("東京都", for: UIControlState())
-        chk8.setTitleColor(UIColor.black, for: UIControlState())
+        chk8.setTitle("東京都", for: UIControl.State())
+        chk8.setTitleColor(UIColor.black, for: UIControl.State())
         chk8.awakeFromNib()
         self.win1.addSubview(chk8)
         
         //閉じるボタン生成
         btnClose.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnClose.backgroundColor = UIColor.orange
-        btnClose.setTitle("閉じる", for: UIControlState())
-        btnClose.setTitleColor(UIColor.white, for: UIControlState())
+        btnClose.setTitle("閉じる", for: UIControl.State())
+        btnClose.setTitleColor(UIColor.white, for: UIControl.State())
         btnClose.layer.masksToBounds = true
         btnClose.layer.cornerRadius = 10.0
         btnClose.layer.position = CGPoint(x: self.win1.frame.width/2-60, y: self.win1.frame.height-20)
@@ -277,8 +277,8 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         //判定ボタン生成
         btnAction.frame = CGRect(x: 0,y: 0,width: 100,height: 30)
         btnAction.backgroundColor = UIColor.red
-        btnAction.setTitle("判定", for: UIControlState())
-        btnAction.setTitleColor(UIColor.white, for: UIControlState())
+        btnAction.setTitle("判定", for: UIControl.State())
+        btnAction.setTitleColor(UIColor.white, for: UIControl.State())
         btnAction.layer.masksToBounds = true
         btnAction.layer.cornerRadius = 10.0
         btnAction.layer.position = CGPoint(x: self.win1.frame.width/2+60, y: self.win1.frame.height-20)
@@ -363,7 +363,7 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
     }
     
     //ツールバーの選択ボタンを押した時
-    func done() {
+    @objc func done() {
         textField1.endEditing(true) //これで閉じる
         /* textField2.endEditing(true)
         textField3.endEditing(true)

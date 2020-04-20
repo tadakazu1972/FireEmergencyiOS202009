@@ -60,9 +60,9 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //アプリ説明書
         btnData.backgroundColor = UIColor.blue
         btnData.layer.masksToBounds = true
-        btnData.setTitle("アプリ説明書", for: UIControlState())
-        btnData.setTitleColor(UIColor.white, for: UIControlState())
-        btnData.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnData.setTitle("アプリ説明書", for: UIControl.State())
+        btnData.setTitleColor(UIColor.white, for: UIControl.State())
+        btnData.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnData.layer.cornerRadius = 8.0
         btnData.tag = 0
         btnData.translatesAutoresizingMaskIntoConstraints = false
@@ -71,8 +71,8 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //震災
         btnEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnEarthquake.layer.masksToBounds = true
-        btnEarthquake.setTitle("震災", for: UIControlState())
-        btnEarthquake.setTitleColor(UIColor.black, for: UIControlState())
+        btnEarthquake.setTitle("震災", for: UIControl.State())
+        btnEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
         btnEarthquake.tag=1
         btnEarthquake.addTarget(self, action: #selector(self.onClickbtnEarthquake(_:)), for: .touchUpInside)
         btnEarthquake.translatesAutoresizingMaskIntoConstraints = false
@@ -80,8 +80,8 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //風水害
         btnTyphoon.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon.layer.masksToBounds = true
-        btnTyphoon.setTitle("風水害", for: UIControlState())
-        btnTyphoon.setTitleColor(UIColor.black, for: UIControlState())
+        btnTyphoon.setTitle("風水害", for: UIControl.State())
+        btnTyphoon.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoon.tag=2
         btnTyphoon.addTarget(self, action: #selector(self.onClickbtnTyphoon(_:)), for: .touchUpInside)
         btnTyphoon.translatesAutoresizingMaskIntoConstraints = false
@@ -89,8 +89,8 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //国民保護
         btnKokuminhogo.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKokuminhogo.layer.masksToBounds = true
-        btnKokuminhogo.setTitle("国民保", for: UIControlState())
-        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControlState())
+        btnKokuminhogo.setTitle("国民保", for: UIControl.State())
+        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControl.State())
         btnKokuminhogo.tag=3
         btnKokuminhogo.addTarget(self, action: #selector(self.onClickbtnKokuminhogo(_:)), for: .touchUpInside)
         btnKokuminhogo.translatesAutoresizingMaskIntoConstraints = false
@@ -98,8 +98,8 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //緊援隊
         btnKinentai.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai.layer.masksToBounds = true
-        btnKinentai.setTitle("緊援隊", for: UIControlState())
-        btnKinentai.setTitleColor(UIColor.black, for: UIControlState())
+        btnKinentai.setTitle("緊援隊", for: UIControl.State())
+        btnKinentai.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentai.tag=4
         btnKinentai.addTarget(self, action: #selector(self.onClickbtnKinentai(_:)), for: .touchUpInside)
         btnKinentai.translatesAutoresizingMaskIntoConstraints = false
@@ -159,9 +159,9 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //データ登録ボタン
         btnSave.backgroundColor = UIColor.red
         btnSave.layer.masksToBounds = true
-        btnSave.setTitle("登録", for: UIControlState())
-        btnSave.setTitleColor(UIColor.white, for: UIControlState())
-        btnSave.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnSave.setTitle("登録", for: UIControl.State())
+        btnSave.setTitleColor(UIColor.white, for: UIControl.State())
+        btnSave.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnSave.layer.cornerRadius = 8.0
         btnSave.tag = 5
         btnSave.addTarget(self, action: #selector(self.onClickbtnSave(_:)), for: .touchUpInside)
@@ -185,9 +185,9 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         //連絡網データ操作
         btnContact.backgroundColor = UIColor.blue
         btnContact.layer.masksToBounds = true
-        btnContact.setTitle("連絡網データ操作", for: UIControlState())
-        btnContact.setTitleColor(UIColor.white, for: UIControlState())
-        btnContact.setTitleColor(UIColor.black, for: UIControlState.highlighted)
+        btnContact.setTitle("連絡網データ操作", for: UIControl.State())
+        btnContact.setTitleColor(UIColor.white, for: UIControl.State())
+        btnContact.setTitleColor(UIColor.black, for: UIControl.State.highlighted)
         btnContact.layer.cornerRadius = 8.0
         btnContact.tag = 6
         btnContact.addTarget(self, action: #selector(self.onClickbtnContact(_:)), for: .touchUpInside)
@@ -199,7 +199,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //制約ひな型
-    func Constraint(_ item: AnyObject, _ attr: NSLayoutAttribute, to: AnyObject?, _ attrTo: NSLayoutAttribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutRelation = .equal, priority: UILayoutPriority = UILayoutPriorityRequired) -> NSLayoutConstraint {
+    func Constraint(_ item: AnyObject, _ attr: NSLayoutConstraint.Attribute, to: AnyObject?, _ attrTo: NSLayoutConstraint.Attribute, constant: CGFloat = 0.0, multiplier: CGFloat = 1.0, relate: NSLayoutConstraint.Relation = .equal, priority: UILayoutPriority = UILayoutPriority.required) -> NSLayoutConstraint {
         let ret = NSLayoutConstraint(
             item:       item,
             attribute:  attr,
@@ -391,7 +391,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //登録ボタンクリック
-    func onClickbtnSave(_ sender : UIButton){
+    @objc func onClickbtnSave(_ sender : UIButton){
         userDefaults.set(mainStation, forKey:"mainStation")
         userDefaults.set(mainStationRow!, forKey:"mainStationRow")
         userDefaults.set(tsunamiStation, forKey:"tsunamiStation")
@@ -400,14 +400,14 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         userDefaults.set(kubunRow!, forKey:"kubunRow")
         
         //アラート表示
-        let alert = UIAlertController(title:"", message: "登録しました", preferredStyle: UIAlertControllerStyle.alert)
-        let alertCancel = UIAlertAction(title:"閉じる", style: UIAlertActionStyle.cancel, handler:nil)
+        let alert = UIAlertController(title:"", message: "登録しました", preferredStyle: UIAlertController.Style.alert)
+        let alertCancel = UIAlertAction(title:"閉じる", style: UIAlertAction.Style.cancel, handler:nil)
         alert.addAction(alertCancel)
         self.present(alert, animated:true, completion: nil)
     }
     
     //震災画面遷移
-    func onClickbtnEarthquake(_ sender : UIButton){
+    @objc func onClickbtnEarthquake(_ sender : UIButton){
         let data:ViewController = ViewController()
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
@@ -415,7 +415,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //風水害画面遷移
-    func onClickbtnTyphoon(_ sender : UIButton){
+    @objc func onClickbtnTyphoon(_ sender : UIButton){
         let data:TyphoonViewController = TyphoonViewController()
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
@@ -423,7 +423,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //国民保護画面遷移
-    func onClickbtnKokuminhogo(_ sender : UIButton){
+    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
         let data:KokuminhogoViewController = KokuminhogoViewController()
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
@@ -431,7 +431,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //緊援隊画面遷移
-    func onClickbtnKinentai(_ sender : UIButton){
+    @objc func onClickbtnKinentai(_ sender : UIButton){
         let data:KinentaiViewController = KinentaiViewController()
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
@@ -439,7 +439,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //連絡網データ操作遷移
-    func onClickbtnContact(_ sender : UIButton){
+    @objc func onClickbtnContact(_ sender : UIButton){
         let data:ContactViewController = ContactViewController()
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
@@ -447,7 +447,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     }
     
     //アプリ説明書
-    func onClickbtnGuide(_ sender : UIButton){
+    @objc func onClickbtnGuide(_ sender : UIButton){
         let data:GuideViewController = GuideViewController()
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false)
