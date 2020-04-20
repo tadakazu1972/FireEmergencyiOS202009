@@ -69,7 +69,7 @@ class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
     //表示
     func showInfo (){
         //元の画面を暗く
-        parent.view.alpha = 0.3
+        parent.view.alpha = 0.0
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white

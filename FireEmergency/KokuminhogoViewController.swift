@@ -74,7 +74,7 @@ class KokuminhogoViewController: UIViewController {
         btnEarthquake.setTitle("震災", for: UIControl.State())
         btnEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
         btnEarthquake.tag=1
-        btnEarthquake.addTarget(self, action: #selector(self.onClickbtnKokuminhogo(_:)), for: .touchUpInside)
+        btnEarthquake.addTarget(self, action: #selector(self.onClickbtnEarthquake(_:)), for: .touchUpInside)
         btnEarthquake.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnEarthquake)
         //風水害
@@ -552,54 +552,81 @@ class KokuminhogoViewController: UIViewController {
     
     //基礎データ入力画面遷移
     @objc func onClickbtnData(_ sender : UIButton){
-        //dataViewControllerのインスタンス生成
-        let data:DataViewController = DataViewController()
-        
-        //navigationControllerのrootViewControllerにdataViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
+        //データ入力ViewControllerの存在を確認
+        if isDataViewController  {
+            //存在したなら自らを消滅するのみ
+            self.dismiss(animated: true, completion: nil)
+            isKokuminhogoViewController = false
+        } else {
+            //dataViewControllerのインスタンス生成
+            let data:DataViewController = DataViewController()
+            isDataViewController = true
+            //navigationControllerのrootViewControllerにdataViewControllerをセット
+            let nav = UINavigationController(rootViewController: data)
+            nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
+            //画面遷移
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     
     //震災画面遷移
-    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
-        //dataViewControllerのインスタンス生成
-        let data:ViewController = ViewController()
-        
-        //navigationControllerのrootViewControllerにKokuminhogoViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
+    @objc func onClickbtnEarthquake(_ sender : UIButton){
+        //震災ViewControllerの存在を確認
+        if isViewController  {
+            //存在したなら自らを消滅するのみ
+            self.dismiss(animated: true, completion: nil)
+            isKokuminhogoViewController = false
+        } else {
+            //ViewControllerのインスタンス生成
+            let data:ViewController = ViewController()
+            isViewController = true
+            //navigationControllerのrootViewControllerにKokuminhogoViewControllerをセット
+            let nav = UINavigationController(rootViewController: data)
+            nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
+            //画面遷移
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     
     //風水害画面遷移
     @objc func onClickbtnTyphoon(_ sender : UIButton){
-        //インスタンス生成
-        let data:TyphoonViewController = TyphoonViewController()
-        
-        //navigationControllerのrootViewControllerにTyphoonViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
+        //風水害ViewControllerの存在を確認
+        if isTyphoonViewController  {
+            //自分を消滅
+            self.dismiss(animated: true, completion: nil)
+            isKokuminhogoViewController = false
+        } else {
+            //自分を消滅
+            //self.dismiss(animated: true, completion: nil)
+            //isKokuminhogoViewController = false
+            //インスタンス生成
+            let data:TyphoonViewController = TyphoonViewController()
+            isTyphoonViewController = true
+            //navigationControllerのrootViewControllerにTyphoonViewControllerをセット
+            let nav = UINavigationController(rootViewController: data)
+            nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
+            //画面遷移
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     
     //緊援隊画面遷移
     @objc func onClickbtnKinentai(_ sender : UIButton){
-        //KinentaiViewControllerのインスタンス生成
-        let data:KinentaiViewController = KinentaiViewController()
-        
-        //navigationControllerのrootViewControllerにKinentaiViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
+        //緊援隊ViewControllerの存在を確認
+        if isKinentaiViewController  {
+            //存在したなら自らを消滅するのみ
+            self.dismiss(animated: true, completion: nil)
+            isKokuminhogoViewController = false
+        } else {
+            //KinentaiViewControllerのインスタンス生成
+            let data:KinentaiViewController = KinentaiViewController()
+            isKinentaiViewController = true
+            //navigationControllerのrootViewControllerにKinentaiViewControllerをセット
+            let nav = UINavigationController(rootViewController: data)
+            nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
+            //画面遷移
+            self.present(nav, animated: true, completion: nil)
+        }
     }
     
     override func didReceiveMemoryWarning() {
