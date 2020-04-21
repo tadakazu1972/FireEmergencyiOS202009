@@ -225,7 +225,7 @@ class KokuminhogoViewController: UIViewController {
         btnKokuminhogoCaution.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnKokuminhogoCaution.tag=13
         btnKokuminhogoCaution.translatesAutoresizingMaskIntoConstraints = false
-        btnKokuminhogoCaution.addTarget(self, action: #selector(ViewController.showInfoCaution(_:)), for: .touchUpInside)
+        btnKokuminhogoCaution.addTarget(self, action: #selector(self.showInfoCaution(_:)), for: .touchUpInside)
         self.view.addSubview(btnKokuminhogoCaution)
         //防災ネット
         btnKokuminhogoBousaiNet.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
@@ -541,7 +541,7 @@ class KokuminhogoViewController: UIViewController {
     }
     
     //留意事項等
-    func showInfoCaution(_ sender: UIButton){
+    @objc func showInfoCaution(_ sender: UIButton){
         mKokuminhogoSelectDialog.showInfo()
     }
     

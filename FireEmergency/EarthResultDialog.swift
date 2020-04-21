@@ -10,7 +10,7 @@ import UIKit
 
 class EarthResultDialog {
     //ボタン押したら出るUIWindow
-    fileprivate var parent: ViewController!
+    fileprivate var parent: EarthquakeViewController!
     fileprivate var win1: UIWindow!
     fileprivate var text1: UITextView!
     fileprivate var btnClose: UIButton!
@@ -21,7 +21,7 @@ class EarthResultDialog {
     var kubun: String = ""
     
     //コンストラクタ
-    init(parentView: ViewController){
+    init(parentView: EarthquakeViewController){
         parent = parentView
         win1 = UIWindow()
         text1 = UITextView()

@@ -10,7 +10,7 @@ import UIKit
 
 class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
     //ボタン押したら出るUIWindow
-    fileprivate var parent: ViewController!
+    fileprivate var parent: EarthquakeViewController!
     fileprivate var win1: UIWindow!
     fileprivate var text1: UITextView!
     fileprivate var table: UITableView!
@@ -20,7 +20,7 @@ class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
     fileprivate var mIndex: Int!
     
     //コンストラクタ
-    init(index: Int, parentView: ViewController){
+    init(index: Int, parentView: EarthquakeViewController){
         parent = parentView
         win1 = UIWindow()
         text1 = UITextView()
