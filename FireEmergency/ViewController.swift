@@ -88,8 +88,13 @@ class ViewController: UIViewController {
         //SegmentedControll生成
         let segItems = ["震災","風水害","国民保護","緊援隊"]
         mSegment = UISegmentedControl(items: segItems)
-        mSegment.frame = CGRect(x: 10, y:100, width: UIScreen.main.bounds.size.width-20, height:40)
-        mSegment.tintColor = UIColor(red:0.3, green:0.61, blue:0.93, alpha:1.0)
+        mSegment.frame = CGRect(x: 10, y:92, width: UIScreen.main.bounds.size.width-20, height:40)
+        if #available(iOS 13.0, *) {
+            mSegment.selectedSegmentTintColor = UIColor(red:0.3, green:0.61, blue:0.93, alpha:1.0)
+        } else {
+            // Fallback on earlier versions
+            mSegment.tintColor = UIColor(red:0.3, green:0.61, blue:0.93, alpha:1.0)
+        }
         mSegment.backgroundColor = UIColor(red:0.96, green:0.98, blue:1.00, alpha:1.0)
         //選択されたセグメントのフォントと文字色
         mSegment.setTitleTextAttributes([
@@ -147,7 +152,7 @@ class ViewController: UIViewController {
         //制約
         self.view.addConstraints([
             //基礎データ入力ボタン
-            Constraint(btnData, .top, to:self.view, .top, constant:20),
+            Constraint(btnData, .top, to:self.view, .top, constant:44),
             Constraint(btnData, .leading, to:self.view, .leading, constant:8),
             Constraint(btnData, .trailing, to:self.view, .trailingMargin, constant:8)
         ])
@@ -159,26 +164,46 @@ class ViewController: UIViewController {
     
     private func updateView(){
         switch mSegment.selectedSegmentIndex {
+        //震災
         case 0:
             remove(asChildViewController: mTyphoonViewController)
             remove(asChildViewController: mKokuminhogoViewController)
             remove(asChildViewController: mKinentaiViewController)
             add(asChildViewController: mEarthquakeViewController)
+            //親ViewController背景
+            self.view.backgroundColor = UIColor(red:0.9, green:0.7, blue:0.2, alpha:1.0)
+            //データ登録ボタン背景色
+            btnData.backgroundColor = UIColor.blue
+        //風水害
         case 1:
             remove(asChildViewController: mEarthquakeViewController)
             remove(asChildViewController: mKokuminhogoViewController)
             remove(asChildViewController: mKinentaiViewController)
             add(asChildViewController: mTyphoonViewController)
+            //親ViewController背景
+            self.view.backgroundColor = UIColor(red:0.2, green:0.2, blue:0.9, alpha:1.0)
+            //データ登録ボタン背景色
+            btnData.backgroundColor = UIColor.red
+        //国民保護
         case 2:
             remove(asChildViewController: mEarthquakeViewController)
             remove(asChildViewController: mTyphoonViewController)
             remove(asChildViewController: mKinentaiViewController)
             add(asChildViewController: mKokuminhogoViewController)
+            //親ViewController背景
+            self.view.backgroundColor = UIColor(red:0.0, green:0.55, blue:0.0, alpha:1.0)
+            //データ登録ボタン背景色
+            btnData.backgroundColor = UIColor.blue
+        //緊援隊
         case 3:
             remove(asChildViewController: mEarthquakeViewController)
             remove(asChildViewController: mTyphoonViewController)
             remove(asChildViewController: mKokuminhogoViewController)
             add(asChildViewController: mKinentaiViewController)
+            //親ViewController背景
+            self.view.backgroundColor = UIColor(red:0.8, green:0.15, blue:0.1, alpha:1.0)
+            //データ登録ボタン背景色
+            btnData.backgroundColor = UIColor.blue
         default:
             break
         }
@@ -194,7 +219,7 @@ class ViewController: UIViewController {
         addChild(viewController)
         self.view.addSubview(viewController.view)
         //viewController.view.frame = self.view.bounds
-        viewController.view.frame = CGRect(x: 0, y: 200, width: self.view.bounds.size.width, height: self.view.bounds.height)
+        viewController.view.frame = CGRect(x: 0, y: 144, width: self.view.bounds.size.width, height: self.view.bounds.height-144)
         viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
         //子ViewControllerへ通知
         viewController.didMove(toParent: self)
