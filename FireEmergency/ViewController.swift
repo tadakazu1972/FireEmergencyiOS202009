@@ -18,6 +18,7 @@ internal var isDataViewController: Bool = false
 
 class ViewController: UIViewController {
     //メイン画面
+    var mSegment: UISegmentedControl!
     let btnData         = UIButton(frame: CGRect.zero)
     let btnEarthquake   = UIButton(frame: CGRect.zero)
     let btnTyphoon      = UIButton(frame: CGRect.zero)
@@ -64,6 +65,19 @@ class ViewController: UIViewController {
     let userDefaults = UserDefaults.standard
     //SQLite用
     internal var mDBHelper: DBHelper!
+    //子ViewCOntroller設定
+    private lazy var mTyphoonViewController: TyphoonViewController = {
+        var viewController = TyphoonViewController()
+        add(asChildViewController: viewController)
+        return viewController
+    }()
+    
+    private lazy var mKokuminhogoViewController: KokuminhogoViewController = {
+        var viewController = KokuminhogoViewController()
+        add(asChildViewController: viewController)
+        return viewController
+    }()
+    
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -88,6 +102,28 @@ class ViewController: UIViewController {
         }
         
         self.view.backgroundColor = UIColor(red:0.9, green:0.7, blue:0.2, alpha:1.0)
+        //SegmentedControll生成
+        let segItems = ["震災","風水害","国民保護","緊援隊"]
+        mSegment = UISegmentedControl(items: segItems)
+        /*mSegment.setTitle("震災", forSegmentAt: 0)
+        mSegment.setTitle("風水害", forSegmentAt: 1)
+        mSegment.setTitle("国民保護", forSegmentAt: 2)
+        mSegment.setTitle("緊援隊", forSegmentAt: 3)*/
+        mSegment.frame = CGRect(x: 10, y:100, width: UIScreen.main.bounds.size.width-20, height:40)
+        mSegment.tintColor = UIColor(red:0.3, green:0.61, blue:0.93, alpha:1.0)
+        mSegment.backgroundColor = UIColor(red:0.96, green:0.98, blue:1.00, alpha:1.0)
+        //選択されたセグメントのフォントと文字色
+        mSegment.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "HiraKakuProN-W6", size:14.0)!,
+            NSAttributedString.Key.foregroundColor: UIColor.white], for: .selected)
+        //通常のセグメントのフォントと文字色
+        mSegment.setTitleTextAttributes([
+            NSAttributedString.Key.font : UIFont(name: "HiraKakuProN-W3", size:14.0)!,
+            NSAttributedString.Key.foregroundColor: UIColor(red:0.30, green:0.49, blue:0.62, alpha:1.0)], for: .normal)
+        //セグメントの選択
+        mSegment.selectedSegmentIndex = 0
+        mSegment.addTarget(self, action: #selector(segmentChanged(_:)), for:UIControl.Event.valueChanged)
+        self.view.addSubview(mSegment)
         //Button生成
         //基礎データ入力
         btnData.backgroundColor = UIColor.blue
@@ -290,6 +326,9 @@ class ViewController: UIViewController {
         
         //passCheckをfalseで初期化
         userDefaults.set(false, forKey: "passCheck")
+        
+        //子ViewControllerセット
+        setupView()
     }
     
     //制約ひな型
@@ -321,6 +360,12 @@ class ViewController: UIViewController {
             Constraint(pad1, .leading, to:self.view, .leading, constant:0),
             Constraint(pad1, .width, to:self.view, .width, constant:0, multiplier:0.024)
         ])
+        /*self.view.addConstraints([
+            //Segmented Controll
+            Constraint(mSegment, .top, to:btnData, .bottom, constant:8),
+            Constraint(mSegment, .leading, to:pad1, .trailing, constant:0),
+            Constraint(mSegment, .width, to:self.view, .width, constant:0, multiplier:0.8)
+        ])*/
         self.view.addConstraints([
             //震災ボタン
             Constraint(btnEarthquake, .top, to:btnData, .bottom, constant:8),
@@ -507,6 +552,65 @@ class ViewController: UIViewController {
             Constraint(btnEarthquakeBousaiNet, .leading, to:pad33, .trailing, constant:0),
             Constraint(btnEarthquakeBousaiNet, .width, to:btnEarthquakeTel, .width, constant:0)
         ])
+    }
+    
+    private func setupView(){
+        updateView()
+    }
+    
+    private func updateView(){
+        switch mSegment.selectedSegmentIndex {
+        case 0:
+            print("0を選択")
+        case 1:
+            print("1を選択")
+            remove(asChildViewController: mKokuminhogoViewController)
+            add(asChildViewController: mTyphoonViewController)
+        case 2:
+            print("2を選択")
+            remove(asChildViewController: mTyphoonViewController)
+            add(asChildViewController: mKokuminhogoViewController)
+        case 3:
+            print("3を選択")
+        default:
+            break
+        }
+    }
+    
+    //セグメントが変更された
+    @objc func segmentChanged(_ segment:UISegmentedControl){
+        updateView()
+        /*switch segment.selectedSegmentIndex {
+        case 0:
+            print("0を選択")
+        case 1:
+            print("1を選択")
+        case 2:
+            print("2を選択")
+        case 3:
+            print("3を選択")
+        default:
+            break
+        }*/
+    }
+    
+    private func add(asChildViewController viewController: UIViewController){
+        addChild(viewController)
+        self.view.addSubview(viewController.view)
+        //viewController.view.frame = self.view.bounds
+        viewController.view.frame = CGRect(x: 0, y: 200, width: self.view.bounds.size.width, height: self.view.bounds.height)
+        viewController.view.autoresizingMask = [.flexibleWidth, .flexibleHeight]
+        //子ViewControllerへ通知
+        viewController.didMove(toParent: self)
+    }
+    
+    private func remove(asChildViewController viewController: UIViewController){
+        //子ViewControllerへ通知
+        viewController.willMove(toParent: nil)
+        //子ViewをSuperviewから削除
+        viewController.view.removeFromSuperview()
+        //子ViewControllerへ通知
+        viewController.removeFromParent()
     }
     
     //震度５強以上

@@ -574,6 +574,7 @@ class KokuminhogoViewController: UIViewController {
         //震災ViewControllerの存在を確認
         if isViewController  {
             //存在したなら自らを消滅するのみ
+            self.parent!.dismiss(animated: true, completion: nil)
             self.dismiss(animated: true, completion: nil)
             isKokuminhogoViewController = false
         } else {
