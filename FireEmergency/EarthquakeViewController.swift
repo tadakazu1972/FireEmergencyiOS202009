@@ -256,8 +256,8 @@ class EarthquakeViewController: UIViewController {
             Constraint(padY4, .height, to:self.view, .height, constant:0, multiplier:0.03)
         ])
         self.view.addConstraints([
-            //震度４ボタン Y座標の中心
-            Constraint(btnEarthquake3, .centerY, to:self.view, .centerY, constant:0),
+            //震度４ボタン Y座標の中心 -72に留意
+            Constraint(btnEarthquake3, .centerY, to:self.view, .centerY, constant:-72),
             Constraint(btnEarthquake3, .centerX, to:self.view, .centerX, constant:8),
             Constraint(btnEarthquake3, .width, to:self.view, .width, constant:0, multiplier:0.8)
         ])

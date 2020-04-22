@@ -452,7 +452,6 @@
 				597FD11F1E2A7AAA0011ABB1 /* CustomUICollectionViewCell.swift */,
 				598AC8F31D8512F3006842C8 /* DataViewController.swift */,
 				5960EB771E46C52900D1917A /* DBHelper.swift */,
-				59C9A957244ED616000B3C01 /* EarthquakeViewController.swift */,
 				593C66821DCDB50900405F53 /* EarthResultDialog.swift */,
 				59EC66EB1DA0B3C300A95067 /* EarthSelectDialog.swift */,
 				59AC16651E6C038000BBB28F /* Guide1Dialog.swift */,
@@ -480,10 +479,8 @@
 				5960D6832205C384005E512C /* KinentaiResultDialog31.swift */,
 				5960D68522067431005E512C /* KinentaiResultDialog32.swift */,
 				5960D6872206AD2A005E512C /* KinentaiResultDialog33.swift */,
-				598AC8E01D850AE6006842C8 /* KinentaiViewController.swift */,
 				593C66861DCEB10100405F53 /* KokuminhogoResultDialog.swift */,
 				59D8AED81E508A7D00A3EDE2 /* KokuminhogoSelectDialog.swift */,
-				593C66841DCEAFE000405F53 /* KokuminhogoViewController.swift */,
 				59B7FC8F1E3CF106002D4392 /* MailViewController.swift */,
 				595361051E77A87E00551A0E /* PassInputDialog.swift */,
 				595233851E77957400FC8CE8 /* PassViewController.swift */,
@@ -492,8 +489,11 @@
 				594CA3431E017D6E00FF8714 /* TyphoonResultDialog2.swift */,
 				594CA33B1DF0567600FF8714 /* TyphoonSelectDialog.swift */,
 				594CA3411E002F8900FF8714 /* TyphoonSelectDialog2.swift */,
-				594CA3391DF0540200FF8714 /* TyphoonViewController.swift */,
 				597FD1151E2113E50011ABB1 /* ViewController.swift */,
+				59C9A957244ED616000B3C01 /* EarthquakeViewController.swift */,
+				594CA3391DF0540200FF8714 /* TyphoonViewController.swift */,
+				593C66841DCEAFE000405F53 /* KokuminhogoViewController.swift */,
+				598AC8E01D850AE6006842C8 /* KinentaiViewController.swift */,
 				594DDA481D9747110078EE72 /* caution.txt */,
 				597FD13B1E2D0F550011ABB1 /* kinentai_nankaitraf.txt */,
 				597FD13D1E2D0F620011ABB1 /* kinentai_nankaitraf2.txt */,
@@ -570,7 +570,7 @@
 				TargetAttributes = {
 					598AC8DA1D850AE6006842C8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = X7TZM2569N;
+						DevelopmentTeam = XSUE867SN9;
 						LastSwiftMigration = 0830;
 					};
 				};
@@ -905,7 +905,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X7TZM2569N;
+				DEVELOPMENT_TEAM = XSUE867SN9;
 				INFOPLIST_FILE = FireEmergency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -923,7 +923,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = X7TZM2569N;
+				DEVELOPMENT_TEAM = XSUE867SN9;
 				INFOPLIST_FILE = FireEmergency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 8.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

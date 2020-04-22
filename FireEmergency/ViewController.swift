@@ -103,7 +103,7 @@ class ViewController: UIViewController {
         //通常のセグメントのフォントと文字色
         mSegment.setTitleTextAttributes([
             NSAttributedString.Key.font : UIFont(name: "HiraKakuProN-W3", size:14.0)!,
-            NSAttributedString.Key.foregroundColor: UIColor(red:0.30, green:0.49, blue:0.62, alpha:1.0)], for: .normal)
+            NSAttributedString.Key.foregroundColor: UIColor.black], for: .normal)
         //セグメントの選択
         mSegment.selectedSegmentIndex = 0
         mSegment.addTarget(self, action: #selector(segmentChanged(_:)), for:UIControl.Event.valueChanged)
