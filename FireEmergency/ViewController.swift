@@ -9,19 +9,14 @@
 import UIKit
 
 //グローバル変数
-//震災、風水害、国民保護、緊急援助隊、データ入力の5つのViewControllerクラスが存在しているか保持用変数
-internal var isViewController: Bool = true
-internal var isTyphoonViewController: Bool = false
-internal var isKokuminhogoViewController: Bool = false
-internal var isKinentaiViewController: Bool = false
-internal var isDataViewController: Bool = false
+internal var mViewController: ViewController!
 
 class ViewController: UIViewController {
     //メイン画面
     var mSegment: UISegmentedControl!
     let btnData         = UIButton(frame: CGRect.zero)
     //別クラスのインスタンス保持用変数
-    fileprivate var mViewController: ViewController!
+    //fileprivate var mViewController: ViewController!
     fileprivate var mInfoDialog: InfoDialog!
     fileprivate var mBousainetDialog: BousainetDialog!
     fileprivate var mEarthSelectDialog: EarthSelectDialog!
@@ -62,6 +57,9 @@ class ViewController: UIViewController {
     //スタート
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        //自分を保存：後でダイアログ表示の際に暗くするときの呼び出しに使うため
+        mViewController = self
         
         //DB生成
         mDBHelper = DBHelper()
@@ -238,8 +236,6 @@ class ViewController: UIViewController {
     @objc func onClickbtnData(_ sender : UIButton){
         //dataViewControllerのインスタンス生成
         let data:DataViewController = DataViewController()
-        //存在を保存
-        isDataViewController = true
         //navigationControllerのrootViewControllerにdataViewControllerをセット
         let nav = UINavigationController(rootViewController: data)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
