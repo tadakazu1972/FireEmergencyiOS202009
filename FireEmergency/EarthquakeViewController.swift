@@ -16,12 +16,14 @@ class EarthquakeViewController: UIViewController {
     let btnEarthquake3  = UIButton(frame: CGRect.zero)
     let btnEarthquake4  = UIButton(frame: CGRect.zero)
     let btnEarthquake5  = UIButton(frame: CGRect.zero)
+    let btnEarthquake6  = UIButton(frame: CGRect.zero)
     let padY1           = UIView(frame: CGRect.zero) //ボタンの間にはさむ見えないpaddingがわり
     let padY2           = UIView(frame: CGRect.zero)
     let padY3           = UIView(frame: CGRect.zero)
     let padY4           = UIView(frame: CGRect.zero)
     let padY5           = UIView(frame: CGRect.zero)
     let padY6           = UIView(frame: CGRect.zero)
+    let padY7           = UIView(frame: CGRect.zero)
     let btnEarthquakeEarthquake = UIButton(frame: CGRect.zero)
     let btnEarthquakeBlackout   = UIButton(frame: CGRect.zero)
     let btnEarthquakeRoad       = UIButton(frame: CGRect.zero)
@@ -107,6 +109,15 @@ class EarthquakeViewController: UIViewController {
         btnEarthquake5.translatesAutoresizingMaskIntoConstraints = false
         btnEarthquake5.addTarget(self, action: #selector(self.showSelectEarthquake5(_:)), for: .touchUpInside)
         self.view.addSubview(btnEarthquake5)
+        //南海トラフ地震臨時情報
+        btnEarthquake6.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
+        btnEarthquake6.layer.masksToBounds = true
+        btnEarthquake6.setTitle("南海トラフ地震臨時情報", for: UIControl.State())
+        btnEarthquake6.setTitleColor(UIColor.black, for: UIControl.State())
+        btnEarthquake6.tag=10
+        btnEarthquake6.translatesAutoresizingMaskIntoConstraints = false
+        btnEarthquake6.addTarget(self, action: #selector(self.showSelectEarthquake6(_:)), for: .touchUpInside)
+        self.view.addSubview(btnEarthquake6)
         //垂直方向のpad
         padY1.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(padY1)
@@ -120,6 +131,8 @@ class EarthquakeViewController: UIViewController {
         self.view.addSubview(padY5)
         padY6.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(padY6)
+        padY7.translatesAutoresizingMaskIntoConstraints = false
+        self.view.addSubview(padY7)
         //情報（地震）
         btnEarthquakeEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnEarthquakeEarthquake.layer.masksToBounds = true
@@ -286,6 +299,18 @@ class EarthquakeViewController: UIViewController {
             Constraint(btnEarthquake5, .width, to:self.view, .width, constant:0, multiplier:0.8)
         ])
         self.view.addConstraints([
+            //padY7
+            Constraint(padY7, .top, to:btnEarthquake5, .bottom, constant:0),
+            Constraint(padY7, .leading, to:self.view, .leading, constant:0),
+            Constraint(padY7, .height, to:self.view, .height, constant:0, multiplier:0.03)
+        ])
+        self.view.addConstraints([
+            //南海トラフ地震臨時情報ボタン
+            Constraint(btnEarthquake6, .top, to:padY7, .bottom, constant:0),
+            Constraint(btnEarthquake6, .centerX, to:self.view, .centerX, constant:8),
+            Constraint(btnEarthquake6, .width, to:self.view, .width, constant:0, multiplier:0.8)
+        ])
+        self.view.addConstraints([
             //pad21
             Constraint(pad21, .bottom, to:btnEarthquakeTel, .top, constant:-8),
             Constraint(pad21, .leading, to:self.view, .leading, constant:0),
@@ -386,6 +411,12 @@ class EarthquakeViewController: UIViewController {
     //東海地震に伴う非常招集
     @objc func showSelectEarthquake5(_ sender: UIButton){
         mEarthSelectDialog = EarthSelectDialog(index: 5, parentView: self)
+        mEarthSelectDialog.showInfo()
+    }
+    
+    //南海トラフ地震臨時情報
+    @objc func showSelectEarthquake6(_ sender: UIButton){
+        mEarthSelectDialog = EarthSelectDialog(index: 6, parentView: self)
         mEarthSelectDialog.showInfo()
     }
     

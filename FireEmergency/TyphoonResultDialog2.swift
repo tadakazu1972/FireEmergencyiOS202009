@@ -1401,6 +1401,7 @@ class TyphoonResultDialog2 {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0 //明るく
     }
     
     //戻る

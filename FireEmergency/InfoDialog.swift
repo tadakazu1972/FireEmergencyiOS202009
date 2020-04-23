@@ -33,13 +33,14 @@ class InfoDialog {
     
     //表示
     func showInfo(_ data :String){
-        //元の画面を暗く
+        //下層の画面を暗く
         parent.view.alpha = 0.3
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
         win1.frame = CGRect(x: 80,y: 80,width: parent.view.frame.width-40,height: parent.view.frame.height-200)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72 子ViewController調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -156,5 +157,6 @@ class InfoDialog {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0 //明るく
     }
 }

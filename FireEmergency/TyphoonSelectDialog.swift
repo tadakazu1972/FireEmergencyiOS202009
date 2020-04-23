@@ -61,8 +61,9 @@ class TyphoonSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource 
     
     //表示
     func showInfo (){
-        //元の画面を暗く
+        //下層の画面を暗く
         parent.view.alpha = 0.3
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
@@ -116,6 +117,7 @@ class TyphoonSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource 
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0 //明るく
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection sction: Int)-> Int {

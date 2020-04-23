@@ -40,13 +40,14 @@ class BousainetDialog {
     
     //表示
     func showInfo(){
-        //元の画面を暗く
+        //下層の画面を暗く
         parent.view.alpha = 0.3
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
         win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height/2+180)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72子ViewController調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -109,11 +110,11 @@ class BousainetDialog {
     @objc func onClickApp(_ sender: UIButton){
         //大阪市防災アプリ iOS版にはURLスキームが設定されていないので、AppStoreを一度経由して、インストールしていたら開く、してなかったら入手
         let url1 = URL(string: "jp.goo.bousai.osakaapp://")!
-        let url2 = URL(string: "https://itunes.apple.com/app/id1092387835")
+        let url2 = URL(string: "https://itunes.apple.com/app/id1092387835")!
         if (UIApplication.shared.canOpenURL(url1)) {
-            UIApplication.shared.openURL(url1)
+            UIApplication.shared.open(url1, options:[:], completionHandler: nil)
         } else {
-            UIApplication.shared.openURL(url2!)
+            UIApplication.shared.open(url2, options:[:], completionHandler: nil)
         }
         
         if (text2.isHidden) {
@@ -128,5 +129,6 @@ class BousainetDialog {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0 //明るく
     }
 }

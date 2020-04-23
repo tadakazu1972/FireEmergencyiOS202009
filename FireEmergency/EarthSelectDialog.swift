@@ -44,6 +44,9 @@ class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
         case 5:
             items = ["■警戒宣言が発令されたとき（東海地震予知情報）","■東海地震注意報が発表されたとき","■東海地震に関連する調査情報（臨時）が発表されたとき"]
             break
+        case 6:
+            items = ["■調査中","■巨大地震注意","■巨大地震警戒"]
+            break
         default:
             items = ["■大津波警報","■津波警報","■警報なし"]
             break
@@ -69,12 +72,13 @@ class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
     //表示
     func showInfo (){
         //元の画面を暗く
-        parent.view.alpha = 0.0
+        parent.view.alpha = 0.3
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height-300)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height-200)
+        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72子ViewController調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -119,6 +123,7 @@ class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0 //明るく
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection sction: Int)-> Int {
@@ -208,6 +213,21 @@ class EarthSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
                 break
             case 2:
                 parent.mEarthResultDialog.showResult(53)
+                break
+            default:
+                break
+            }
+            break
+        case 6:
+            switch indexPath.row {
+            case 0:
+                parent.mEarthResultDialog.showResult(61)
+                break
+            case 1:
+                parent.mEarthResultDialog.showResult(62)
+                break
+            case 2:
+                parent.mEarthResultDialog.showResult(63)
                 break
             default:
                 break
