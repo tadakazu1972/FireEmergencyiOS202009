@@ -435,58 +435,6 @@ class EarthquakeViewController: UIViewController {
         mBousainetDialog.showInfo()
     }
     
-    //基礎データ入力画面遷移
-    @objc func onClickbtnData(_ sender : UIButton){
-        //dataViewControllerのインスタンス生成
-        let data:DataViewController = DataViewController()
-        //存在を保存
-        isDataViewController = true
-        //navigationControllerのrootViewControllerにdataViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
-    }
-    
-    //風水害画面遷移
-    @objc func onClickbtnTyphoon(_ sender : UIButton){
-        //インスタンス生成
-        let data:TyphoonViewController = TyphoonViewController()
-        //存在を保存
-        isTyphoonViewController = true
-        //navigationControllerのrootViewControllerにTyphoonViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
-    }
-    
-    //国民保護画面遷移
-    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
-        //KokuminhogoViewControllerのインスタンス生成
-        let data:KokuminhogoViewController = KokuminhogoViewController()
-        //存在を保存
-        isKokuminhogoViewController = true
-        //navigationControllerのrootViewControllerにKokuminhogoViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
-    }
-    
-    //緊援隊画面遷移
-    @objc func onClickbtnKinentai(_ sender : UIButton){
-        //KinentaiViewControllerのインスタンス生成
-        let data:KinentaiViewController = KinentaiViewController()
-        //存在を保存
-        isKinentaiViewController = true
-        //navigationControllerのrootViewControllerにKinentaiViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
-    }
-
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.

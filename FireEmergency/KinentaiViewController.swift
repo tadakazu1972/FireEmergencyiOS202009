@@ -428,6 +428,7 @@ class KinentaiViewController: UIViewController {
         mInfoDialog.showInfo("earthquake")
     }
     
+    /*緊急会陰除隊だけは、大阪市以外の他都市でも使うときのために以下は残しておく
     //基礎データ入力画面遷移
     @objc func onClickbtnData(_ sender : UIButton){
         //データ入力ViewControllerの存在を確認
@@ -503,6 +504,7 @@ class KinentaiViewController: UIViewController {
             self.present(nav, animated: true, completion: nil)
         }
     }
+ */
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
