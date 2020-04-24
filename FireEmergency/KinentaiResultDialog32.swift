@@ -34,7 +34,7 @@ class KinentaiResultDialog32 {
             break
         //大阪府大隊(陸上)
         case 2:
-            text0.text = "■大阪府大隊(陸上)\n　出動先：埼玉県\n　集結場所：万博公園又は草津PA\n　進出拠点：三芳PA(関越自動車道)\n"
+            text0.text = "■大阪府大隊(陸上)\n　出動先：埼玉県\n　集結場所：高度専門教育訓練センター\n　進出拠点：三芳PA(関越自動車道)\n"
             break
         //航空小隊
         case 3:
@@ -63,6 +63,7 @@ class KinentaiResultDialog32 {
     func showInfo (){
         //元の画面を暗く
         parent.win1.alpha = 0.1
+        //mViewController.view.alpha = 0.1
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
@@ -100,6 +101,7 @@ class KinentaiResultDialog32 {
         win1.isHidden = true      //win1隠す
         text0.text = ""         //使い回しするのでテキスト内容クリア
         parent.win1.alpha = 1.0 //下の画面をもとどおり明るくする
+        //mViewController.view.alpha = 1.0
         parent.onButton() //前のダイアログの無効化しているボタンを有効化
     }
 }

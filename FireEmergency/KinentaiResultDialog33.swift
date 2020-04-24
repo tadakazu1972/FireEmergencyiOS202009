@@ -30,11 +30,11 @@ class KinentaiResultDialog33 {
         switch index {
         //指揮支援部隊
         case 1:
-            text0.text = "■指揮支援部隊\n　指揮支援部隊長\n　→和歌山県\n\n　指揮支援隊\n　→被害状況による\n"
+            text0.text = "■指揮支援部隊\n　統括指揮支援隊\n　→和歌山県\n\n　指揮支援隊\n　→被害状況による\n"
             break
         //大阪府大隊(陸上)
         case 2:
-            text0.text = "■大阪府大隊(陸上)\n　出動先：和歌山県\n\n　集結場所：蜻蛉池公園又は岸和田SA\n\n　進出拠点：紀ノ川SA(阪和自動車道)又は橋本運動公園\n"
+            text0.text = "■大阪府大隊(陸上)\n　出動先：和歌山県\n\n　集結場所：高度専門教育訓練センター\n\n　進出拠点：紀ノ川SA(阪和自動車道)又は橋本運動公園\n"
             break
         //航空小隊
         case 3:
@@ -63,6 +63,7 @@ class KinentaiResultDialog33 {
     func showInfo (){
         //元の画面を暗く
         parent.win1.alpha = 0.1
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
@@ -100,6 +101,7 @@ class KinentaiResultDialog33 {
         win1.isHidden = true      //win1隠す
         text0.text = ""         //使い回しするのでテキスト内容クリア
         parent.win1.alpha = 1.0 //下の画面をもとどおり明るくする
+        //mViewController.view.alpha = 1.0 このダイアログは１層下に戻る仕様なので親ViewControllerは明るくしない
         parent.onButton() //前のダイアログの無効化しているボタンを有効化
     }
 }

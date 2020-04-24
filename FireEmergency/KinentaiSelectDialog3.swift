@@ -53,9 +53,9 @@ class KinentaiSelectDialog3 {
         //首都直下地震
         case 2:
             text0.text = "首都直下地震アクションプラン適用"
-            text1.text = "■指揮支援部隊\n　→指揮支援部隊長として出動\n　→"
+            text1.text = "■指揮支援部隊\n　→統括指揮支援隊として出動\n　→"
             text2.text = "■大阪府大隊(陸上)\n　→全隊出動\n　→"
-            text3.text = "■航空小隊\n　→指揮支援部隊長の輸送\n　→"
+            text3.text = "■航空小隊\n　→統括指揮支援部隊輸送航空小隊\n　→"
             break
         //南海トラフ地震
         case 3:
@@ -93,11 +93,12 @@ class KinentaiSelectDialog3 {
     func showInfo (){
         //KinentaiViewControllerの画面を暗く
         parent.view.alpha = 0.1
+        mViewController.view.alpha = 0.1
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
         win1.frame = CGRect(x: 20,y: 80, width: parent.view.frame.width-40, height: 480)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -285,6 +286,7 @@ class KinentaiSelectDialog3 {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0
     }
 }
 

@@ -54,6 +54,7 @@ class KinentaiShutochokka1 : UITextField {
     func showResult(){
         //元の画面を暗く
         parent.view.alpha = 0.3
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
@@ -107,6 +108,7 @@ class KinentaiShutochokka1 : UITextField {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0
     }
     
     //判定

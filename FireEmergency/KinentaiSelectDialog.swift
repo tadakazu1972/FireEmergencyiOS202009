@@ -60,7 +60,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
             break
         case 32:  // 2018-09-26 追加　首都直下
             text1.text = "首都直下地震アクションプラン"
-            items = ["\n■指揮支援部隊\n　→指揮支援部隊長として出動\n　→出動先(タップで表示)\n","\n■大阪府大隊(陸上)\n　→全隊出動\n　→出動先(タップで表示)\n","\n■航空小隊\n　→指揮支援部隊長の輸送\n　→出動先(タップで表示)\n"]
+            items = ["\n■指揮支援部隊\n　→統括指揮支援隊として出動\n　→出動先(タップで表示)\n","\n■大阪府大隊(陸上)\n　→全隊出動\n　→出動先(タップで表示)\n","\n■航空小隊\n　→統括指揮支援隊輸送航空小隊\n　→出動先(タップで表示)\n"]
             break
         case 34:  // 2018-09-26 追加　南海トラフ
             text1.text = "南海トラフ地震アクションプラン適用"
@@ -97,11 +97,12 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
     func showInfo (){
         //元の画面を暗く
         parent.view.alpha = 0.3
+        mViewController.view.alpha = 0.3
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
         win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height-200)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -145,6 +146,7 @@ class KinentaiSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection sction: Int)-> Int {

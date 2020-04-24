@@ -93,7 +93,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         picKinmu.selectRow(mainStationRow!, inComponent:0, animated:false) //呼び出したrow値でピッカー初期化
         self.view.addSubview(picKinmu)
         //大津波・津波警報時参集指定署ラベル
-        lblTsunami.text = "■大津波・津波警報時参集指定署"
+        lblTsunami.text = "■大津波警報・津波警報時(震度5弱以上)参集指定署"
         lblTsunami.adjustsFontSizeToFitWidth = true
         lblTsunami.textAlignment = NSTextAlignment.left
         lblTsunami.translatesAutoresizingMaskIntoConstraints = false

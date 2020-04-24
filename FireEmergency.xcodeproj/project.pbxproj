@@ -464,17 +464,6 @@
 				595361171E7F6EA000551A0E /* Guide43Dialog.swift */,
 				5953612F1E7FB66A00551A0E /* Guide44Dialog.swift */,
 				59AC165F1E6267A100BBB28F /* GuideViewController.swift */,
-				597FD1411E2EF3EA0011ABB1 /* KinentaiNankaitraf2.swift */,
-				597FD11B1E21E44C0011ABB1 /* KinentaiSelectDialog.swift */,
-				926A120F215B5B1300ABE76D /* KinentaiToukai1.swift */,
-				926A1210215B5B1400ABE76D /* KinentaiShutochokka1.swift */,
-				597FD13F1E2EF3CF0011ABB1 /* KinentaiNankaitraf1.swift */,
-				597FD11D1E29CD4D0011ABB1 /* KinentaiSelectDialog2.swift */,
-				5960D67F22056743005E512C /* KinentaiSelectDialog3.swift */,
-				597FD1211E2B1F4F0011ABB1 /* KinentaiResultDialog.swift */,
-				5960D6832205C384005E512C /* KinentaiResultDialog31.swift */,
-				5960D68522067431005E512C /* KinentaiResultDialog32.swift */,
-				5960D6872206AD2A005E512C /* KinentaiResultDialog33.swift */,
 				59B7FC8F1E3CF106002D4392 /* MailViewController.swift */,
 				595361051E77A87E00551A0E /* PassInputDialog.swift */,
 				595233851E77957400FC8CE8 /* PassViewController.swift */,
@@ -492,6 +481,17 @@
 				593C66861DCEB10100405F53 /* KokuminhogoResultDialog.swift */,
 				59D8AED81E508A7D00A3EDE2 /* KokuminhogoSelectDialog.swift */,
 				598AC8E01D850AE6006842C8 /* KinentaiViewController.swift */,
+				597FD11B1E21E44C0011ABB1 /* KinentaiSelectDialog.swift */,
+				926A120F215B5B1300ABE76D /* KinentaiToukai1.swift */,
+				597FD11D1E29CD4D0011ABB1 /* KinentaiSelectDialog2.swift */,
+				597FD1211E2B1F4F0011ABB1 /* KinentaiResultDialog.swift */,
+				926A1210215B5B1400ABE76D /* KinentaiShutochokka1.swift */,
+				5960D68522067431005E512C /* KinentaiResultDialog32.swift */,
+				597FD13F1E2EF3CF0011ABB1 /* KinentaiNankaitraf1.swift */,
+				5960D67F22056743005E512C /* KinentaiSelectDialog3.swift */,
+				5960D6832205C384005E512C /* KinentaiResultDialog31.swift */,
+				5960D6872206AD2A005E512C /* KinentaiResultDialog33.swift */,
+				597FD1411E2EF3EA0011ABB1 /* KinentaiNankaitraf2.swift */,
 				594DDA4A1D9F50D40078EE72 /* InfoDialog.swift */,
 				597FD1451E2F053F0011ABB1 /* BousainetDialog.swift */,
 				594DDA481D9747110078EE72 /* caution.txt */,
@@ -570,7 +570,7 @@
 				TargetAttributes = {
 					598AC8DA1D850AE6006842C8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = X7TZM2569N;
+						DevelopmentTeam = XSUE867SN9;
 						LastSwiftMigration = 0830;
 					};
 				};
@@ -904,7 +904,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = X7TZM2569N;
+				DEVELOPMENT_TEAM = XSUE867SN9;
 				INFOPLIST_FILE = FireEmergency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -922,7 +922,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = X7TZM2569N;
+				DEVELOPMENT_TEAM = XSUE867SN9;
 				INFOPLIST_FILE = FireEmergency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

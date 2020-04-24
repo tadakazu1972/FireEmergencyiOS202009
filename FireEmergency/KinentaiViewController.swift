@@ -28,6 +28,7 @@ class KinentaiViewController: UIViewController {
     let btnKinentaiTel        = UIButton(frame: CGRect.zero)
     let btnKinentaiRiver      = UIButton(frame: CGRect.zero)
     let btnKinentaiWeather    = UIButton(frame: CGRect.zero)
+    let btnKinentaiKinen      = UIButton(frame: CGRect.zero)
     let pad21            = UIView(frame: CGRect.zero) //ボタンの間にはさむ見えないpaddingがわり
     let pad22            = UIView(frame: CGRect.zero)
     let pad23            = UIView(frame: CGRect.zero)
@@ -92,6 +93,7 @@ class KinentaiViewController: UIViewController {
         btnKinentai4.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai4.addTarget(self, action: #selector(self.showSelectKinentai4(_:)), for: .touchUpInside)
         self.view.addSubview(btnKinentai4)
+        /* 2020-04-24 削除
         //特殊災害(NBC含む)
         btnKinentai5.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnKinentai5.layer.masksToBounds = true
@@ -101,6 +103,7 @@ class KinentaiViewController: UIViewController {
         btnKinentai5.translatesAutoresizingMaskIntoConstraints = false
         btnKinentai5.addTarget(self, action: #selector(self.showSelectKinentai5(_:)), for: .touchUpInside)
         self.view.addSubview(btnKinentai5)
+        */
         //垂直方向のpad
         padY1.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(padY1)
@@ -170,7 +173,17 @@ class KinentaiViewController: UIViewController {
         btnKinentaiWeather.setTitleColor(UIColor.black, for: UIControl.State())
         btnKinentaiWeather.tag=15
         btnKinentaiWeather.translatesAutoresizingMaskIntoConstraints = false
+        btnKinentaiWeather.addTarget(self, action: #selector(self.showInfoWeather(_:)), for: .touchUpInside)
         self.view.addSubview(btnKinentaiWeather)
+        //情報(緊援)
+        btnKinentaiKinen.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
+        btnKinentaiKinen.layer.masksToBounds = true
+        btnKinentaiKinen.setTitle("情報(緊援)", for: UIControl.State())
+        btnKinentaiKinen.setTitleColor(UIColor.black, for: UIControl.State())
+        btnKinentaiKinen.tag=16
+        btnKinentaiKinen.translatesAutoresizingMaskIntoConstraints = false
+        btnKinentaiKinen.addTarget(self, action: #selector(self.showInfoKinen(_:)), for: .touchUpInside)
+        self.view.addSubview(btnKinentaiKinen)
         //pad
         pad21.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(pad21)
@@ -271,12 +284,14 @@ class KinentaiViewController: UIViewController {
             Constraint(padY6, .leading, to:self.view, .leading, constant:0),
             Constraint(padY6, .height, to:self.view, .height, constant:0, multiplier:0.03)
         ])
+        /* 2020-04-24 削除
         self.view.addConstraints([
             //特殊災害(NBC含む)
             Constraint(btnKinentai5, .top, to:padY6, .bottom, constant:0),
             Constraint(btnKinentai5, .centerX, to:self.view, .centerX, constant:8),
             Constraint(btnKinentai5, .width, to:self.view, .width, constant:0, multiplier:0.8)
         ])
+        */
         self.view.addConstraints([
             //pad21
             Constraint(pad21, .bottom, to:btnKinentaiTel, .top, constant:-8),
@@ -349,6 +364,12 @@ class KinentaiViewController: UIViewController {
             Constraint(btnKinentaiWeather, .leading, to:pad33, .trailing, constant:0),
             Constraint(btnKinentaiWeather, .width, to:btnKinentaiTel, .width, constant:0)
         ])
+        self.view.addConstraints([
+            //情報(緊援)
+            Constraint(btnKinentaiKinen, .bottom, to:btnKinentaiBlackout, .top ,constant:-8),
+            Constraint(btnKinentaiKinen, .leading, to:btnKinentaiBlackout, .leading, constant:0),
+            Constraint(btnKinentaiKinen, .width, to:btnKinentaiBlackout, .width, constant:0)
+        ])
     }
     
     //地震(震央「陸」)
@@ -375,16 +396,23 @@ class KinentaiViewController: UIViewController {
         mKinentaiSelectDialog.showInfo()
     }
     
+    /* 2020-04-24 削除
     //特殊災害(NBC含む)
     @objc func showSelectKinentai5(_ sender: UIButton){
         //特殊災害はKinentaiSelectDialogをすっとばしていきなり都道府県選択のKinentaiSelectDIalog2を呼び出す
         mKinentaiSelectDialog2 = KinentaiSelectDialog2(index: 51, parentView: self)
         mKinentaiSelectDialog2.showInfo()
     }
+    */
     
     //情報(地震)
     @objc func showInfoEarthquake(_ sender: UIButton){
         mInfoDialog.showInfo("earthquake")
+    }
+    
+    //情報（停電）
+    @objc func showInfoBlackout(_ sender: UIButton){
+        mInfoDialog.showInfo("blackout")
     }
     
     //情報（道路）
@@ -412,11 +440,6 @@ class KinentaiViewController: UIViewController {
             self.present(nav, animated: true, completion: nil)
         }
     }
-    
-    //情報（停電）
-    @objc func showInfoBlackout(_ sender: UIButton){
-        mInfoDialog.showInfo("blackout")
-    }
 
     //情報(河川)
     @objc func showInfoRiver(_ sender: UIButton){
@@ -424,8 +447,13 @@ class KinentaiViewController: UIViewController {
     }
     
     //情報(気象)
-    func showInfoWeather(_ sender: UIButton){
-        mInfoDialog.showInfo("earthquake")
+    @objc func showInfoWeather(_ sender: UIButton){
+        mInfoDialog.showInfo("weather")
+    }
+    
+    //情報(気象)
+    @objc func showInfoKinen(_ sender: UIButton){
+        mInfoDialog.showInfo("kinen")
     }
     
     /*緊急会陰除隊だけは、大阪市以外の他都市でも使うときのために以下は残しておく
