@@ -11,7 +11,7 @@ import UIKit
 class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
     //メイン画面
     let btnData         = UIButton(frame: CGRect.zero)
-    let btnBack   = UIButton(frame: CGRect.zero)
+    let btnBack         = UIButton(frame: CGRect.zero)
     let btnContact      = UIButton(frame: CGRect.zero) //連絡網データ操作起動の入口ボタン
     let lblData         = UILabel(frame: CGRect.zero)
     let lblKinmu        = UILabel(frame: CGRect.zero)
@@ -47,8 +47,11 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
+        //自身を明るく
         self.view.backgroundColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+        self.view.alpha = 1.0
+        //元の画面を暗く
+        mViewController.view.alpha = 0.1
         //Button生成
         //アプリ説明書
         btnData.backgroundColor = UIColor.blue
@@ -67,7 +70,7 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         btnBack.setTitle("戻る", for: UIControl.State())
         btnBack.setTitleColor(UIColor.black, for: UIControl.State())
         btnBack.tag=1
-        btnBack.addTarget(self, action: #selector(self.onClickbtnEarthquake(_:)), for: .touchUpInside)
+        btnBack.addTarget(self, action: #selector(self.onClickbtnBack(_:)), for: .touchUpInside)
         btnBack.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnBack)
         //あなたのデータを入力してください
@@ -321,9 +324,10 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
         self.present(alert, animated:true, completion: nil)
     }
     
-    //震災画面遷移
-    @objc func onClickbtnEarthquake(_ sender : UIButton){
+    //戻る
+    @objc func onClickbtnBack(_ sender : UIButton){
         self.dismiss(animated: true)
+        mViewController.view.alpha = 1.0
     }
     
     //連絡網データ操作遷移

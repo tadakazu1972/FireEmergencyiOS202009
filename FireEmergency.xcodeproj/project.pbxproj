@@ -441,15 +441,11 @@
 				59D8AEDC1E53452600A3EDE2 /* ContactDeleteDialog.swift */,
 				59D8AEF81E61A16300A3EDE2 /* ContactImportCSVDialog.swift */,
 				597FD1491E3329E00011ABB1 /* ContactLoadDialog.swift */,
-				5960EB7B1E47443500D1917A /* ContactLoadDialog2.swift */,
-				59D8AEDE1E59224700A3EDE2 /* ContactNewViewController.swift */,
 				595361391E7FBEF400551A0E /* ContactPassInputDialog.swift */,
 				59D8AEFA1E6246E700A3EDE2 /* ContactSearchViewController.swift */,
 				59D8AEE01E59AF5F00A3EDE2 /* ContactUpdateSelectDialog.swift */,
 				59D8AEE21E59B64A00A3EDE2 /* ContactUpdateViewController.swift */,
-				597FD1471E33218B0011ABB1 /* ContactViewController.swift */,
 				597FD11F1E2A7AAA0011ABB1 /* CustomUICollectionViewCell.swift */,
-				598AC8F31D8512F3006842C8 /* DataViewController.swift */,
 				5960EB771E46C52900D1917A /* DBHelper.swift */,
 				59AC16651E6C038000BBB28F /* Guide1Dialog.swift */,
 				595233711E73C83200FC8CE8 /* Guide2SelectDialog.swift */,
@@ -463,10 +459,8 @@
 				595361251E7F893D00551A0E /* Guide42Dialog.swift */,
 				595361171E7F6EA000551A0E /* Guide43Dialog.swift */,
 				5953612F1E7FB66A00551A0E /* Guide44Dialog.swift */,
-				59AC165F1E6267A100BBB28F /* GuideViewController.swift */,
 				59B7FC8F1E3CF106002D4392 /* MailViewController.swift */,
 				595361051E77A87E00551A0E /* PassInputDialog.swift */,
-				595233851E77957400FC8CE8 /* PassViewController.swift */,
 				5960EB791E46C7BD00D1917A /* StringExtensions.swift */,
 				597FD1151E2113E50011ABB1 /* ViewController.swift */,
 				59C9A957244ED616000B3C01 /* EarthquakeViewController.swift */,
@@ -493,6 +487,12 @@
 				5960D6872206AD2A005E512C /* KinentaiResultDialog33.swift */,
 				597FD1411E2EF3EA0011ABB1 /* KinentaiNankaitraf2.swift */,
 				594DDA4A1D9F50D40078EE72 /* InfoDialog.swift */,
+				598AC8F31D8512F3006842C8 /* DataViewController.swift */,
+				597FD1471E33218B0011ABB1 /* ContactViewController.swift */,
+				5960EB7B1E47443500D1917A /* ContactLoadDialog2.swift */,
+				59D8AEDE1E59224700A3EDE2 /* ContactNewViewController.swift */,
+				59AC165F1E6267A100BBB28F /* GuideViewController.swift */,
+				595233851E77957400FC8CE8 /* PassViewController.swift */,
 				597FD1451E2F053F0011ABB1 /* BousainetDialog.swift */,
 				594DDA481D9747110078EE72 /* caution.txt */,
 				597FD13B1E2D0F550011ABB1 /* kinentai_nankaitraf.txt */,
@@ -570,7 +570,7 @@
 				TargetAttributes = {
 					598AC8DA1D850AE6006842C8 = {
 						CreatedOnToolsVersion = 7.3;
-						DevelopmentTeam = XSUE867SN9;
+						DevelopmentTeam = X7TZM2569N;
 						LastSwiftMigration = 0830;
 					};
 				};
@@ -904,7 +904,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
-				DEVELOPMENT_TEAM = XSUE867SN9;
+				DEVELOPMENT_TEAM = X7TZM2569N;
 				INFOPLIST_FILE = FireEmergency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
@@ -922,7 +922,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_IDENTITY = "iPhone Distribution";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Distribution";
-				DEVELOPMENT_TEAM = XSUE867SN9;
+				DEVELOPMENT_TEAM = X7TZM2569N;
 				INFOPLIST_FILE = FireEmergency/Info.plist;
 				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";

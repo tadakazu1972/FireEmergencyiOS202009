@@ -11,14 +11,7 @@ import UIKit
 class GuideViewController: UIViewController {
     //メイン画面
     let btnData         = UIButton(frame: CGRect.zero)
-    let btnEarthquake   = UIButton(frame: CGRect.zero)
-    let btnTyphoon      = UIButton(frame: CGRect.zero)
-    let btnKokuminhogo  = UIButton(frame: CGRect.zero)
-    let btnKinentai     = UIButton(frame: CGRect.zero)
-    let pad1            = UIView(frame: CGRect.zero) //ボタンの間にはさむ見えないpaddingがわり
-    let pad2            = UIView(frame: CGRect.zero)
-    let pad3            = UIView(frame: CGRect.zero)
-    let pad4            = UIView(frame: CGRect.zero)
+    let btnBack            = UIButton(frame: CGRect.zero)
     let lblGuide        = UILabel(frame: CGRect.zero)
     let btnGuide1       = UIButton(frame: CGRect.zero)
     let btnGuide2       = UIButton(frame: CGRect.zero)
@@ -67,50 +60,14 @@ class GuideViewController: UIViewController {
         btnData.translatesAutoresizingMaskIntoConstraints = false
         self.view.addSubview(btnData)
         //震災
-        btnEarthquake.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
-        btnEarthquake.layer.masksToBounds = true
-        btnEarthquake.setTitle("震災", for: UIControl.State())
-        btnEarthquake.setTitleColor(UIColor.black, for: UIControl.State())
-        btnEarthquake.tag=1
-        btnEarthquake.translatesAutoresizingMaskIntoConstraints = false
-        btnEarthquake.addTarget(self, action: #selector(self.onClickbtnEarthquake(_:)), for: .touchUpInside)
-        self.view.addSubview(btnEarthquake)
-        //風水害
-        btnTyphoon.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
-        btnTyphoon.layer.masksToBounds = true
-        btnTyphoon.setTitle("風水害", for: UIControl.State())
-        btnTyphoon.setTitleColor(UIColor.black, for: UIControl.State())
-        btnTyphoon.tag=2
-        btnTyphoon.addTarget(self, action: #selector(self.onClickbtnTyphoon(_:)), for: .touchUpInside)
-        btnTyphoon.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(btnTyphoon)
-        //国民保護
-        btnKokuminhogo.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
-        btnKokuminhogo.layer.masksToBounds = true
-        btnKokuminhogo.setTitle("国民保", for: UIControl.State())
-        btnKokuminhogo.setTitleColor(UIColor.black, for: UIControl.State())
-        btnKokuminhogo.tag=3
-        btnKokuminhogo.addTarget(self, action: #selector(self.onClickbtnKokuminhogo(_:)), for: .touchUpInside)
-        btnKokuminhogo.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(btnKokuminhogo)
-        //緊援隊
-        btnKinentai.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
-        btnKinentai.layer.masksToBounds = true
-        btnKinentai.setTitle("緊援隊", for: UIControl.State())
-        btnKinentai.setTitleColor(UIColor.black, for: UIControl.State())
-        btnKinentai.tag=4
-        btnKinentai.addTarget(self, action: #selector(self.onClickbtnKinentai(_:)), for: .touchUpInside)
-        btnKinentai.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(btnKinentai)
-        //pad
-        pad1.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(pad1)
-        pad2.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(pad2)
-        pad3.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(pad3)
-        pad4.translatesAutoresizingMaskIntoConstraints = false
-        self.view.addSubview(pad4)
+        btnBack.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
+        btnBack.layer.masksToBounds = true
+        btnBack.setTitle("戻る", for: UIControl.State())
+        btnBack.setTitleColor(UIColor.black, for: UIControl.State())
+        btnBack.tag=1
+        btnBack.translatesAutoresizingMaskIntoConstraints = false
+        btnBack.addTarget(self, action: #selector(self.onClickbtnBack(_:)), for: .touchUpInside)
+        self.view.addSubview(btnBack)
         //アプリ説明書
         lblGuide.text = "アプリ説明書"
         lblGuide.textColor = UIColor.black
@@ -217,58 +174,10 @@ class GuideViewController: UIViewController {
             Constraint(btnData, .trailing, to:self.view, .trailingMargin, constant:8)
             ])
         self.view.addConstraints([
-            //pad1
-            Constraint(pad1, .top, to:btnData, .bottom, constant:8),
-            Constraint(pad1, .leading, to:self.view, .leading, constant:0),
-            Constraint(pad1, .width, to:self.view, .width, constant:0, multiplier:0.024)
-            ])
-        self.view.addConstraints([
-            //震災ボタン
-            Constraint(btnEarthquake, .top, to:btnData, .bottom, constant:8),
-            Constraint(btnEarthquake, .leading, to:pad1, .trailing, constant:0),
-            Constraint(btnEarthquake, .width, to:self.view, .width, constant:0, multiplier:0.22)
-            ])
-        self.view.addConstraints([
-            //pad2
-            Constraint(pad2, .top, to:btnData, .bottom, constant:8),
-            Constraint(pad2, .leading, to:btnEarthquake, .trailing, constant:0),
-            Constraint(pad2, .width, to:self.view, .width, constant:0, multiplier:0.024)
-            ])
-        self.view.addConstraints([
-            //風水害ボタン
-            Constraint(btnTyphoon, .top, to:btnData, .bottom, constant:8),
-            Constraint(btnTyphoon, .leading, to:pad2, .trailing, constant:0),
-            Constraint(btnTyphoon, .width, to:btnEarthquake, .width, constant:0)
-            ])
-        self.view.addConstraints([
-            //pad3
-            Constraint(pad3, .top, to:btnData, .bottom, constant:8),
-            Constraint(pad3, .leading, to:btnTyphoon, .trailing, constant:0),
-            Constraint(pad3, .width, to:self.view, .width, constant:0, multiplier:0.024)
-            ])
-        self.view.addConstraints([
-            //国民保護ボタン
-            Constraint(btnKokuminhogo, .top, to:btnData, .bottom ,constant:8),
-            Constraint(btnKokuminhogo, .leading, to:pad3, .trailing, constant:0),
-            Constraint(btnKokuminhogo, .width, to:btnEarthquake, .width, constant:0)
-            ])
-        self.view.addConstraints([
-            //pad4
-            Constraint(pad4, .top, to:btnData, .bottom, constant:8),
-            Constraint(pad4, .leading, to:btnKokuminhogo, .trailing, constant:0),
-            Constraint(pad4, .width, to:self.view, .width, constant:0, multiplier:0.024)
-            ])
-        self.view.addConstraints([
-            //緊援隊ボタン
-            Constraint(btnKinentai, .top, to:btnData, .bottom, constant:8),
-            Constraint(btnKinentai, .leading, to:pad4, .trailing, constant:0),
-            Constraint(btnKinentai, .width, to:btnEarthquake, .width, constant:0)
-            ])
-        self.view.addConstraints([
-            //padY1
-            Constraint(padY1, .top, to:btnEarthquake, .bottom, constant:0),
-            Constraint(padY1, .leading, to:self.view, .leading, constant:0),
-            Constraint(padY1, .height, to:self.view, .height, constant:0, multiplier:0.05)
+            //戻るボタン
+            Constraint(btnBack, .top, to:btnData, .bottom, constant:8),
+            Constraint(btnBack, .centerX, to:self.view, .centerX, constant:0),
+            Constraint(btnBack, .width, to:self.view, .width, constant:0, multiplier:0.8)
             ])
         self.view.addConstraints([
             //アプリ説明書ラベル
@@ -421,35 +330,8 @@ class GuideViewController: UIViewController {
     }
     
     //震災画面遷移
-    @objc func onClickbtnEarthquake(_ sender : UIButton){
-        let data:ViewController = ViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        self.present(nav, animated: true, completion: nil)
-    }
-    
-    //風水害画面遷移
-    @objc func onClickbtnTyphoon(_ sender : UIButton){
-        let data:TyphoonViewController = TyphoonViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        self.present(nav, animated: true, completion: nil)
-    }
-    
-    //国民保護画面遷移
-    @objc func onClickbtnKokuminhogo(_ sender : UIButton){
-        let data:KokuminhogoViewController = KokuminhogoViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        self.present(nav, animated: true, completion: nil)
-    }
-    
-    //緊援隊画面遷移
-    @objc func onClickbtnKinentai(_ sender : UIButton){
-        let data:KinentaiViewController = KinentaiViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        self.present(nav, animated: true, completion: nil)
+    @objc func onClickbtnBack(_ sender : UIButton){
+        self.dismiss(animated: true)
     }
     
     override func didReceiveMemoryWarning() {

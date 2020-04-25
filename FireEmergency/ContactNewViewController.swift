@@ -421,15 +421,7 @@ class ContactNewViewController: UIViewController, UIPickerViewDelegate, UIPicker
     
     //キャンセルボタンクリック
     @objc func onClickbtnCancel(_ sender : UIButton){
-        //KinentaiViewControllerのインスタンス生成
-        let data:ContactViewController = ContactViewController()
-        
-        //navigationControllerのrootViewControllerにKinentaiViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
+        self.dismiss(animated: true)
     }
     
     override func didReceiveMemoryWarning() {

@@ -56,7 +56,8 @@ class ContactLoadDialog2: NSObject, UITableViewDelegate, UITableViewDataSource {
     //表示
     func showResult(){
         //元の画面を暗く
-        parent.view.alpha = 0.3
+        parent.view.alpha = 0.1
+        mViewController.view.alpha = 0.1
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
@@ -136,6 +137,7 @@ class ContactLoadDialog2: NSObject, UITableViewDelegate, UITableViewDataSource {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0
     }
     
     //メール送信
@@ -144,6 +146,7 @@ class ContactLoadDialog2: NSObject, UITableViewDelegate, UITableViewDataSource {
         win1.isHidden = true
         text1.text = ""
         parent.view.alpha = 1.0
+        mViewController.view.alpha = 1.0
         
         //メールアドレス集約
         var addressArray: [String] = []
