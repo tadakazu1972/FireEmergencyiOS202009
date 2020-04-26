@@ -53,7 +53,9 @@ class PassInputDialog : UITextField {
     //表示
     func showResult(){
         //元の画面を暗く
-        parent.view.alpha = 0.3
+        parent.view.alpha = 0.1
+        mViewController.view.alpha = 0.1
+        mViewController2.view.alpha = 0.1
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
@@ -114,6 +116,8 @@ class PassInputDialog : UITextField {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0
+        mViewController2.view.alpha = 1.0
     }
     
     //判定
@@ -121,6 +125,8 @@ class PassInputDialog : UITextField {
         win1.isHidden = true      //win1隠す
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
+        mViewController.view.alpha = 1.0
+        mViewController2.view.alpha = 1.0
         //対応の結果であるアクションプランを表示
         if textField1.text == userDefaults.string(forKey: "password") {
             userDefaults.set(true, forKey: "passCheck")

@@ -434,7 +434,7 @@ class EarthquakeViewController: UIViewController {
     @objc func showContactLoad(_ sender: UIButton){
         //初期設定のままだと設定画面に遷移
         if userDefaults.string(forKey: "password") == "nil" {
-            //PasViewController呼び出し
+            //PassViewController呼び出し
             let data:PassViewController = PassViewController()
             let nav = UINavigationController(rootViewController: data)
             nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい

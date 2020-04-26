@@ -21,6 +21,9 @@ class PassViewController: UIViewController, UITextFieldDelegate {
         super.viewDidLoad()
         
         self.view.backgroundColor = UIColor(red:1.0, green:1.0, blue:1.0, alpha:1.0)
+        //元の画面を暗く
+        mViewController.view.alpha = 0.3
+        mViewController2.view.alpha = 0.3
         //lblPass生成
         lblPass.text = "パスワード登録(変更不可)"
         lblPass.textColor = UIColor.black
@@ -112,12 +115,19 @@ class PassViewController: UIViewController, UITextFieldDelegate {
         
         //自己を破棄し、呼び出し元へ遷移
         self.dismiss(animated: true, completion: nil)
+        
+        //明るく
+        mViewController.view.alpha = 1.0
+        mViewController2.view.alpha = 1.0
     }
     
     //キャンセルボタンクリック
     @objc func onClickbtnCancel(_ sender : UIButton){
         //自己を破棄し、呼び出し元へ遷移
         self.dismiss(animated: true, completion: nil)
+        //明るく
+        mViewController.view.alpha = 1.0
+        mViewController2.view.alpha = 1.0
     }
     
     override func didReceiveMemoryWarning() {

@@ -138,6 +138,7 @@
 		59D8AEF91E61A16300A3EDE2 /* ContactImportCSVDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8AEF81E61A16300A3EDE2 /* ContactImportCSVDialog.swift */; };
 		59D8AEFB1E6246E700A3EDE2 /* ContactSearchViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59D8AEFA1E6246E700A3EDE2 /* ContactSearchViewController.swift */; };
 		59EC66EC1DA0B3C300A95067 /* EarthSelectDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59EC66EB1DA0B3C300A95067 /* EarthSelectDialog.swift */; };
+		59F6407224553AF200A39423 /* ViewController2.swift in Sources */ = {isa = PBXBuildFile; fileRef = 59F6407124553AF200A39423 /* ViewController2.swift */; };
 		926A11FB215B1D3E00ABE76D /* kinentai_shutochokka110.txt in Resources */ = {isa = PBXBuildFile; fileRef = 926A11F1215B1D3D00ABE76D /* kinentai_shutochokka110.txt */; };
 		926A11FC215B1D3E00ABE76D /* kinentai_shutochokka112.txt in Resources */ = {isa = PBXBuildFile; fileRef = 926A11F2215B1D3D00ABE76D /* kinentai_shutochokka112.txt */; };
 		926A11FD215B1D3E00ABE76D /* kinentai_shutochokka111.txt in Resources */ = {isa = PBXBuildFile; fileRef = 926A11F3215B1D3D00ABE76D /* kinentai_shutochokka111.txt */; };
@@ -302,6 +303,7 @@
 		59D8AEF81E61A16300A3EDE2 /* ContactImportCSVDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactImportCSVDialog.swift; sourceTree = "<group>"; };
 		59D8AEFA1E6246E700A3EDE2 /* ContactSearchViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ContactSearchViewController.swift; sourceTree = "<group>"; };
 		59EC66EB1DA0B3C300A95067 /* EarthSelectDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EarthSelectDialog.swift; sourceTree = "<group>"; };
+		59F6407124553AF200A39423 /* ViewController2.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ViewController2.swift; sourceTree = "<group>"; };
 		926A11F1215B1D3D00ABE76D /* kinentai_shutochokka110.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kinentai_shutochokka110.txt; sourceTree = "<group>"; };
 		926A11F2215B1D3D00ABE76D /* kinentai_shutochokka112.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kinentai_shutochokka112.txt; sourceTree = "<group>"; };
 		926A11F3215B1D3D00ABE76D /* kinentai_shutochokka111.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = kinentai_shutochokka111.txt; sourceTree = "<group>"; };
@@ -442,25 +444,10 @@
 				59D8AEF81E61A16300A3EDE2 /* ContactImportCSVDialog.swift */,
 				597FD1491E3329E00011ABB1 /* ContactLoadDialog.swift */,
 				595361391E7FBEF400551A0E /* ContactPassInputDialog.swift */,
-				59D8AEFA1E6246E700A3EDE2 /* ContactSearchViewController.swift */,
 				59D8AEE01E59AF5F00A3EDE2 /* ContactUpdateSelectDialog.swift */,
 				59D8AEE21E59B64A00A3EDE2 /* ContactUpdateViewController.swift */,
 				597FD11F1E2A7AAA0011ABB1 /* CustomUICollectionViewCell.swift */,
 				5960EB771E46C52900D1917A /* DBHelper.swift */,
-				59AC16651E6C038000BBB28F /* Guide1Dialog.swift */,
-				595233711E73C83200FC8CE8 /* Guide2SelectDialog.swift */,
-				595233731E73CF2F00FC8CE8 /* Guide3Dialog.swift */,
-				5952337B1E7410C800FC8CE8 /* Guide4SelectDialog.swift */,
-				5952337D1E741A2000FC8CE8 /* Guide5Dialog.swift */,
-				59AC16631E6C006C00BBB28F /* Guide6Dialog.swift */,
-				5953613B1E7FCDD700551A0E /* Guide21Dialog.swift */,
-				595361511E801B6500551A0E /* Guide22Dialog.swift */,
-				5953611D1E7F7D0F00551A0E /* Guide41Dialog.swift */,
-				595361251E7F893D00551A0E /* Guide42Dialog.swift */,
-				595361171E7F6EA000551A0E /* Guide43Dialog.swift */,
-				5953612F1E7FB66A00551A0E /* Guide44Dialog.swift */,
-				59B7FC8F1E3CF106002D4392 /* MailViewController.swift */,
-				595361051E77A87E00551A0E /* PassInputDialog.swift */,
 				5960EB791E46C7BD00D1917A /* StringExtensions.swift */,
 				597FD1151E2113E50011ABB1 /* ViewController.swift */,
 				59C9A957244ED616000B3C01 /* EarthquakeViewController.swift */,
@@ -487,12 +474,28 @@
 				5960D6872206AD2A005E512C /* KinentaiResultDialog33.swift */,
 				597FD1411E2EF3EA0011ABB1 /* KinentaiNankaitraf2.swift */,
 				594DDA4A1D9F50D40078EE72 /* InfoDialog.swift */,
+				59F6407124553AF200A39423 /* ViewController2.swift */,
 				598AC8F31D8512F3006842C8 /* DataViewController.swift */,
 				597FD1471E33218B0011ABB1 /* ContactViewController.swift */,
-				5960EB7B1E47443500D1917A /* ContactLoadDialog2.swift */,
 				59D8AEDE1E59224700A3EDE2 /* ContactNewViewController.swift */,
-				59AC165F1E6267A100BBB28F /* GuideViewController.swift */,
 				595233851E77957400FC8CE8 /* PassViewController.swift */,
+				595361051E77A87E00551A0E /* PassInputDialog.swift */,
+				59D8AEFA1E6246E700A3EDE2 /* ContactSearchViewController.swift */,
+				5960EB7B1E47443500D1917A /* ContactLoadDialog2.swift */,
+				59B7FC8F1E3CF106002D4392 /* MailViewController.swift */,
+				59AC165F1E6267A100BBB28F /* GuideViewController.swift */,
+				59AC16651E6C038000BBB28F /* Guide1Dialog.swift */,
+				595233711E73C83200FC8CE8 /* Guide2SelectDialog.swift */,
+				5953613B1E7FCDD700551A0E /* Guide21Dialog.swift */,
+				595361511E801B6500551A0E /* Guide22Dialog.swift */,
+				595233731E73CF2F00FC8CE8 /* Guide3Dialog.swift */,
+				5952337B1E7410C800FC8CE8 /* Guide4SelectDialog.swift */,
+				5953611D1E7F7D0F00551A0E /* Guide41Dialog.swift */,
+				595361251E7F893D00551A0E /* Guide42Dialog.swift */,
+				595361171E7F6EA000551A0E /* Guide43Dialog.swift */,
+				5953612F1E7FB66A00551A0E /* Guide44Dialog.swift */,
+				5952337D1E741A2000FC8CE8 /* Guide5Dialog.swift */,
+				59AC16631E6C006C00BBB28F /* Guide6Dialog.swift */,
 				597FD1451E2F053F0011ABB1 /* BousainetDialog.swift */,
 				594DDA481D9747110078EE72 /* caution.txt */,
 				597FD13B1E2D0F550011ABB1 /* kinentai_nankaitraf.txt */,
@@ -752,6 +755,7 @@
 				597FD1401E2EF3CF0011ABB1 /* KinentaiNankaitraf1.swift in Sources */,
 				590157681E38CC6800928154 /* ContactCell1.swift in Sources */,
 				595233741E73CF2F00FC8CE8 /* Guide3Dialog.swift in Sources */,
+				59F6407224553AF200A39423 /* ViewController2.swift in Sources */,
 				5960D68622067431005E512C /* KinentaiResultDialog32.swift in Sources */,
 				597FD1161E2113E50011ABB1 /* ViewController.swift in Sources */,
 				595361181E7F6EA000551A0E /* Guide43Dialog.swift in Sources */,

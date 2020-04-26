@@ -10,6 +10,7 @@ import UIKit
 
 //グローバル変数
 internal var mViewController: ViewController!
+internal var mViewController2: ViewController2!
 
 class ViewController: UIViewController {
     //メイン画面
@@ -29,7 +30,7 @@ class ViewController: UIViewController {
     //SQLite用
     internal var mDBHelper: DBHelper!
     
-    //震災、風水害、国民保護、緊援隊それぞれ４つのViewCOntroller設定
+    //震災、風水害、国民保護、緊援隊それぞれ４つのViewController設定
     private lazy var mEarthquakeViewController: EarthquakeViewController = {
         var viewController = EarthquakeViewController()
         add(asChildViewController: viewController)
@@ -60,7 +61,8 @@ class ViewController: UIViewController {
         
         //自分を保存：後でダイアログ表示の際に暗くするときの呼び出しに使うため
         mViewController = self
-        
+        //基礎データ入力、連絡網データ操作、アプリ説明書のViewController2生成
+        mViewController2 = ViewController2()
         //DB生成
         mDBHelper = DBHelper()
         mDBHelper.createTable()
@@ -234,18 +236,20 @@ class ViewController: UIViewController {
     
     //基礎データ入力画面遷移
     @objc func onClickbtnData(_ sender : UIButton){
-        //dataViewControllerのインスタンス生成
-        let data:DataViewController = DataViewController()
-        //navigationControllerのrootViewControllerにdataViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
+        //自身を暗く
+        self.view.alpha = 0.0
+        //常に基礎データ入力画面に遷移するよう設定
+        mScreen = 1
+        mViewController2.updateView()
+        //navigationControllerのrootViewControllerにViewController2をセット
+        let nav = UINavigationController(rootViewController: mViewController2)
         nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
         //画面遷移
-        self.present(nav, animated: true, completion: nil)
+        self.present(nav, animated: true, completion: nil)        
     }
     
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 

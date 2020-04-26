@@ -54,25 +54,24 @@ class MailViewController: UIViewController, MFMailComposeViewControllerDelegate 
         
         switch result  {
         case .cancelled:
+            //自らを削除
+            self.dismiss(animated: true, completion: nil)
             break
         case .saved:
+            //自らを削除
+            self.dismiss(animated: true, completion: nil)
             break
         case .sent:
+            //自らを削除
+            self.dismiss(animated: true, completion: nil)
             break
         case .failed:
+            //自らを削除
+            self.dismiss(animated: true, completion: nil)
             break
         }
         
+        //自らを削除
         self.dismiss(animated: true, completion: nil)
-        
-        //dataViewControllerのインスタンス生成
-        let data:ViewController = ViewController()
-        
-        //navigationControllerのrootViewControllerにKokuminhogoViewControllerをセット
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        
-        //画面遷移
-        self.present(nav, animated: true, completion: nil)
     }
 }

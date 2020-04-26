@@ -49,7 +49,7 @@ class Guide4SelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource {
         //Win1
         win1.backgroundColor = UIColor.white
         win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height-300)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2)
+        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+20)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする

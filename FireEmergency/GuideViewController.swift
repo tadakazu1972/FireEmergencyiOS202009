@@ -323,15 +323,15 @@ class GuideViewController: UIViewController {
     
     //基礎データ入力画面遷移
     func onClickbtnData(_ sender : UIButton){
-        let data:DataViewController = DataViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        self.present(nav, animated: true, completion: nil)
+        //基礎データ入力画面に戻る
+        mScreen = 1
+        mViewController2.updateView()
     }
     
-    //震災画面遷移
+    //戻る
     @objc func onClickbtnBack(_ sender : UIButton){
         self.dismiss(animated: true)
+        mViewController.view.alpha = 1.0
     }
     
     override func didReceiveMemoryWarning() {

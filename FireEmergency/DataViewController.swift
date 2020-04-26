@@ -332,18 +332,14 @@ class DataViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDa
     
     //連絡網データ操作遷移
     @objc func onClickbtnContact(_ sender : UIButton){
-        let data:ContactViewController = ContactViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false) //これをいれないとNavigationBarが表示されてうざい
-        self.present(nav, animated: true, completion: nil)
+        mScreen = 2
+        mViewController2.updateView()
     }
     
     //アプリ説明書
     @objc func onClickbtnGuide(_ sender : UIButton){
-        let data:GuideViewController = GuideViewController()
-        let nav = UINavigationController(rootViewController: data)
-        nav.setNavigationBarHidden(true, animated: false)
-        self.present(nav, animated: true, completion: nil)
+        mScreen = 3
+        mViewController2.updateView()
     }
     
     override func didReceiveMemoryWarning() {

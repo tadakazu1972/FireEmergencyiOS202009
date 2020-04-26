@@ -532,12 +532,15 @@ class ContactViewController: UIViewController {
     
     //基礎データ入力画面遷移
     @objc func onClickbtnData(_ sender : UIButton){
-        self.dismiss(animated:true)
+        //基礎データ入力画面に戻る
+        mScreen = 1
+        mViewController2.updateView()
     }
     
     //戻るボタン
     @objc func onClickbtnBack(_ sender : UIButton){
-        self.dismiss(animated:true)
+        self.dismiss(animated: true)
+        mViewController.view.alpha = 1.0
     }
     
     override func didReceiveMemoryWarning() {
