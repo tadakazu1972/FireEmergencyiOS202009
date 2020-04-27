@@ -79,7 +79,7 @@ class InfoDialog {
                 text1.text="URLをタップしてください\n\n■総務省消防庁\n\nhttp://www.fdma.go.jp/\n\n■官房長官記者会見\n\nhttp://www.kantei.go.jp/jp/tyoukanpress/index.html\n\n■総理指示\n\nhttp://www.kantei.go.jp/jp/97_abe/discource/index.html\n\n■総理記者会見\n\nhttp://www.kantei.go.jp/jp/97_abe/statement/index.html\n\n■首相官邸(災害・危機管理ツイッター)\n\nhttps://twitter.com/Kantei_Saigai"
                 break
             case "kinen":
-            text1.text="URLをタップしてください\n\n■緊急消防援助隊支援情報共有ツール\n\nhttp://kinen-s.jk-fdma.appspot.com\nユーザーID:infosvc\nパスワード:23948756\n\n■総務省消防庁ホームページ\n\nhttps://www.fdma.go.jp/"
+            text1.text="URLをタップしてください\n\n■緊急消防援助隊支援情報共有ツール\n\nhttp://kinen-sjk-fdma.appspot.com\nユーザーID:infosvc\nパスワード:23948756\n\n■総務省消防庁ホームページ\n\nhttps://www.fdma.go.jp/"
             break
             case "caution":
                 //テキストファイル読込
