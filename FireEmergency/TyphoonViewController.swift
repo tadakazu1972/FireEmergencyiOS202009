@@ -195,7 +195,7 @@ class TyphoonViewController: UIViewController {
         //制約
         self.view.addConstraints([
             //非常召集基準（風水害）ラベル
-            Constraint(lblTyphoon, .bottom, to:self.view, .top, constant:40),
+            Constraint(lblTyphoon, .bottom, to:padY2, .top, constant:0),
             Constraint(lblTyphoon, .centerX, to:self.view, .centerX, constant:8),
             Constraint(lblTyphoon, .width, to:self.view, .width, constant:0, multiplier:0.8)
             ])

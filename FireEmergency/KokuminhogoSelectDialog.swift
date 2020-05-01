@@ -47,7 +47,7 @@ class KokuminhogoSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSou
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height-200)
+        win1.frame = CGRect(x: 80,y: 200,width: parent.view.frame.width-40,height: parent.view.frame.height*0.8)
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72子ViewController調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10

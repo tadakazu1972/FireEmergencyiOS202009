@@ -163,7 +163,7 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height)
+        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height*1.2) //東海は情報量が多く、parentが画面*0.8を引き継いでいるので逆に拡大させる必要あり。よって*1.2にしている
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
@@ -174,7 +174,7 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         
         //１セット目
         //text1生成
-        text1.frame = CGRect(x: 10,y: 10, width: self.win1.frame.width - 20, height: self.win1.frame.height-60)
+        text1.frame = CGRect(x: 10,y: 10, width: self.win1.frame.width - 20, height: self.win1.frame.height)
         text1.backgroundColor = UIColor.clear
         text1.font = UIFont.systemFont(ofSize: CGFloat(14))
         text1.textColor = UIColor.black
@@ -216,49 +216,49 @@ class KinentaiToukai1 : UITextField, UIPickerViewDelegate, UIPickerViewDataSourc
         self.win1.addSubview(label2)
         
         // checkbox生成　2018-09-26 追加
-        chk1.frame = CGRect(x:0, y:300, width:self.win1.frame.width/2, height:40)
+        chk1.frame = CGRect(x:0, y:self.win1.frame.height/2*1.05, width:self.win1.frame.width/2, height:40)
         chk1.setTitle("静岡県", for: UIControl.State())
         chk1.setTitleColor(UIColor.black, for: UIControl.State())
         chk1.awakeFromNib()
         self.win1.addSubview(chk1)
         
-        chk2.frame = CGRect(x:self.win1.frame.width/2, y:300, width:self.win1.frame.width/2, height:40)
+        chk2.frame = CGRect(x:self.win1.frame.width/2, y:self.win1.frame.height/2*1.05, width:self.win1.frame.width/2, height:40)
         chk2.setTitle("愛知県", for: UIControl.State())
         chk2.setTitleColor(UIColor.black, for: UIControl.State())
         chk2.awakeFromNib()
         self.win1.addSubview(chk2)
         
-        chk3.frame = CGRect(x:0, y:350, width:self.win1.frame.width/2, height:40)
+        chk3.frame = CGRect(x:0, y:self.win1.frame.height/2*1.2, width:self.win1.frame.width/2, height:40)
         chk3.setTitle("山梨県", for: UIControl.State())
         chk3.setTitleColor(UIColor.black, for: UIControl.State())
         chk3.awakeFromNib()
         self.win1.addSubview(chk3)
         
-        chk4.frame = CGRect(x:self.win1.frame.width/2, y:350, width:self.win1.frame.width/2, height:40)
+        chk4.frame = CGRect(x:self.win1.frame.width/2, y:self.win1.frame.height/2*1.2, width:self.win1.frame.width/2, height:40)
         chk4.setTitle("長野県", for: UIControl.State())
         chk4.setTitleColor(UIColor.black, for: UIControl.State())
         chk4.awakeFromNib()
         self.win1.addSubview(chk4)
         
-        chk5.frame = CGRect(x:0, y:400, width:self.win1.frame.width/2, height:40)
+        chk5.frame = CGRect(x:0, y:self.win1.frame.height/2*1.35, width:self.win1.frame.width/2, height:40)
         chk5.setTitle("神奈川県", for: UIControl.State())
         chk5.setTitleColor(UIColor.black, for: UIControl.State())
         chk5.awakeFromNib()
         self.win1.addSubview(chk5)
         
-        chk6.frame = CGRect(x:self.win1.frame.width/2, y:400, width:self.win1.frame.width/2, height:40)
+        chk6.frame = CGRect(x:self.win1.frame.width/2, y:self.win1.frame.height/2*1.35, width:self.win1.frame.width/2, height:40)
         chk6.setTitle("三重県", for: UIControl.State())
         chk6.setTitleColor(UIColor.black, for: UIControl.State())
         chk6.awakeFromNib()
         self.win1.addSubview(chk6)
         
-        chk7.frame = CGRect(x:0, y:450, width:self.win1.frame.width/2, height:40)
+        chk7.frame = CGRect(x:0, y:self.win1.frame.height/2*1.5, width:self.win1.frame.width/2, height:40)
         chk7.setTitle("岐阜県", for: UIControl.State())
         chk7.setTitleColor(UIColor.black, for: UIControl.State())
         chk7.awakeFromNib()
         self.win1.addSubview(chk7)
         
-        chk8.frame = CGRect(x:self.win1.frame.width/2, y:450, width:self.win1.frame.width/2, height:40)
+        chk8.frame = CGRect(x:self.win1.frame.width/2, y:self.win1.frame.height/2*1.5, width:self.win1.frame.width/2, height:40)
         chk8.setTitle("東京都", for: UIControl.State())
         chk8.setTitleColor(UIColor.black, for: UIControl.State())
         chk8.awakeFromNib()

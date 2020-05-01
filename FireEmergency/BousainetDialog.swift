@@ -46,8 +46,8 @@ class BousainetDialog {
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height/2+180)
-        win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72子ViewController調整
+        win1.frame = CGRect(x: 80,y: 10,width: mViewController.view.frame.width-40,height: mViewController.view.frame.height*0.9)
+        win1.layer.position = CGPoint(x: mViewController.view.frame.width/2, y: mViewController.view.frame.height/2)
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
         //KeyWindowにする
@@ -69,7 +69,7 @@ class BousainetDialog {
         self.win1.addSubview(text1)
         
         //iOS版「大阪市防災アプリ」のAppStoreを表示するTextView生成
-        text2.frame = CGRect(x: 60,y: self.win1.frame.height/2+34, width: self.win1.frame.width/1.7, height: self.win1.frame.height/2+160)
+        text2.frame = CGRect(x: 60,y: self.win1.frame.height/2*1.2, width: self.win1.frame.width/1.7, height: self.win1.frame.height/2)
         text2.backgroundColor = UIColor.clear
         text2.font = UIFont.systemFont(ofSize: CGFloat(12))
         text2.textColor = UIColor.black

@@ -69,8 +69,9 @@ class MailViewController: UIViewController, MFMailComposeViewControllerDelegate 
             //自らを削除
             self.dismiss(animated: true, completion: nil)
             break
+        default:
+            break
         }
-        
         //自らを削除
         self.dismiss(animated: true, completion: nil)
     }

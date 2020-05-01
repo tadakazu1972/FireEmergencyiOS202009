@@ -226,7 +226,7 @@ class KinentaiViewController: UIViewController {
         //制約
         self.view.addConstraints([
             //緊急消防援助隊出場基準表ラベル
-            Constraint(lblKinentai, .bottom, to:self.view, .top, constant:40),
+            Constraint(lblKinentai, .bottom, to:padY2, .top, constant:0),
             Constraint(lblKinentai, .centerX, to:self.view, .centerX, constant:8),
             Constraint(lblKinentai, .width, to:self.view, .width, constant:0, multiplier:0.8)
         ])

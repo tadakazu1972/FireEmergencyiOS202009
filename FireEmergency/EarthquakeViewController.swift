@@ -234,7 +234,7 @@ class EarthquakeViewController: UIViewController {
     override func viewDidLayoutSubviews(){
         self.view.addConstraints([
             //非常召集基準（震災）ラベル
-            Constraint(lblEarthquake, .bottom, to:self.view, .top, constant:40),
+            Constraint(lblEarthquake, .bottom, to:padY2, .top, constant:0),
             Constraint(lblEarthquake, .centerX, to:self.view, .centerX, constant:8),
             Constraint(lblEarthquake, .width, to:self.view, .width, constant:0, multiplier:1.0)
         ])

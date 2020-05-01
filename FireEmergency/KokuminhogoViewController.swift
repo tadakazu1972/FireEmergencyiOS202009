@@ -217,7 +217,7 @@ class KokuminhogoViewController: UIViewController {
         //制約
         self.view.addConstraints([
             //非常召集基準（震災）ラベル
-            Constraint(lblKokuminhogo, .bottom, to:self.view, .top, constant:40),
+            Constraint(lblKokuminhogo, .bottom, to:padY2, .top, constant:0),
             Constraint(lblKokuminhogo, .centerX, to:self.view, .centerX, constant:8),
             Constraint(lblKokuminhogo, .width, to:self.view, .width, constant:0, multiplier:0.8)
             ])
