@@ -434,7 +434,7 @@ class TyphoonResultDialog2 {
             let title:String! = "■神崎川(三国) 避難準備・高齢者等避難開始(水位4.8m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
-            text2.text="西淀川,淀川,東淀川,消防局"
+            text2.text="3号:西淀川,淀川,東淀川,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
@@ -1266,7 +1266,7 @@ class TyphoonResultDialog2 {
             let title:String! = "■東除川(大堀上小橋) 避難準備・高齢者等避難開始(水位3.2m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "平野", "消防局")
-            text2.text="平野,消防局"
+            text2.text="3号:平野,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
