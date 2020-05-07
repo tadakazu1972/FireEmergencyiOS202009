@@ -77,7 +77,12 @@ class TyphoonResultDialog2 {
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 10,width: parent.view.frame.width-40,height: parent.view.frame.height*0.8)
+        if mViewController.view.frame.height < 570 {
+            //iPhone SE
+            win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-5,height: mViewController.view.frame.height*0.9)
+        } else {
+            win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-20,height: mViewController.view.frame.height*0.6)
+        }
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72:子ViewController調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
@@ -97,7 +102,7 @@ class TyphoonResultDialog2 {
         text1.dataDetectorTypes = .link
         
         //該当署を表示するTextView生成
-        text2.frame = CGRect(x: 100,y: self.win1.frame.height/2+34, width: self.win1.frame.width/1.7, height: self.win1.frame.height/2+160)
+        text2.frame = CGRect(x: 100,y: self.win1.frame.height-180, width: self.win1.frame.width/1.7, height: self.win1.frame.height/3)
         text2.backgroundColor = UIColor.clear
         text2.font = UIFont.systemFont(ofSize: CGFloat(12))
         text2.textColor = UIColor.black
@@ -1382,7 +1387,7 @@ class TyphoonResultDialog2 {
         btnGaitousyo.setTitleColor(UIColor.black, for: UIControl.State())
         btnGaitousyo.layer.masksToBounds = true
         btnGaitousyo.layer.cornerRadius = 0.0
-        btnGaitousyo.layer.position = CGPoint(x: 56, y: self.win1.frame.height/2+60)
+        btnGaitousyo.layer.position = CGPoint(x: 56, y: self.win1.frame.height-155)
         btnGaitousyo.addTarget(self, action: #selector(self.onClickGaitousyo(_:)), for: .touchUpInside)
         self.win1.addSubview(btnGaitousyo)
     }

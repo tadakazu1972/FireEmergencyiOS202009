@@ -64,7 +64,12 @@ class TyphoonResultDialog {
         //初期設定
         //Win1
         win1.backgroundColor = UIColor.white
-        win1.frame = CGRect(x: 80,y: 180,width: parent.view.frame.width-40,height: parent.view.frame.height-40)
+        if mViewController.view.frame.height < 570 {
+            //iPhone SE
+            win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-5,height: mViewController.view.frame.height*0.9)
+        } else {
+            win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-20,height: mViewController.view.frame.height*0.6)
+        }
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72:子ViewController調整
         win1.alpha = 1.0
         win1.layer.cornerRadius = 10
