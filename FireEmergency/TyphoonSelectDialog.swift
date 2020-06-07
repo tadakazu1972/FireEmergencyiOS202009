@@ -35,7 +35,8 @@ class TyphoonSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource 
             items = ["■特別警報", "■暴風（雪）警報", "■大雨警報", "■大雪警報", "■洪水警報", "■波浪警報", "■高潮警報", "■高潮注意報"]
             break
         case 3:
-            items = ["■淀川（枚方）", "■大和川（柏原）", "■神崎川（三国）", "■安威川（千歳橋）", "■寝屋川（京橋）", "■第二寝屋川（昭明橋）", "■平野川（剣橋）", "■平野川分水路（今里大橋）", "■古川（桑才）", "■東除川（大堀上小橋）","■高潮区域(水防警報(出動))"]
+            //2020.06 天竺川、高川、西除川　追加
+            items = ["■淀川（枚方）", "■大和川（柏原）", "■神崎川（三国）", "■天竺川（天竺川橋）", "■高川（水路橋）", "■安威川（千歳橋）", "■寝屋川（京橋）", "■第二寝屋川（昭明橋）", "■平野川（剣橋）", "■平野川分水路（今里大橋）", "■古川（桑才）", "■東除川（大堀上小橋）", "■西除川（布忍橋）", "■高潮区域(水防警報(出動))"]
             break
         default:
             items = ["■特別警報", "■暴風（雪）警報", "■大雨警報", "■大雪警報", "■洪水警報", "■波浪警報", "■高潮警報", "■高潮注意報"]
@@ -180,47 +181,73 @@ class TyphoonSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource 
             break
         case 3:
             switch indexPath.row {
+            //淀川
             case 0:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 1, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
+            //大和川
             case 1:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 2, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
+            //神崎川
             case 2:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 3, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
+            //天竺川 2020.06　追加 index:12(既存分を変更しないため)
             case 3:
+                mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 12, parentView: parent)
+                mTyphoonSelectDialog2.showInfo()
+                break
+            //高川 2020.06　追加 index:13(既存分を変更しないため)
+            case 4:
+                mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 13, parentView: parent)
+                mTyphoonSelectDialog2.showInfo()
+                break
+            //安威川
+            case 5:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 4, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 4:
+            //寝屋川
+            case 6:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 5, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 5:
+            //第二寝屋川
+            case 7:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 6, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 6:
+            //平野川
+            case 8:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 7, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 7:
+            //平野川分水路
+            case 9:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 8, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 8:
+            //古川
+            case 10:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 9, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 9:
+            //東除川
+            case 11:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 10, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break
-            case 10:
+            //西除川 2020.06　追加 index:14(既存分を変更しないため)
+            case 12:
+                mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 14, parentView: parent)
+                mTyphoonSelectDialog2.showInfo()
+                break
+            //高潮区域
+            case 13:
                 mTyphoonSelectDialog2 = TyphoonSelectDialog2(index: 11, parentView: parent)
                 mTyphoonSelectDialog2.showInfo()
                 break

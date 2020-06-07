@@ -510,6 +510,218 @@ class TyphoonResultDialog2 {
             }
             text1.text = title + message
             break
+        //天竺川 2020.06　追加(既存分を修正しないためcase 121-125)
+        //氾濫注意水位、水防警報(出動)
+        case 121:
+            let title:String! = "■天竺川(天竺川橋) 氾濫注意水位(水位2m)、水防警報(出動)\n\n"
+            text1.text = title + "\n\n招集なし"
+            break
+        //避難準備情報発令の見込み
+        case 122:
+            let title:String! = "■天竺川(天竺川橋) 避難準備・高齢者等避難開始発令の見込み(1時間以内に水位2.2mに到達)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "4号:淀川,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
+        case 123:
+            let title:String! = "■天竺川(天竺川橋) 避難準備・高齢者等避難開始(水位2.2m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "3号:淀川,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //３号招集なので、１号、２号は参集なしの判定する
+                if kubun == "１号招集" || kubun == "２号招集" {
+                    message = "招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
+        case 124:
+            let title:String! = "■天竺川(天竺川橋) 避難勧告(水位2.3m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
+            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
+            text2.text="流域署2号:淀川,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,東淀川,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
+            var message:String! = ""
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //２号招集なので、１号は参集なしの判定する
+                if kubun == "１号招集" {
+                    message = "２号非常招集\n\n招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    } else {
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                    }
+                }
+            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難指示
+        case 125:
+            let title:String! = "■天竺川(天竺川橋) 避難指示(緊急)(水位2.86m)\n\n"
+            text2.text="２号:全署,消防局"
+            var message:String! = ""
+            //２号招集なので、１号は参集なしの判定する
+            if kubun == "１号招集" {
+                message = "招集なし"
+            } else {
+                if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                } else {
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                }
+            }
+            text1.text = title + message
+            break
+        //高川 2020.06　追加(既存分を修正しないためcase 131-135)
+        //氾濫注意水位、水防警報(出動)
+        case 131:
+            let title:String! = "■高川(水路橋) 氾濫注意水位(水位1.5m)、水防警報(出動)\n\n"
+            text1.text = title + "\n\n招集なし"
+            break
+        //避難準備情報発令の見込み
+        case 132:
+            let title:String! = "■高川(水路橋) 避難準備・高齢者等避難開始発令の見込み(1時間以内に水位1.55mに到達)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "4号:淀川,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
+        case 133:
+            let title:String! = "■高川(水路橋) 避難準備・高齢者等避難開始(水位1.55m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "3号:淀川,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //３号招集なので、１号、２号は参集なしの判定する
+                if kubun == "１号招集" || kubun == "２号招集" {
+                    message = "招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
+        case 134:
+            let title:String! = "■高川(水路橋) 避難勧告(水位1.6m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
+            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
+            text2.text="流域署2号:淀川,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,東淀川,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
+            var message:String! = ""
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //２号招集なので、１号は参集なしの判定する
+                if kubun == "１号招集" {
+                    message = "２号非常招集\n\n招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    } else {
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                    }
+                }
+            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難指示
+        case 135:
+            let title:String! = "■高川(水路橋) 避難指示(緊急)(水位3.6m)\n\n"
+            text2.text="２号:全署,消防局"
+            var message:String! = ""
+            //２号招集なので、１号は参集なしの判定する
+            if kubun == "１号招集" {
+                message = "招集なし"
+            } else {
+                if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                } else {
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                }
+            }
+            text1.text = title + message
+            break
         //安威川(千歳橋)
         //氾濫注意水位、水防警報(出動)
         case 41:
@@ -1210,7 +1422,7 @@ class TyphoonResultDialog2 {
             }
             text1.text = title + message
             break
-        //古川(桑才)
+        //古川(桑才) 2020.06 修正
         //氾濫注意水位、水防警報(出動)
         case 91:
             //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
@@ -1225,6 +1437,117 @@ class TyphoonResultDialog2 {
                 message = "ー\n\n招集なし"
             }
             text1.text = title + "第５非常警備\n\n" + message
+            break
+        //避難準備情報発令の見込み
+        case 92:
+            let title:String! = "■古川(桑才)  避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.3mに到達)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
+            text2.text = "流域署4号:旭,城東,鶴見,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難準備情報　３号、４号判定
+        case 93:
+            let title:String! = "■古川(桑才)  避難準備・高齢者等避難開始(水位3.3m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
+            let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺", "東成", "生野", "阿倍野", "住吉", "東住吉", "平野")
+            text2.text="流域署3号:旭,城東,鶴見,消防局\n流域周辺署4号:都島,中央,天王寺,東成,生野,阿倍野,住吉,東住吉,平野"
+            var message:String! = ""
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //３号招集なので、１号、２号は参集なしの判定する
+                if kubun == "１号招集" || kubun == "２号招集" {
+                    message = "招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                }
+            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
+        case 94:
+            let title:String! = "■古川(桑才)  避難勧告(水位3.4m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
+            let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺",  "東成", "生野", "阿倍野", "住吉", "東住吉", "平野")
+            text2.text="流域署2号:旭,城東,鶴見,消防局\n流域周辺署3号:都島,中央,天王寺,東成,生野,阿倍野,住吉,東住吉,平野\nその他の署4号:北,福島,此花,西,港,大正,天王寺,浪速,西淀川,淀川,東淀川,住之江,西成,水上"
+            var message:String! = ""
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //２号招集なので、１号は参集なしの判定する
+                if kubun == "１号招集" {
+                    message = "２号非常招集\n\n招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    } else {
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                    }
+                }
+            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難指示
+        case 95:
+            let title:String! = "■古川(桑才)  避難指示(緊急)(水位3.67m)\n\n"
+            text2.text="２号:全署,消防局"
+            var message:String! = ""
+            //２号招集なので、１号は参集なしの判定する
+            if kubun == "１号招集" {
+                message = "招集なし"
+            } else {
+                if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                } else {
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                }
+            }
+            text1.text = title + message
             break
         //東除川(大堀上小橋)
         //氾濫注意水位、水防警報(出動)
@@ -1266,7 +1589,7 @@ class TyphoonResultDialog2 {
             }
             text1.text = title + message
             break
-        //避難準備情報　３号しかない　神崎川、東除川
+        //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
         case 103:
             let title:String! = "■東除川(大堀上小橋) 避難準備・高齢者等避難開始(水位3.2m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
@@ -1333,6 +1656,112 @@ class TyphoonResultDialog2 {
             //２号招集なので、１号は参集なしの判定する
             if kubun == "１号招集" {
                 message = "２号非常招集\n\n招集なし"
+            } else {
+                if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                } else {
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                }
+            }
+            text1.text = title + message
+            break
+        //西除川(布忍橋) 2020.06　追加(既存分を修正しないためcase 131-135)
+        //氾濫注意水位、水防警報(出動)
+        case 141:
+            let title:String! = "■西除川(布忍橋)  氾濫注意水位(水位2.5m)、水防警報(出動)\n\n"
+            text1.text = title + "\n\n招集なし"
+            break
+        //避難準備情報発令の見込み
+        case 142:
+            let title:String! = "■西除川(布忍橋)  避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.7mに到達)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "東住吉", "平野", "消防局")
+            text2.text = "4号:東住吉,平野,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
+        case 143:
+            let title:String! = "■西除川(布忍橋)  避難準備・高齢者等避難開始(水位3.7m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "東住吉", "平野","消防局")
+            text2.text = "3号:東住吉,平野,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //３号招集なので、１号、２号は参集なしの判定する
+                if kubun == "１号招集" || kubun == "２号招集" {
+                    message = "招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
+        case 144:
+            let title:String! = "■西除川(布忍橋)  避難勧告(水位4m)\n\n"
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo1 = Set(arrayLiteral: "東住吉", "平野", "消防局")
+            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "西成", "水上")
+            text2.text="流域署2号:東住吉,平野,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,淀川,東淀川,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,西成,水上"
+            var message:String! = ""
+            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+                //２号招集なので、１号は参集なしの判定する
+                if kubun == "１号招集" {
+                    message = "２号非常招集\n\n招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    } else {
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                    }
+                }
+            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+                //４号招集なので、１号、２号、３号は参集なしの判定する
+                if kubun == "４号招集" {
+                    if mainStation == "消防局" {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                } else {
+                    message = "招集なし"
+                }
+            } else {
+                message = "招集なし"
+            }
+            text1.text = title + message
+            break
+        //避難指示
+        case 145:
+            let title:String! = "■西除川(布忍橋)  避難指示(緊急)(水位5.06m)\n\n"
+            text2.text="２号:全署,消防局"
+            var message:String! = ""
+            //２号招集なので、１号は参集なしの判定する
+            if kubun == "１号招集" {
+                message = "招集なし"
             } else {
                 if mainStation == "消防局" || mainStation == "教育訓練センター" {
                     message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"

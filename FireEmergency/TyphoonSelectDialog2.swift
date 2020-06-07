@@ -39,6 +39,12 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
         case 3:
             items = ["■氾濫注意水位(水位3.8m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.8mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位4.8m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位5m)", "■【警戒レベル４】避難指示(緊急)(水位5.8m)"] //神崎川（三国）
             break
+        case 12:
+        items = ["■氾濫注意水位(水位2m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位2.2mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位2.2m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位2.3m)", "■【警戒レベル４】避難指示(緊急)(水位2.86m)"] //天竺川 2020.06 追加
+        break
+        case 13:
+        items = ["■氾濫注意水位(水位1.5m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位1.55mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位1.55m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位1.6m)", "■【警戒レベル４】避難指示(緊急)(水位3.6m)"] //高川 2020.06 追加
+        break
         case 4:
             items = ["■氾濫注意水位(水位3.25m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.5mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.5m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位4.25m)", "■【警戒レベル４】避難指示(緊急)(水位5.1m)"] //安威川（千歳橋）
             break
@@ -55,11 +61,14 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.4mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.4m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.85m)", "■【警戒レベル４】避難指示(緊急)(水位4.63m)"] //平野川分水路（今里大橋）
             break
         case 9:
-            items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)"] //古川（桑才）
+            items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)","■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.3mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.3m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.4m)", "■【警戒レベル４】避難指示(緊急)(水位3.67m)"] //古川（桑才）2020.06修正
             break
         case 10:
             items = ["■氾濫注意水位(水位2.9m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.2mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.2m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.9m)", "■【警戒レベル４】避難指示(緊急)(水位5.3m)"] //東除川（大堀上小橋）
             break
+        case 14:
+        items = ["■氾濫注意水位(水位2.5m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.7mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.7m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位4m)", "■【警戒レベル４】避難指示(緊急)(水位5.06m)"] //西除川 2020.06 追加
+        break
         case 11:
             items = ["■高潮区域(水防警報(出動))"] //高潮区域
             break
@@ -241,6 +250,60 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 break
             }
             break
+        //天竺川 2020.06　追加(既存分を修正しないためcase 12とする)
+        case 12:
+            switch indexPath.row {
+            case 0:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(121)
+                break
+            case 1:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(122)
+                break
+            case 2:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(123)
+                break
+            case 3:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(124)
+                break
+            case 4:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(125)
+                break
+            default:
+                break
+            }
+            break
+        //高川 2020.06　追加(既存分を修正しないためcase 13とする)
+        case 13:
+            switch indexPath.row {
+            case 0:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(131)
+                break
+            case 1:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(132)
+                break
+            case 2:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(133)
+                break
+            case 3:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(134)
+                break
+            case 4:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(135)
+                break
+            default:
+                break
+            }
+            break
         //安威川
         case 4:
             switch indexPath.row {
@@ -376,12 +439,28 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 break
             }
             break
-        //古川
+        //古川 2020.06 修正
         case 9:
             switch indexPath.row {
             case 0:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(91)
+                break
+            case 1:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(92)
+                break
+            case 2:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(93)
+                break
+            case 3:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(94)
+                break
+            case 4:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(95)
                 break
             default:
                 break
@@ -409,6 +488,33 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 4:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(105)
+                break
+            default:
+                break
+            }
+            break
+        //西除川 2020.06　追加(既存分を修正しないためcase 14とする)
+        case 14:
+            switch indexPath.row {
+            case 0:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(141)
+                break
+            case 1:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(142)
+                break
+            case 2:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(143)
+                break
+            case 3:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(144)
+                break
+            case 4:
+                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
+                mTyphoonResultDialog2.showResult(145)
                 break
             default:
                 break
