@@ -1497,18 +1497,19 @@ class TyphoonResultDialog2 {
             }
             text1.text = title + message
             break
-        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
+        //避難勧告　２号、３号、４号判定
         case 94:
             let title:String! = "■古川(桑才)  避難勧告(水位3.4m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺",  "東成", "生野", "阿倍野", "住吉", "東住吉", "平野")
+            let gaitousyo3 = Set(arrayLiteral: "北", "福島", "此花", "西", "港", "大正", "天王寺", "浪速", "西淀川", "淀川", "東淀川", "住之江", "西成", "水上")
             text2.text="流域署2号:旭,城東,鶴見,消防局\n流域周辺署3号:都島,中央,天王寺,東成,生野,阿倍野,住吉,東住吉,平野\nその他の署4号:北,福島,此花,西,港,大正,天王寺,浪速,西淀川,淀川,東淀川,住之江,西成,水上"
             var message:String! = ""
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
                 //２号招集なので、１号は参集なしの判定する
                 if kubun == "１号招集" {
-                    message = "２号非常招集\n\n招集なし"
+                    message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
                         message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
@@ -1517,6 +1518,17 @@ class TyphoonResultDialog2 {
                     }
                 }
             } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+                //３号招集なので、１号、２号は参集なしの判定する
+                if kubun == "１号招集" || kubun == "２号招集" {
+                    message = "招集なし"
+                } else {
+                    if mainStation == "消防局" {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+                }
+            } else if gaitousyo3.contains(userDefaults.string(forKey: "mainStation")!){
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
