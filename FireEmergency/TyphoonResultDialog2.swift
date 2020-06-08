@@ -1872,6 +1872,16 @@ class TyphoonResultDialog2 {
             mTyphoonSelectDialog2 = TyphoonSelectDialog2(index:3, parentView: parent)
             mTyphoonSelectDialog2.showInfo()
             break
+        //天竺川の水位選択に戻る
+        case 12:
+            mTyphoonSelectDialog2 = TyphoonSelectDialog2(index:12, parentView: parent)
+            mTyphoonSelectDialog2.showInfo()
+            break
+        //古川の水位選択に戻る
+        case 13:
+            mTyphoonSelectDialog2 = TyphoonSelectDialog2(index:13, parentView: parent)
+            mTyphoonSelectDialog2.showInfo()
+            break
         //安威川の水位選択に戻る
         case 4:
             mTyphoonSelectDialog2 = TyphoonSelectDialog2(index:4, parentView: parent)
@@ -1905,6 +1915,11 @@ class TyphoonResultDialog2 {
         //東除川の水位選択に戻る
         case 10:
             mTyphoonSelectDialog2 = TyphoonSelectDialog2(index:10, parentView: parent)
+            mTyphoonSelectDialog2.showInfo()
+            break
+        //西除川の水位選択に戻る
+        case 14:
+            mTyphoonSelectDialog2 = TyphoonSelectDialog2(index:14, parentView: parent)
             mTyphoonSelectDialog2.showInfo()
             break
         //高潮区域選択に戻る
