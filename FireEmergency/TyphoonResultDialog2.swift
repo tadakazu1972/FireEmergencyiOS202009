@@ -1504,7 +1504,7 @@ class TyphoonResultDialog2 {
             let gaitousyo1 = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺",  "東成", "生野", "阿倍野", "住吉", "東住吉", "平野")
             let gaitousyo3 = Set(arrayLiteral: "北", "福島", "此花", "西", "港", "大正", "天王寺", "浪速", "西淀川", "淀川", "東淀川", "住之江", "西成", "水上")
-            text2.text="流域署2号:旭,城東,鶴見,消防局\n流域周辺署3号:都島,中央,天王寺,東成,生野,阿倍野,住吉,東住吉,平野\nその他の署4号:北,福島,此花,西,港,大正,天王寺,浪速,西淀川,淀川,東淀川,住之江,西成,水上"
+            text2.text="流域署2号:旭,城東,鶴見,消防局\n流域周辺署3号:都島,中央,天王寺,東成,生野,阿倍野,住吉,東住吉,平野\nその他の署4号:北,福島,此花,西,港,大正,浪速,西淀川,淀川,東淀川,住之江,西成,水上"
             var message:String! = ""
             if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
                 //２号招集なので、１号は参集なしの判定する
