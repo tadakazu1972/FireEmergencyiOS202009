@@ -142,9 +142,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -178,9 +178,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -225,9 +225,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -282,9 +282,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -318,9 +318,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -365,9 +365,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -422,9 +422,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -481,9 +481,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -528,9 +528,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -587,9 +587,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -634,9 +634,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -693,9 +693,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -750,9 +750,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -786,9 +786,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -833,9 +833,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -890,9 +890,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -926,9 +926,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -973,9 +973,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1030,9 +1030,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1066,9 +1066,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1113,9 +1113,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1170,9 +1170,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1206,9 +1206,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1253,9 +1253,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1310,9 +1310,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1346,9 +1346,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1393,9 +1393,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1450,9 +1450,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1485,9 +1485,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1532,9 +1532,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1589,9 +1589,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1648,9 +1648,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1695,9 +1695,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
@@ -1754,9 +1754,9 @@ class TyphoonResultDialog2 {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
