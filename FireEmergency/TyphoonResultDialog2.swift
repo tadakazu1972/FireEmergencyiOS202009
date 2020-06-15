@@ -81,7 +81,7 @@ class TyphoonResultDialog2 {
             //iPhone SE
             win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-5,height: mViewController.view.frame.height*0.9)
         } else {
-            win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-20,height: mViewController.view.frame.height*0.6)
+            win1.frame = CGRect(x: 0,y: 0,width: mViewController.view.frame.width-20,height: mViewController.view.frame.height*0.7)
         }
         win1.layer.position = CGPoint(x: parent.view.frame.width/2, y: parent.view.frame.height/2+72) //+72:子ViewController調整
         win1.alpha = 1.0
@@ -102,7 +102,7 @@ class TyphoonResultDialog2 {
         text1.dataDetectorTypes = .link
         
         //該当署を表示するTextView生成
-        text2.frame = CGRect(x: 100,y: self.win1.frame.height-180, width: self.win1.frame.width/1.7, height: self.win1.frame.height/3)
+        text2.frame = CGRect(x: 100,y: self.win1.frame.height-170, width: self.win1.frame.width/1.7, height: self.win1.frame.height/3)
         text2.backgroundColor = UIColor.clear
         text2.font = UIFont.systemFont(ofSize: CGFloat(12))
         text2.textColor = UIColor.black
@@ -156,7 +156,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 13:
-            let title:String! = "■淀川（枚方）\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位5.4m)\n\n"
+            let title:String! = "■淀川（枚方）\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位5.4m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "北", "都島", "福島", "此花", "西淀川", "淀川", "東淀川", "旭", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "城東", "鶴見")
@@ -296,7 +296,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 23:
-            let title:String! = "■大和川(柏原)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.7m)\n\n"
+            let title:String! = "■大和川(柏原)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.7m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
@@ -436,7 +436,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報　３号しかない　神崎川、東除川
         case 33:
-            let title:String! = "■神崎川(三国)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.8m)\n\n"
+            let title:String! = "■神崎川(三国)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.8m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
             text2.text="3号:西淀川,淀川,東淀川,消防局"
@@ -542,7 +542,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
         case 123:
-            let title:String! = "■天竺川(天竺川橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位2.2m)\n\n"
+            let title:String! = "■天竺川(天竺川橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位2.2m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
             text2.text = "3号:淀川,消防局"
@@ -648,7 +648,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
         case 133:
-            let title:String! = "■高川(水路橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位1.55m)\n\n"
+            let title:String! = "■高川(水路橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位1.55m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
             text2.text = "3号:淀川,消防局"
@@ -764,7 +764,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 43:
-            let title:String! = "■安威川(千歳橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.5m)\n\n"
+            let title:String! = "■安威川(千歳橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.5m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "東淀川", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "西淀川", "淀川")
@@ -904,7 +904,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 53:
-            let title:String! = "■寝屋川(京橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.1m)\n\n"
+            let title:String! = "■寝屋川(京橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.1m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "都島", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "中央", "天王寺", "阿倍野", "住吉")
@@ -1044,7 +1044,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 63:
-            let title:String! = "■第二寝屋川(昭明橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.25m)\n\n"
+            let title:String! = "■第二寝屋川(昭明橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.25m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "東成", "城東", "鶴見", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺", "生野", "旭", "阿倍野", "住吉", "東住吉", "平野")
@@ -1184,7 +1184,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 73:
-            let title:String! = "■平野川(剣橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.9m)\n\n"
+            let title:String! = "■平野川(剣橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.9m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "東成", "生野", "城東", "東住吉", "平野", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺", "旭", "鶴見", "阿倍野", "住吉")
@@ -1324,7 +1324,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報
         case 83:
-            let title:String! = "■平野川分水路(今里大橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.4m)\n\n"
+            let title:String! = "■平野川分水路(今里大橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.4m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "東成", "生野", "城東", "東住吉", "平野", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺", "旭", "鶴見", "阿倍野", "住吉")
@@ -1464,7 +1464,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報　３号、４号判定
         case 93:
-            let title:String! = "■古川(桑才)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.3m)\n\n"
+            let title:String! = "■古川(桑才)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.3m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
             let gaitousyo2 = Set(arrayLiteral: "都島", "中央", "天王寺", "東成", "生野", "阿倍野", "住吉", "東住吉", "平野")
@@ -1603,7 +1603,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
         case 103:
-            let title:String! = "■東除川(大堀上小橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.2m)\n\n"
+            let title:String! = "■東除川(大堀上小橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.2m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "平野", "消防局")
             text2.text="3号:平野,消防局"
@@ -1709,7 +1709,7 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
         case 143:
-            let title:String! = "■西除川(布忍橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.7m)\n\n"
+            let title:String! = "■西除川(布忍橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.7m)、避難勧告発令の見込み\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo1 = Set(arrayLiteral: "東住吉", "平野","消防局")
             text2.text = "3号:東住吉,平野,消防局"
@@ -1828,7 +1828,7 @@ class TyphoonResultDialog2 {
         btnGaitousyo.setTitleColor(UIColor.black, for: UIControl.State())
         btnGaitousyo.layer.masksToBounds = true
         btnGaitousyo.layer.cornerRadius = 0.0
-        btnGaitousyo.layer.position = CGPoint(x: 56, y: self.win1.frame.height-155)
+        btnGaitousyo.layer.position = CGPoint(x: 56, y: self.win1.frame.height-145)
         btnGaitousyo.addTarget(self, action: #selector(self.onClickGaitousyo(_:)), for: .touchUpInside)
         self.win1.addSubview(btnGaitousyo)
     }
