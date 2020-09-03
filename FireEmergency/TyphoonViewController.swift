@@ -75,7 +75,7 @@ class TyphoonViewController: UIViewController {
         //河川水位による非常招集
         btnTyphoon3.backgroundColor = UIColor(red:0.85, green:0.85, blue:0.85, alpha:1.0)
         btnTyphoon3.layer.masksToBounds = true
-        btnTyphoon3.setTitle("河川水位による非常招集", for: UIControl.State())
+        btnTyphoon3.setTitle("河川水位等による非常招集", for: UIControl.State())
         btnTyphoon3.setTitleColor(UIColor.black, for: UIControl.State())
         btnTyphoon3.setTitleColor(UIColor.red, for: UIControl.State.highlighted)
         btnTyphoon3.tag=7
