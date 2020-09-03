@@ -133,13 +133,10 @@ class TyphoonResultDialog {
             break
         //洪水警報
         case 25:
-            //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
-            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西淀川", "淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "住之江", "住吉", "東住吉", "平野", "消防局")
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                text1.text="■洪水警報\n\n第５非常警備(北、都島、福島、此花、中央、西淀川、淀川、東淀川、東成、生野、旭、城東、鶴見、住之江、住吉、東住吉、平野、消防局)\n\n\(mainStation)\n\n招集なし"
+            if mainStation == "教育訓練センター" {
+                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
             } else {
-                text1.text="■洪水警報\n\n第５非常警備(北、都島、福島、此花、中央、西淀川、淀川、東淀川、東成、生野、旭、城東、鶴見、住之江、住吉、東住吉、平野、消防局)\n\nー\n\n招集なし"
+                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
             }
             break
         //波浪警報
@@ -155,24 +152,18 @@ class TyphoonResultDialog {
             break
         //高潮警報
         case 27:
-            //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
-            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "浪速", "西淀川", "淀川", "住之江", "西成", "水上", "消防局")
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                text1.text="■高潮警報\n\n第５非常警備(北、都島、福島、此花、中央、西、港、大正、浪速、西淀川、淀川、住之江、西成、水上、消防局)\n\n\(mainStation)\n\n招集なし"
+            if mainStation == "教育訓練センター" {
+                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
             } else {
-                text1.text="■高潮警報\n\n第５非常警備(北、都島、福島、此花、中央、西、港、大正、浪速、西淀川、淀川、住之江、西成、水上、消防局)\n\nー\n\n招集なし"
+                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
             }
             break
         //高潮注意報
         case 28:
-            //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
-            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "浪速", "西淀川", "淀川", "住之江", "西成", "水上", "消防局")
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                text1.text="■高潮注意報\n\n第５非常警備(北、都島、福島、此花、中央、西、港、大正、浪速、西淀川、淀川、住之江、西成、水上、消防局)\n\n\(mainStation)\n\n招集なし"
+            if mainStation == "教育訓練センター" {
+                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
             } else {
-                text1.text="■高潮注意報\n\n第５非常警備(北、都島、福島、此花、中央、西、港、大正、浪速、西淀川、淀川、住之江、西成、水上、消防局)\n\nー\n\n招集なし"
+                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
             }
             break
         //
