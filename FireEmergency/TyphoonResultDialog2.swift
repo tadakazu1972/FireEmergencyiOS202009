@@ -513,8 +513,18 @@ class TyphoonResultDialog2 {
         //天竺川 2020.06　追加(既存分を修正しないためcase 121-125)
         //氾濫注意水位、水防警報(出動)
         case 121:
+            //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■天竺川(天竺川橋)\n氾濫注意水位(水位2m)、水防警報(出動)\n\n"
-            text1.text = title + "\n\n招集なし"
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "淀川,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                message = "\(mainStation)\n\n招集なし"
+            } else {
+                message = "ー\n\n招集なし"
+            }
+            text1.text = title + "第５非常警備\n\n" + message
             break
         //避難準備情報発令の見込み
         case 122:
@@ -619,8 +629,18 @@ class TyphoonResultDialog2 {
         //高川 2020.06　追加(既存分を修正しないためcase 131-135)
         //氾濫注意水位、水防警報(出動)
         case 131:
+            //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■高川(水路橋)\n氾濫注意水位(水位1.5m)、水防警報(出動)\n\n"
-            text1.text = title + "\n\n招集なし"
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "淀川,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                message = "\(mainStation)\n\n招集なし"
+            } else {
+                message = "ー\n\n招集なし"
+            }
+            text1.text = title + "第５非常警備\n\n" + message
             break
         //避難準備情報発令の見込み
         case 132:
@@ -1680,7 +1700,18 @@ class TyphoonResultDialog2 {
         //西除川(布忍橋) 2020.06　追加(既存分を修正しないためcase 131-135)
         //氾濫注意水位、水防警報(出動)
         case 141:
+            //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■西除川(布忍橋)\n氾濫注意水位(水位2.5m)、水防警報(出動)\n\n"
+            let gaitousyo = Set(arrayLiteral: "東住吉", "平野", "消防局")
+            text2.text = "東住吉,平野,消防局"
+            var message:String! = ""
+            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                message = "\(mainStation)\n\n招集なし"
+            } else {
+                message = "ー\n\n招集なし"
+            }
+            text1.text = title + "第５非常警備\n\n" + message
             text1.text = title + "\n\n招集なし"
             break
         //避難準備情報発令の見込み
