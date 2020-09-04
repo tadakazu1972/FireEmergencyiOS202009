@@ -31,7 +31,7 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
         //itemsの内容を場合分け
         switch index {
         case 1:
-            items = ["■氾濫注意水位(水位4.5m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位5.4mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位5.4m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位5.5m)", "■【警戒レベル４】避難指示(緊急)(水位8.3m)"] //淀川（枚方）
+            items = ["■氾濫注意水位(水位4.5m)、水防警報(出動)", "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位5.4m)", "■【警戒レベル４】避難勧告(水位5.5m)", "■【警戒レベル４】避難指示(緊急)(水位8.3m)"] //淀川（枚方）
             break
         case 2:
             items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.7mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位4.7m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位5.3m)", "■【警戒レベル４】避難指示(緊急)(水位6.8m)"] //大和川（柏原）
@@ -187,10 +187,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(14)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(15)
                 break
             default:
                 break

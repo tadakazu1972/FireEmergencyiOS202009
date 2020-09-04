@@ -132,10 +132,14 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 12:
-            let title:String! = "■淀川（枚方）\n 避難準備・高齢者等避難開始発令の見込み(1時間以内に水位5.4mに到達)\n\n"
+            let title:String! = "■淀川（枚方）\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位5.4m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "西淀川", "淀川", "東淀川", "旭", "消防局")
-            text2.text = "4号:北,都島,福島,此花,西淀川,淀川,東淀川,旭,消防局"
+            text2.text = "4号:北,都島,福島,此花,西淀川,淀川,東淀川,旭,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
+            
+            /*
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
@@ -150,68 +154,71 @@ class TyphoonResultDialog2 {
                     message = "招集なし"
                 }
             } else {
-                message = "招集なし"
+                //その他の署は５号
+                message = "第５非常警備\n\n\(mainStation)\n\n招集なし"
             }
-            text1.text = title + message
+            text1.text = title + message */
             break
-        //避難準備情報
+        //避難勧告
         case 13:
-            let title:String! = "■淀川（枚方）\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位5.4m)、避難勧告発令の見込み\n\n"
+            let title:String! = "■淀川（枚方）\n【警戒レベル４】\n避難勧告(水位5.5m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "北", "都島", "福島", "此花", "西淀川", "淀川", "東淀川", "旭", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "城東", "鶴見")
-            text2.text="流域署3号:北,都島,福島,此花,西淀川,淀川,東淀川,旭,消防局\n流域周辺署4号:城東,鶴見"
+            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "西淀川", "淀川", "東淀川", "旭", "消防局")
+            text2.text = "3号:北,都島,福島,此花,西淀川,淀川,東淀川,旭,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
+            
+            /*
             var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
                 //３号招集なので、１号、２号は参集なしの判定する
                 if kubun == "１号招集" || kubun == "２号招集" {
                     message = "招集なし"
                 } else {
                     if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "３号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "３号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
+            } else {
                 //４号招集なので、１号、２号、３号は参集なしの判定する
                 if kubun == "４号招集" {
                     if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                     } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
+                        message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 } else {
                     message = "招集なし"
                 }
-            } else {
-                message = "招集なし"
             }
-            text1.text = title + message
+            text1.text = title + message*/
             break
-        //避難勧告
+        //避難指示
         case 14:
-            let title:String! = "■淀川（枚方）\n【警戒レベル４】\n避難勧告(水位5.5m)\n\n"
+            let title:String! = "■淀川（枚方）\n【警戒レベル４】\n避難指示(緊急)(水位8.3m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "北", "都島", "福島", "此花", "西淀川", "淀川", "東淀川", "旭", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "城東", "鶴見")
-            let gaitousyo3 = Set(arrayLiteral: "中央", "西", "港", "大正", "天王寺", "浪速", "東成", "生野", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
-            text2.text="流域署2号:北,都島,福島,此花,西淀川,淀川,東淀川,旭,消防局\n流域周辺署3号:城東,鶴見\nその他の署４号：中央,西,港,大正,天王寺,浪速,東成,生野,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
+            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "西淀川", "淀川", "東淀川", "旭", "消防局")
+            text2.text = "2号:北,都島,福島,此花,西淀川,淀川,東淀川,旭,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
+            
+            /*
             var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
+            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+                //２号招集なので、１号は招集なしの判定する
                 if kubun == "１号招集" {
                     message = "招集なし"
                 } else {
-                    if mainStation == "消防局" {
+                    if mainStation == "消防局" || mainStation == "教育訓練センター" {
                         message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
                     } else {
                         message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
                     }
                 }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
+            } else {
+                //３号招集なので、１号、２号は招集なしの判定する
                 if kubun == "１号招集" || kubun == "２号招集" {
                     message = "招集なし"
                 } else {
@@ -221,38 +228,8 @@ class TyphoonResultDialog2 {
                         message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
                     }
                 }
-            } else if gaitousyo3.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
             }
-            text1.text = title + message
-            break
-        //避難指示
-        case 15:
-            let title:String! = "■淀川（枚方）\n【警戒レベル４】\n避難指示(緊急)(水位8.3m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            text1.text = title + message*/
             break
         //大和川(柏原)
         //氾濫注意水位、水防警報(出動)
@@ -272,127 +249,30 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 22:
-            let title:String! = "■大和川(柏原)\n避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.7mに到達)\n\n"
+            let title:String! = "■大和川(柏原)\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位4.7m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
-            text2.text = "4号:住之江,住吉,東住吉,平野,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            text2.text = "4号:住之江,住吉,東住吉,平野,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
-        //避難準備情報
+        ////避難勧告
         case 23:
-            let title:String! = "■大和川(柏原)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.7m)、避難勧告発令の見込み\n\n"
-            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
-            text2.text="流域署3号:住之江,住吉,東住吉,平野,消防局\n流域周辺署4号:天王寺,浪速,東成,生野,城東,阿倍野,西成"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
-            break
-        //避難勧告
-        case 24:
             let title:String! = "■大和川(柏原)\n【警戒レベル４】\n避難勧告(水位5.3m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "天王寺", "浪速", "東成", "生野", "城東", "阿倍野", "西成")
-            let gaitousyo3 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "西淀川", "淀川", "東淀川", "旭", "鶴見", "水上")
-            text2.text="流域署2号:住之江,住吉,東住吉,平野,消防局\n流域周辺署3号:天王寺,浪速,東成,生野,城東,阿倍野,西成\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,西淀川,淀川,東淀川,旭,鶴見,水上"
-            var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
-                if kubun == "１号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                    } else {
-                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else if gaitousyo3.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
+            text2.text = "3号:住之江,住吉,東住吉,平野,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
-        case 25:
+        case 24:
             let title:String! = "■大和川(柏原)\n【警戒レベル４】\n避難指示(緊急)(水位6.8m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "住之江", "住吉", "東住吉", "平野", "消防局")
+            text2.text = "2号:住之江,住吉,東住吉,平野,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //神崎川(三国)
         //氾濫注意水位、水防警報(出動)
@@ -412,103 +292,30 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 32:
-            let title:String! = "■神崎川(三国)\n避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.8mに到達)\n\n"
+            let title:String! = "■神崎川(三国)\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位4.8m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
-            text2.text = "4号:西淀川,淀川,東淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            text2.text = "4号:西淀川,淀川,東淀川,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
-        //避難準備情報　３号しかない　神崎川、東除川
+        //避難勧告
         case 33:
-            let title:String! = "■神崎川(三国)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位4.8m)、避難勧告発令の見込み\n\n"
-            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
-            text2.text="3号:西淀川,淀川,東淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
-            break
-        //避難勧告　２号、４号判定　神崎川、東除川
-        case 34:
             let title:String! = "■神崎川(三国)\n【警戒レベル４】\n避難勧告(水位5m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
-            text2.text="流域署2号:西淀川,淀川,東淀川,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
-            var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
-                if kubun == "１号招集" {
-                    message = "２号非常招集\n\n招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                    } else {
-                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
+            text2.text = "3号:西淀川,淀川,東淀川,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
-        case 35:
+        case 34:
             let title:String! = "■神崎川(三国)\n【警戒レベル４】\n避難指示(緊急)(水位5.8m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "西淀川", "淀川", "東淀川", "消防局")
+            text2.text = "2号:西淀川,淀川,東淀川,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //天竺川 2020.06　追加(既存分を修正しないためcase 121-125)
         //氾濫注意水位、水防警報(出動)
@@ -528,103 +335,30 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 122:
-            let title:String! = "■天竺川(天竺川橋)\n避難準備・高齢者等避難開始発令の見込み(1時間以内に水位2.2mに到達)\n\n"
+            let title:String! = "■天竺川(天竺川橋)\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位2.2m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
-            text2.text = "4号:淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            text2.text = "4号:淀川,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
-        //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
+        //避難勧告
         case 123:
-            let title:String! = "■天竺川(天竺川橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位2.2m)、避難勧告発令の見込み\n\n"
-            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
-            text2.text = "3号:淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
-            break
-        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
-        case 124:
             let title:String! = "■天竺川(天竺川橋)\n【警戒レベル４】\n避難勧告(水位2.3m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
-            text2.text="流域署2号:淀川,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,東淀川,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
-            var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
-                if kubun == "１号招集" {
-                    message = "２号非常招集\n\n招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                    } else {
-                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "3号:淀川,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
         case 125:
             let title:String! = "■天竺川(天竺川橋)\n【警戒レベル４】\n避難指示(緊急)(水位2.86m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "2号:淀川,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //高川 2020.06　追加(既存分を修正しないためcase 131-135)
         //氾濫注意水位、水防警報(出動)
@@ -644,103 +378,30 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 132:
-            let title:String! = "■高川(水路橋)\n避難準備・高齢者等避難開始発令の見込み(1時間以内に水位1.55mに到達)\n\n"
+            let title:String! = "■高川(水路橋)\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位1.55m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
-            text2.text = "4号:淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            text2.text = "4号:淀川,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
-        //避難準備情報　３号しかない　神崎川、天竺川、高川、東除川、西除川
+        //避難勧告
         case 133:
-            let title:String! = "■高川(水路橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位1.55m)、避難勧告発令の見込み\n\n"
-            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
-            text2.text = "3号:淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
-            break
-        //避難勧告　２号、４号判定　神崎川、天竺川、高川、古川、東除川、西除川
-        case 134:
             let title:String! = "■高川(水路橋)\n【警戒レベル４】\n避難勧告(水位1.6m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "淀川", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "西淀川", "東淀川", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
-            text2.text="流域署2号:淀川,消防局\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,東淀川,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
-            var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
-                if kubun == "１号招集" {
-                    message = "２号非常招集\n\n招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                    } else {
-                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "3号:淀川,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
-        case 135:
+        case 134:
             let title:String! = "■高川(水路橋)\n【警戒レベル４】\n避難指示(緊急)(水位3.6m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
+            text2.text = "2号:淀川,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //安威川(千歳橋)
         //氾濫注意水位、水防警報(出動)
@@ -760,127 +421,30 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 42:
-            let title:String! = "■安威川(千歳橋)\n避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.5mに到達)\n\n"
+            let title:String! = "■安威川(千歳橋)\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.5m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "東淀川", "消防局")
-            text2.text = "4号:東淀川,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
-            break
-        //避難準備情報
-        case 43:
-            let title:String! = "■安威川(千歳橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.5m)、避難勧告発令の見込み\n\n"
-            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "東淀川", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "西淀川", "淀川")
-            text2.text="流域署3号:東淀川,消防局\n流域周辺署4号:西淀川,淀川"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            text2.text = "4号:東淀川,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難勧告
-        case 44:
+        case 43:
             let title:String! = "■安威川(千歳橋)\n【警戒レベル４】\n避難勧告(水位4.25m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "東淀川", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "西淀川", "淀川")
-            let gaitousyo3 = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央", "西", "港", "大正", "天王寺", "浪速", "東成", "生野", "旭", "城東", "鶴見", "阿倍野", "住之江", "住吉", "東住吉", "平野", "西成", "水上")
-            text2.text="流域署2号:東淀川,消防局\n流域周辺署3号:西淀川,淀川\nその他の署4号:北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,東成,生野,旭,城東,鶴見,阿倍野,住之江,住吉,東住吉,平野,西成,水上"
-            var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
-                if kubun == "１号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                    } else {
-                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else if gaitousyo3.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "東淀川", "消防局")
+            text2.text = "3号:東淀川,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
-        case 45:
+        case 44:
             let title:String! = "■安威川(千歳橋)\n【警戒レベル４】\n避難指示(緊急)(水位5.1m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "東淀川", "消防局")
+            text2.text = "2号:東淀川,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //寝屋川(京橋)
         //氾濫注意水位、水防警報(出動)
@@ -900,127 +464,30 @@ class TyphoonResultDialog2 {
             break
         //避難準備情報発令の見込み
         case 52:
-            let title:String! = "■寝屋川(京橋)\n避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.1mに到達)\n\n"
+            let title:String! = "■寝屋川(京橋)\n 【警戒レベル３】\n避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.1m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo = Set(arrayLiteral: "都島", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
-            text2.text = "4号:都島,東成,生野,旭,城東,鶴見,東住吉,平野,消防局"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
-            break
-        //避難準備情報
-        case 53:
-            let title:String! = "■寝屋川(京橋)\n【警戒レベル３】\n避難準備・高齢者等避難開始(水位3.1m)、避難勧告発令の見込み\n\n"
-            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "都島", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "中央", "天王寺", "阿倍野", "住吉")
-            text2.text="流域署3号:都島,東成,生野,旭,城東,鶴見,東住吉,平野,消防局\n流域周辺署4号:中央,天王寺,阿倍野,住吉"
-            var message:String! = ""
-            //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "都島", "中央", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
+            text2.text = "4号:都島,中央,東成,生野,旭,城東,鶴見,東住吉,平野,消防局\n5号:その他の署"
+            
+            setLevel2(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難勧告
-        case 54:
+        case 53:
             let title:String! = "■寝屋川(京橋)\n【警戒レベル４】\n避難勧告(水位3.3m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
-            let gaitousyo1 = Set(arrayLiteral: "都島", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
-            let gaitousyo2 = Set(arrayLiteral: "中央", "天王寺", "阿倍野", "住吉")
-            let gaitousyo3 = Set(arrayLiteral: "北", "福島", "此花", "西", "港", "大正", "浪速", "西淀川", "淀川", "東淀川", "住之江", "西成", "水上")
-            text2.text="流域署2号:都島,東成,生野,旭,城東,鶴見,東住吉,平野,消防局\n流域周辺署3号:中央,天王寺,阿倍野,住吉\nその他の署4号:北,福島,此花,西,港,大正,浪速,西淀川,淀川,東淀川,住之江,西成,水上"
-            var message:String! = ""
-            if gaitousyo1.contains(userDefaults.string(forKey: "mainStation")!){
-                //２号招集なので、１号は参集なしの判定する
-                if kubun == "１号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                    } else {
-                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                    }
-                }
-            } else if gaitousyo2.contains(userDefaults.string(forKey: "mainStation")!){
-                //３号招集なので、１号、２号は参集なしの判定する
-                if kubun == "１号招集" || kubun == "２号招集" {
-                    message = "招集なし"
-                } else {
-                    if mainStation == "消防局" {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                }
-            } else if gaitousyo3.contains(userDefaults.string(forKey: "mainStation")!){
-                //４号招集なので、１号、２号、３号は参集なしの判定する
-                if kubun == "４号招集" {
-                    if mainStation == "消防局" {
-                        message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                    } else {
-                        message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
-                    }
-                } else {
-                    message = "招集なし"
-                }
-            } else {
-                message = "招集なし"
-            }
-            text1.text = title + message
+            let gaitousyo = Set(arrayLiteral: "都島", "中央", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
+            text2.text = "3号:都島,中央,東成,生野,旭,城東,鶴見,東住吉,平野,消防局\n4号:その他の署"
+            
+            setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
-        case 55:
+        case 54:
             let title:String! = "■寝屋川(京橋)\n【警戒レベル４】\n避難指示(緊急)(水位3.5m)\n\n"
-            text2.text="２号:全署,消防局"
-            var message:String! = ""
-            //２号招集なので、１号は参集なしの判定する
-            if kubun == "１号招集" {
-                message = "招集なし"
-            } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
-            }
-            text1.text = title + message
+            let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
+            let gaitousyo = Set(arrayLiteral: "都島", "中央", "東成", "生野", "旭", "城東", "鶴見", "東住吉", "平野", "消防局")
+            text2.text = "2号:都島,中央,東成,生野,旭,城東,鶴見,東住吉,平野,消防局\n3号:その他の署"
+            
+            setLevel4(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //第二寝屋川(昭明橋)
         //氾濫注意水位、水防警報(出動)
@@ -1950,6 +1417,8 @@ class TyphoonResultDialog2 {
             text1.text=""
         }
         
+        
+        
         self.win1.addSubview(text1)
         self.win1.addSubview(text2)
         
@@ -1985,6 +1454,86 @@ class TyphoonResultDialog2 {
         btnGaitousyo.layer.position = CGPoint(x: 56, y: self.win1.frame.height-145)
         btnGaitousyo.addTarget(self, action: #selector(self.onClickGaitousyo(_:)), for: .touchUpInside)
         self.win1.addSubview(btnGaitousyo)
+    }
+    
+    //【警戒レベル３】避難準備・高齢者等避難開始
+    func setLevel2(title: String, hosoku: String, gaitousyo: Set<String> ){
+        var message:String! = ""
+        //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
+        if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+            //４号招集なので、１号、２号、３号は参集なしの判定する
+            if kubun == "４号招集" {
+                if mainStation == "消防局" {
+                    message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                } else {
+                    message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
+                }
+            } else {
+                message = "招集なし"
+            }
+        } else {
+            //その他の署は５号
+            message = "第５非常警備\n\n\(mainStation)\n\n招集なし"
+        }
+        text1.text = title + message
+    }
+    
+    //【警戒レベル４】避難勧告
+    func setLevel3(title: String, hosoku: String, gaitousyo: Set<String>){
+        var message:String! = ""
+        if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+            //３号招集なので、１号、２号は参集なしの判定する
+            if kubun == "１号招集" || kubun == "２号招集" {
+                message = "招集なし"
+            } else {
+                if mainStation == "消防局" {
+                    message = "３号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                } else {
+                    message = "３号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
+                }
+            }
+        } else {
+            //４号招集なので、１号、２号、３号は参集なしの判定する
+            if kubun == "４号招集" {
+                if mainStation == "消防局" {
+                    message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                } else {
+                    message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                }
+            } else {
+                message = "招集なし"
+            }
+        }
+        text1.text = title + message
+    }
+    
+    //【警戒レベル４】避難指示
+    func setLevel4(title: String, hosoku: String, gaitousyo: Set<String>){
+        var message:String! = ""
+        if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
+            //２号招集なので、１号は招集なしの判定する
+            if kubun == "１号招集" {
+                message = "招集なし"
+            } else {
+                if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                } else {
+                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                }
+            }
+        } else {
+            //３号招集なので、１号、２号は招集なしの判定する
+            if kubun == "１号招集" || kubun == "２号招集" {
+                message = "招集なし"
+            } else {
+                if mainStation == "消防局" {
+                    message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                } else {
+                    message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                }
+            }
+        }
+        text1.text = title + message
     }
     
     //該当署ボタン
