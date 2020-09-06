@@ -34,43 +34,43 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             items = ["■氾濫注意水位(水位4.5m)、水防警報(出動)", "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位5.4m)", "■【警戒レベル４】避難勧告(水位5.5m)", "■【警戒レベル４】避難指示(緊急)(水位8.3m)"] //淀川（枚方）
             break
         case 2:
-            items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.7mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位4.7m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位5.3m)", "■【警戒レベル４】避難指示(緊急)(水位6.8m)"] //大和川（柏原）
+            items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位4.7m)", "■【警戒レベル４】避難勧告(水位5.3m)", "■【警戒レベル４】避難指示(緊急)(水位6.8m)"] //大和川（柏原）
             break
         case 3:
-            items = ["■氾濫注意水位(水位3.8m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.8mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位4.8m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位5m)", "■【警戒レベル４】避難指示(緊急)(水位5.8m)"] //神崎川（三国）
+            items = ["■氾濫注意水位(水位3.8m)、水防警報(出動)", "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位4.8m)", "■【警戒レベル４】避難勧告(水位5m)", "■【警戒レベル４】避難指示(緊急)(水位5.8m)"] //神崎川（三国）
             break
         case 12:
-        items = ["■氾濫注意水位(水位2m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位2.2mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位2.2m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位2.3m)", "■【警戒レベル４】避難指示(緊急)(水位2.86m)"] //天竺川 2020.06 追加
+        items = ["■氾濫注意水位(水位2m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位2.2m)", "■【警戒レベル４】避難勧告(水位2.3m)", "■【警戒レベル４】避難指示(緊急)(水位2.86m)"] //天竺川 2020.06 追加
         break
         case 13:
-        items = ["■氾濫注意水位(水位1.5m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位1.55mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位1.55m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位1.6m)", "■【警戒レベル４】避難指示(緊急)(水位3.6m)"] //高川 2020.06 追加
+        items = ["■氾濫注意水位(水位1.5m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位1.55m)", "■【警戒レベル４】避難勧告(水位1.6m)", "■【警戒レベル４】避難指示(緊急)(水位3.6m)"] //高川 2020.06 追加
         break
         case 4:
-            items = ["■氾濫注意水位(水位3.25m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.5mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.5m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位4.25m)", "■【警戒レベル４】避難指示(緊急)(水位5.1m)"] //安威川（千歳橋）
+            items = ["■氾濫注意水位(水位3.25m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.5m)", "■【警戒レベル４】避難勧告(水位4.25m)", "■【警戒レベル４】避難指示(緊急)(水位5.1m)"] //安威川（千歳橋）
             break
         case 5:
-            items = ["■氾濫注意水位(水位3m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.1mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.1m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.3m)", "■【警戒レベル４】避難指示(緊急)(水位3.5m)"] //寝屋川（京橋）
+            items = ["■氾濫注意水位(水位3m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.1m)", "■【警戒レベル４】避難勧告(水位3.3m)", "■【警戒レベル４】避難指示(緊急)(水位3.5m)"] //寝屋川（京橋）
             break
         case 6:
-            items = ["■氾濫注意水位(水位3.4m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位4.25mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位4.25m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位4.55m)", "■【警戒レベル４】避難指示(緊急)(水位4.85m)"] //第二寝屋川（昭明橋）
+            items = ["■氾濫注意水位(水位3.4m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位4.25m)", "■【警戒レベル４】避難勧告(水位4.55m)", "■【警戒レベル４】避難指示(緊急)(水位4.85m)"] //第二寝屋川（昭明橋）
             break
         case 7:
-            items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.9mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.9m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位4.15m)", "■【警戒レベル４】避難指示(緊急)(水位4.4m)"] //平野川（剣橋）
+            items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.9m)", "■【警戒レベル４】避難勧告(水位4.15m)", "■【警戒レベル４】避難指示(緊急)(水位4.4m)"] //平野川（剣橋）
             break
         case 8:
-            items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.4mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.4m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.85m)", "■【警戒レベル４】避難指示(緊急)(水位4.63m)"] //平野川分水路（今里大橋）
+            items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.4m)", "■【警戒レベル４】避難勧告(水位3.85m)", "■【警戒レベル４】避難指示(緊急)(水位4.63m)"] //平野川分水路（今里大橋）
             break
         case 9:
-            items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)","■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.3mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.3m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.4m)", "■【警戒レベル４】避難指示(緊急)(水位3.67m)"] //古川（桑才）2020.06修正
+            items = ["■氾濫注意水位(水位3.2m)、水防警報(出動)", "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.3m)", "■【警戒レベル４】避難勧告(水位3.4m)", "■【警戒レベル４】避難指示(緊急)(水位3.67m)"] //古川（桑才）2020.06修正
             break
         case 10:
-            items = ["■氾濫注意水位(水位2.9m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.2mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.2m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位3.9m)", "■【警戒レベル４】避難指示(緊急)(水位5.3m)"] //東除川（大堀上小橋）
+            items = ["■氾濫注意水位(水位2.9m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.2m)", "■【警戒レベル４】避難勧告(水位3.9m)", "■【警戒レベル４】避難指示(緊急)(水位5.3m)"] //東除川（大堀上小橋）
             break
         case 14:
-        items = ["■氾濫注意水位(水位2.5m)、水防警報(出動)", "■避難準備・高齢者等避難開始発令の見込み(1時間以内に水位3.7mに到達)", "■【警戒レベル３】避難準備・高齢者等避難開始(水位3.7m)、避難勧告発令の見込み", "■【警戒レベル４】避難勧告(水位4m)", "■【警戒レベル４】避難指示(緊急)(水位5.06m)"] //西除川 2020.06 追加
+        items = ["■氾濫注意水位(水位2.5m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.7m)", "■【警戒レベル４】避難勧告(水位4m)", "■【警戒レベル４】避難指示(緊急)(水位5.06m)"] //西除川 2020.06 追加
         break
         case 11:
-            items = ["■高潮"] //高潮 2020.09 名称を高潮のみに変更
+            items = ["■高潮区域(水防警報(出動))",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき", "■【警戒レベル４】避難勧告", "■【警戒レベル４】避難指示(緊急)"] //高潮 2020.09 名称を高潮のみに変更
             break
         default:
             items = [""]
@@ -211,10 +211,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(24)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(25)
-                break
             default:
                 break
             }
@@ -237,10 +233,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(34)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(35)
                 break
             default:
                 break
@@ -265,10 +257,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(124)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(125)
-                break
             default:
                 break
             }
@@ -291,10 +279,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(134)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(135)
                 break
             default:
                 break
@@ -319,10 +303,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(44)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(45)
-                break
             default:
                 break
             }
@@ -345,10 +325,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(54)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(55)
                 break
             default:
                 break
@@ -373,10 +349,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(64)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(65)
-                break
             default:
                 break
             }
@@ -399,10 +371,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(74)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(75)
                 break
             default:
                 break
@@ -427,10 +395,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(84)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(85)
-                break
             default:
                 break
             }
@@ -453,10 +417,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(94)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(95)
                 break
             default:
                 break
@@ -481,10 +441,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(104)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(105)
-                break
             default:
                 break
             }
@@ -508,10 +464,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(144)
                 break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(145)
-                break
             default:
                 break
             }
@@ -534,10 +486,6 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
             case 3:
                 mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
                 mTyphoonResultDialog2.showResult(114)
-                break
-            case 4:
-                mTyphoonResultDialog2 = TyphoonResultDialog2(index:mIndex, parentView: parent)
-                mTyphoonResultDialog2.showResult(115)
                 break
             default:
                 break
