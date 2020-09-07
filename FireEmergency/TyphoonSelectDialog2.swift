@@ -17,6 +17,7 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
     fileprivate var items:[String] = ["","","",""]
     fileprivate var btnClose: UIButton!
     fileprivate var mTyphoonResultDialog2: TyphoonResultDialog2!
+    fileprivate var mTyphoonSelectDialog: TyphoonSelectDialog! //１つ前の河川選択画面に戻る用
     //自分が何番目のダイアログが保存用
     fileprivate var mIndex: Int!
     
@@ -54,9 +55,11 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
         case 6:
             items = ["■氾濫注意水位(水位3.4m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位4.25m)", "■【警戒レベル４】避難勧告(水位4.55m)", "■【警戒レベル４】避難指示(緊急)(水位4.85m)"] //第二寝屋川（昭明橋）
             break
+        //平野川
         case 7:
             items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.9m)", "■【警戒レベル４】避難勧告(水位4.15m)", "■【警戒レベル４】避難指示(緊急)(水位4.4m)"] //平野川（剣橋）
             break
+        //第２平野川
         case 8:
             items = ["■氾濫注意水位(水位3.3m)、水防警報(出動)",  "■【警戒レベル３】避難準備・高齢者等避難開始(見込みを含む。)又は避難勧告が発令される見込みとなったとき(水位3.4m)", "■【警戒レベル４】避難勧告(水位3.85m)", "■【警戒レベル４】避難指示(緊急)(水位4.63m)"] //平野川分水路（今里大橋）
             break
@@ -153,6 +156,9 @@ class TyphoonSelectDialog2: NSObject, UITableViewDelegate, UITableViewDataSource
         text1.text = ""         //使い回しするのでテキスト内容クリア
         parent.view.alpha = 1.0 //元の画面明るく
         mViewController.view.alpha = 1.0 //明るく
+        //１つ前の河川選択画面を表示
+        mTyphoonSelectDialog = TyphoonSelectDialog(index: 3, parentView: parent)
+        mTyphoonSelectDialog.showInfo()
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection sction: Int)-> Int {

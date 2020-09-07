@@ -134,9 +134,9 @@ class TyphoonResultDialog {
         //洪水警報
         case 25:
             if mainStation == "教育訓練センター" {
-                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
+                text1.text="■洪水警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
             } else {
-                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
+                text1.text="■洪水警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
             }
             break
         //波浪警報
@@ -153,17 +153,17 @@ class TyphoonResultDialog {
         //高潮警報
         case 27:
             if mainStation == "教育訓練センター" {
-                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
+                text1.text="■高潮警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
             } else {
-                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
+                text1.text="■高潮警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
             }
             break
         //高潮注意報
         case 28:
             if mainStation == "教育訓練センター" {
-                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
+                text1.text="■高潮注意報\n\n第５非常警備(全署、消防局)\n\nー\n\n招集なし"
             } else {
-                text1.text="■大雪警報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
+                text1.text="■高潮注意報\n\n第５非常警備(全署、消防局)\n\n\(mainStation)\n\n招集なし"
             }
             break
         //
