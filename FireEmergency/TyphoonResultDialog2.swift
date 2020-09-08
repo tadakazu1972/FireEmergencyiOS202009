@@ -338,7 +338,7 @@ class TyphoonResultDialog2 {
             setLevel3(title: title, hosoku: hosoku, gaitousyo: gaitousyo)
             break
         //避難指示
-        case 125:
+        case 124:
             let title:String! = "■天竺川(天竺川橋)\n【警戒レベル４】\n避難指示(緊急)(水位2.86m)\n\n"
             let hosoku:String! = "※平日の9時～17時30分は、原則、勤務中の毎日勤務者で活動体制を確保する"
             let gaitousyo = Set(arrayLiteral: "淀川", "消防局")
@@ -814,23 +814,29 @@ class TyphoonResultDialog2 {
     func setLevel3(title: String, hosoku: String, gaitousyo: Set<String>){
         var message:String! = ""
         if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
-            //３号招集なので、１号、２号は参集なしの判定する
-            if kubun == "１号招集" || kubun == "２号招集" {
-                message = "招集なし"
-            } else {
+            //３号招集対象者の判定
+            if kubun == "３号招集" {
+                if mainStation == "消防局" {
+                    message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                } else {
+                    message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                }
+            } else if kubun == "４号招集" {
                 if mainStation == "消防局" {
                     message = "３号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                 } else {
                     message = "３号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                 }
+            } else {
+                message = "招集なし"
             }
         } else {
-            //４号招集なので、１号、２号、３号は参集なしの判定する
+            //該当署以外は４号招集なので、１号、２号、３号は参集なしの判定する
             if kubun == "４号招集" {
                 if mainStation == "消防局" {
-                    message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    message = "４号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
                 } else {
-                    message = "４号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    message = "４号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
                 }
             } else {
                 message = "招集なし"
@@ -846,23 +852,39 @@ class TyphoonResultDialog2 {
             //２号招集なので、１号は招集なしの判定する
             if kubun == "１号招集" {
                 message = "招集なし"
+            //２号、３号対象者は(非番・日勤)表示
+            } else if kubun == "２号招集" || kubun == "３号招集" {
+                    if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    } else {
+                        message = "２号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n"
+                    }
+            //４号対象者
             } else {
-                if mainStation == "消防局" || mainStation == "教育訓練センター" {
-                    message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
-                } else {
-                    message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
-                }
+                    if mainStation == "消防局" || mainStation == "教育訓練センター" {
+                        message = "２号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n"
+                    } else {
+                        message = "２号非常招集\n\n\(mainStation)へ参集\n\n"
+                    }
             }
         } else {
-            //３号招集なので、１号、２号は招集なしの判定する
+            //該当署以外は３号招集なので、１号、２号は招集なしの判定する
             if kubun == "１号招集" || kubun == "２号招集" {
                 message = "招集なし"
+            //３号対象者は(非番・日勤)表示
+            } else if kubun == "３号招集" {
+                    if mainStation == "消防局" {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
+            //４号対象者
             } else {
-                if mainStation == "消防局" {
-                    message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
-                } else {
-                    message = "３号非常招集(非番・日勤)\n\n\(mainStation)へ参集\n\n" + hosoku
-                }
+                    if mainStation == "消防局" {
+                        message = "３号非常招集\n\n\(mainStation)へ参集(所属担当者に確認すること)\n\n" + hosoku
+                    } else {
+                        message = "３号非常招集\n\n\(mainStation)へ参集\n\n" + hosoku
+                    }
             }
         }
         text1.text = title + message
