@@ -471,8 +471,8 @@ class TyphoonResultDialog2 {
         case 61:
             //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■第二寝屋川(昭明橋)\n氾濫注意水位(水位3.4m)、水防警報(出動)\n\n"
-            let gaitousyo = Set(arrayLiteral: "中央", "東成", "城東", "鶴見", "消防局")
-            text2.text = "中央,東成,城東,鶴見,消防局"
+            let gaitousyo = Set(arrayLiteral: "中央", "城東", "鶴見", "消防局")
+            text2.text = "中央,城東,鶴見,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
@@ -511,8 +511,8 @@ class TyphoonResultDialog2 {
         case 71:
             //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■平野川(剣橋)\n氾濫注意水位(水位3.3m)、水防警報(出動)\n\n"
-            let gaitousyo = Set(arrayLiteral: "中央", "東成", "生野", "城東", "東住吉", "平野", "消防局")
-            text2.text = "中央,東成,生野,城東,東住吉,平野,消防局"
+            let gaitousyo = Set(arrayLiteral: "東成", "生野", "城東", "東住吉", "平野", "消防局")
+            text2.text = "東成,生野,城東,東住吉,平野,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
@@ -551,8 +551,8 @@ class TyphoonResultDialog2 {
         case 81:
             //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■平野川分水路(今里大橋)\n氾濫注意水位(水位3.3m)、水防警報(出動)\n\n"
-            let gaitousyo = Set(arrayLiteral: "中央", "東成", "生野", "城東", "東住吉", "平野", "消防局")
-            text2.text = "中央,東成,生野,城東,東住吉,平野,消防局"
+            let gaitousyo = Set(arrayLiteral: "東成", "生野", "城東", "消防局")
+            text2.text = "東成,生野,城東,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
@@ -591,8 +591,8 @@ class TyphoonResultDialog2 {
         case 91:
             //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■古川(桑才)\n氾濫注意水位(水位3.2m)、水防警報(出動)\n\n"
-            let gaitousyo = Set(arrayLiteral: "旭", "城東", "鶴見", "消防局")
-            text2.text = "旭,城東,鶴見,消防局"
+            let gaitousyo = Set(arrayLiteral: "鶴見", "消防局")
+            text2.text = "鶴見,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){
@@ -711,8 +711,8 @@ class TyphoonResultDialog2 {
         case 111:
             //勤務消防署がリストに該当するか判定　あえて大津波・津波警報時参集指定署ではないことに注意！
             let title:String! = "■高潮区域(水防警報(出動))\n\n"
-            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央","西","港","大正","天王寺","浪速","西淀川", "淀川", "東淀川", "旭", "城東","阿倍野","住之江","住吉","西成","水上","消防局")
-            text2.text = "北,都島,福島,此花,中央,西,港,大正,天王寺,浪速,西淀川,淀川,東淀川,旭,城東,阿倍野,住之江,住吉,西成,水上,消防局"
+            let gaitousyo = Set(arrayLiteral: "北", "都島", "福島", "此花", "中央","西","港","大正","浪速","西淀川", "淀川","住之江","西成","水上","消防局")
+            text2.text = "北,都島,福島,此花,中央,西,港,大正,浪速,西淀川,淀川,住之江,西成,水上,消防局"
             var message:String! = ""
             //mainStationではすでに「消防署」の文字列を付け足してしまっているので上記リストとの比較はuserDefaultの格納値を使う
             if gaitousyo.contains(userDefaults.string(forKey: "mainStation")!){

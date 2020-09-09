@@ -90,7 +90,7 @@ class TyphoonSelectDialog: NSObject, UITableViewDelegate, UITableViewDataSource 
         text1.textAlignment = NSTextAlignment.left
         text1.isEditable = false
         if (mIndex==3){
-            text1.text="河川を選択してください"
+            text1.text="河川等を選択してください"
         } else {
             text1.text="発令されている警報は？"
         }
